@@ -95,8 +95,8 @@ header.site .siteMeta .siteMascot a {
     display: block;
     text-indent: -20000px;
     background-image: url(sculpin-mascot-jackson-micro.png);
-    width: 88px;
-    height: 85px;
+    width: 50px;
+    height: 48px;
 }
 
 .fancySite header.site .siteMeta .siteTitle {
@@ -126,6 +126,11 @@ header.site .siteMeta .siteMascot a {
     header.site .siteMeta .siteMascot a {
         margin-top: -.5em;
     }
+    .fancySite header.site .siteMeta .siteMascot a {
+        background-image: url(sculpin-mascot-jackson-small.png);
+        width: 88px;
+        height: 85px;
+    }
     header.site .siteMeta .siteTitle {
         display: inline-block;
     }
@@ -140,6 +145,11 @@ header.site .siteMeta .siteMascot a {
 @media only screen and (min-width: 480px) {
     .fancySite header.site .siteMeta .siteMascot {
         margin-top: -1.25em;
+    }
+    header.site .siteMeta .siteMascot a {
+        background-image: url(sculpin-mascot-jackson-small.png);
+        width: 88px;
+        height: 85px;
     }
     .fancySite header.site .siteMeta .siteMascot a {
         background-image: url(sculpin-mascot-jackson-medium.png);
@@ -182,11 +192,20 @@ header.site .siteMeta .siteMascot a {
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
     header.site .siteMeta .siteMascot a {
         background-image: url(sculpin-mascot-jackson-micro@2x.png);
+        background-size: 50px 48px;
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px) {
+    .fancySite header.site .siteMeta .siteMascot a {
+        background-image: url(sculpin-mascot-jackson-small@2x.png);
         background-size: 88px 85px;
     }
 }
-
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 480px) {
+    header.site .siteMeta .siteMascot a {
+        background-image: url(sculpin-mascot-jackson-small@2x.png);
+        background-size: 88px 85px;
+    }
     .fancySite header.site .siteMeta .siteMascot a {
         background-image: url(sculpin-mascot-jackson-medium@2x.png);
         background-size: 200px 193px;

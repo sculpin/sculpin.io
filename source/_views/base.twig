@@ -1,0 +1,67 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    {% if page.full_title %}
+    <title>{{ page.full_title|raw }}</title>
+    {% else %}
+    <title>{{ page.title }} &mdash; {{ site.title }}</title>
+    {% endif %}
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{{ site.url }}/css/boilerplate.css">
+    <link rel="stylesheet" href="{{ site.url }}/css/style.css">
+    <link rel="stylesheet" href="{{ site.url }}/css/helpers.css">
+    <link rel="icon" href="{{ site.url }}/favicon.ico">
+    <script src="{{ site.url }}/js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+<body class="{% if page.fancy_index %} fancySite {% endif %}">
+    <!-- <a href="http://github.com/sculpin/sculpin" class="forkMeOnGithub"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a> -->
+    <header class="site">
+        <nav>
+            <ul>
+                <li><a href="{{ site.url }}/">Home</a></li>
+                <li><a href="{{ site.url }}/documentation/">Documentation</a></li>
+                <li><a href="{{ site.url }}/download/">Download</a></li>
+                <li><a href="{{ site.url }}/community/">Community</a></li>
+                <li><a href="{{ site.url }}/blog/">Blog</a></li>
+            </ul>
+        </nav>
+        <div class="siteMeta">
+            <div class="siteMascot"><a href="{{ site.url }}/mascot/">Meet Jackson, the Sculpin mascot</a></div>
+            <div class="siteTitle"><a href="{{ site.url }}/">Sculpin</a></div>
+            <div class="siteSubtitle"><a href="{{ site.url }}/">Static Site Generator</a></div>
+        </div>
+    </header>
+    <div class="mainContent">
+    {% block content %}Fallback content. :){% endblock %}
+    </div>
+    <footer class="site">
+    {% block footer %}
+    &copy;<a href="http://dflydev.com/">Dragonfly Development Inc</a>, 2011-2012
+    {% endblock %}
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{site.url}}/js/libs/jquery-1.6.4.min.js"><\/script>')</script>
+    <script defer src="{{ site.url }}/js/plugins.js"></script>
+    <script defer src="{{ site.url }}/js/script.js"></script>
+    {% if site.google_analytics_tracking_id %}
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{{  site.google_analytics_tracking_id }}']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    {% endif %}
+</body>
+</html>

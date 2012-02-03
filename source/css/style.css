@@ -6,7 +6,7 @@
 /*
 #5B7C89
 #98BFCC
-#111111
+#333333
 */
 
 * { -moz-box-sizing: border-box; box-sizing: border-box; }
@@ -18,49 +18,87 @@ a:visited {
     color: #434354;
 }
 
+html, body { height: 100%; }
+
 body {
     font-size: 1em;
     color: #333333;
     font-family: arial, sans-serif;
+    background-color: #5B7C89;
+}
+
+h1, h2, h3, h4 {
+    text-shadow: .075em .075em .2em #aaa;
 }
 
 footer.site {
-    text-align: center;
-    padding: 2em;
-    font-size: .75em;
+    bottom: 0px;
+    width: 100%;
+    background-color: #5B7C89;
+    border-top: 1px solid #333333;
 }
-footer.site, footer.site a {
-    color: #aaa;
+
+footer.site div.footerContent {
+    padding: 1em;
+    text-shadow: .1em .1em .1em #333;
+    line-height: 1.5em;
 }
-.rgba footer.site, .rgba footer.site a {
-    color: rgba(51, 51, 51, .25);
+
+footer.site,
+footer.site a,
+footer.site a:visited {
+    color: #f0f0f0;
+}
+footer.site a {
+    text-decoration: none;
+}
+
+footer.site .copyright {
+    font-size: .5em;
+}
+
+footer.site .socialMedia {
+    float: right;
+    font-size: 1em;
+    font-weight: bold;
+}
+footer.site .socialMedia ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer.site a:hover {
+    text-decoration: underline;
 }
 
 header.site nav ul,
 header.site .siteMeta,
-footer.site,
+footer.site .footerContentContainer,
 .mainContent {
     margin: 0 auto;
     padding: 0 .25em;
 }
 .mainContent {
-    padding: .25em 1em 2em 1em;
+    padding: .25em 1em 5em 1em;
 }
-
+.mainContentContainer {
+    background-color: #f0f0f0;
+}
 header.site nav ul,
 header.site .siteMeta,
-footer.site,
+footer.site .footerContentContainer,
 .mainContent {
     /*border: 1px solid blue;*/
 }
 
 header.site {
+    border-bottom: 1px solid #333333;
     background-color: #5B7C89;
-    border-bottom: 1px solid #111111;
 }
 header.site nav {
     background-color: #98BFCC;
-    border-bottom: 1px solid #111111;
+    border-bottom: 1px solid #333333;
 }
 header.site nav ul li {
     display: inline-block;
@@ -174,7 +212,7 @@ header.site .siteMeta .siteMascot a {
 @media only screen and (min-width: 768px) {
     header.site nav ul,
     header.site .siteMeta,
-    footer.site,
+    footer.site .footerContentContainer,
     .mainContent {
         max-width: 1024px;
         /* border: 1px solid blue; */

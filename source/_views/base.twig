@@ -36,13 +36,26 @@
             <div class="siteSubtitle"><a href="{{ site.url }}/">Static Site Generator</a></div>
         </div>
     </header>
+    <div class="mainContentContainer">
     <div class="mainContent">
     {% block content %}Fallback content. :){% endblock %}
     </div>
+    </div>
     <footer class="site">
+    <div class="footerContentContainer">
+    <div class="footerContent">
     {% block footer %}
-    &copy;<a href="http://dflydev.com/">Dragonfly Development Inc</a>, 2011-2012
+    <div class="socialMedia">
+        <ul>
+            <li class="twitter"><a href="http://twitter.com/getsculpin">@getsculpin</a></li>
+        </ul>
+    </div>
+    <div class="copyright">
+        &copy;<a href="http://dflydev.com/">Dragonfly Development Inc</a>, 2011-2012
+    </div>
     {% endblock %}
+    </div>
+    </div>
     </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{site.url}}/js/libs/jquery-1.6.4.min.js"><\/script>')</script>

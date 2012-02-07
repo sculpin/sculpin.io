@@ -27,8 +27,8 @@ body {
     background-color: #5B7C89;
 }
 
-h1, h2, h3, h4 {
-    text-shadow: .075em .075em .2em #aaa;
+h1, h2, h3, h4, h5 {
+    text-shadow: .05em .05em .1em #aaa;
 }
 
 footer.site {

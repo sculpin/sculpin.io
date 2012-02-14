@@ -6,8 +6,32 @@ converters: [markdown]
 
 # Download
 
-There are no stable package builds of Sculpin available.
-Sculpin can be run from a fresh clone of
+## Installer
+
+The easiest way to download Sculpin is to use the installer. This will install the latest development
+version of Sculpin in the directory in which this command is executed.
+
+    curl -s http://getsculpin.com/install | php
+
+Want a specific release? **Pro Tip: There are no releases. Yet.**
+
+    curl -s http://getsculpin.com/install | php -- --release=1.0.0
+
+Once installed, using Sculpin is easy!
+
+    php sculpin.phar list
+    php sculpin.phar init
+    php sculpin.phar generate
+
+## Source
+
+Sculpin can also be run from a fresh clone of
 [github.com/sculpin/sculpin](https://github.com/sculpin/sculpin).
+
+The source installation of Sculpin operates a little differently.
+See the [README](https://github.com/sculpin/sculpin/blob/master/README.md)
+for instructions on using the development version of Sculpin.
+
+## Help
 
 Want to fire it up but have questions? Check the Sculpin [community]({{site.url}}/community) for help.

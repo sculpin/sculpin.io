@@ -1,4 +1,6 @@
-.sculpin.yml.dumped
-preview
-public
-sculpin.yml
+/app/cache/*
+/app/config/sculpin_kernel_*.yml
+/app/config/sculpin_site_*.yml
+/output_*/
+/vendor/
+composer.phar

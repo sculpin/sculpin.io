@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Community
-converters: [markdown]
+
 ---
 
 # Community

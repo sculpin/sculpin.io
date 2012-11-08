@@ -1,5 +1,0 @@
-title: Sculpin
-subtitle: Static Site Generator
-posts:
-    permalink: blog/:year/:month/:day/:filename/
-preview_destination: preview

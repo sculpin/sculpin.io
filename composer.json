@@ -1,0 +1,7 @@
+{
+    "require": {
+        "sculpin/sculpin": "2.*",
+        "symfony/finder": "2.1.*@stable"
+    },
+    "minimum-stability": "dev"
+}

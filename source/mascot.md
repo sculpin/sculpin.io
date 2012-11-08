@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Jackson, the Sculpin mascot
-converters: [markdown]
+
 ---
 
 # Jackson, the Sculpin mascot

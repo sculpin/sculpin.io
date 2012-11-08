@@ -6,7 +6,10 @@ title: Community
 
 # Community
 
-Want to get involved? Here are a few ways:
+Sculpin is new and still undergoing heavy development. Please feel free to
+send any questions or comments our way! Want to get involved? Please do!
+
+We can be found in a number of ways:
 
 * Find us in the [#sculpin](irc://irc.freenode.org/sculpin) IRC
   channel on irc.freenode.org.

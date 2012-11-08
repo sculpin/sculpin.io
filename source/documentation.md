@@ -51,5 +51,10 @@ being used to deploy getsculpin.com:
 By default, `--env=prod` will cause Sculpin to place the build in `output_prod/`
 and will try to load configuration from `app/config/sculpin_site_prod.yml`.
 
+
+### Questions?
+
+Check out the Sculpin [community]({{site.url}}/community) if you have questions.
+
 [0]: http://getsculpin.com
 [1]: https://github.com/sculpin/getsculpin.com

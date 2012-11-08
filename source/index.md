@@ -5,12 +5,12 @@ fancy_index: true
 
 ---
 
-# Launching Soon!
+## What is Sculpin?
 
-Sculpin is a static site generator built around some incredible PHP tools &mdash;
-primarily [Symfony](http://symfony.com/) (various components),
+Sculpin is a static site generator built around some incredible PHP tools
+including [Symfony](http://symfony.com/) (various components),
 [Twig](http://twig.sensiolabs.org/) (default formatter),
-and [Composer](http://packagist.org) (bundle manager).
+and [Composer](http://packagist.org) (bundle management).
 
 Want to get involved? Check out the Sculpin [community]({{site.url}}/community)!
 

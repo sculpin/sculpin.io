@@ -34,7 +34,4 @@ Lastly, generate the site:
 
     php vendor/bin/sculpin generate
 
-For additional notes make sure to check out the [README][1].
-
 [0]: http://getsculpin.com
-[1]: https://github.com/sculpin/sculpin/blob/master/README.md

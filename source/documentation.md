@@ -19,10 +19,12 @@ Second, get Composer and install the project dependencies (including Sculpin):
     wget http://getcomposer.org/composer.phar
     php composer.phar install
 
-Third, create a development configuration file at `app/config/sculpin_site_dev.yml`
-so that the generates URLs will make sense for your enviornment. By default,
+Third, create a development configuration file (`app/config/sculpin_site_dev.yml`)
+so that the generated URLs will make sense for your environment. By default,
 the development build will be placed into `output_dev` so make sure to include
-that in your URL. Here is an example:
+that in your URL.
+
+Example:
 
     imports:
         - sculpin_site.yml

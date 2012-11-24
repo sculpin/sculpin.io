@@ -1,13 +1,13 @@
 ---
 layout: default
-full_title: Sculpin &mdash; Static Site Generator
+full_title: Sculpin &mdash; PHP Static Site Generator
 fancy_index: true
 
 ---
 
 ## What is Sculpin?
 
-Sculpin is a static site generator built around some incredible PHP tools
+Sculpin is a PHP static site generator built around some incredible tools
 including [Symfony](http://symfony.com/) (various components),
 [Twig](http://twig.sensiolabs.org/) (default formatter),
 and [Composer](http://packagist.org) (bundle management).

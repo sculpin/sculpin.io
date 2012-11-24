@@ -3,4 +3,5 @@
 /app/config/sculpin_site_*.yml
 /output_*/
 /vendor/
+composer.lock
 composer.phar

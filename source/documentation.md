@@ -21,23 +21,46 @@ Second, get Composer and install the project dependencies (including Sculpin):
     wget http://getcomposer.org/composer.phar
     php composer.phar install
 
-Third, create a development configuration file (`app/config/sculpin_site_dev.yml`)
-so that the generated URLs will make sense for your environment. By default,
-the development build will be placed into `output_dev/` so make sure to include
-that in your URL.
+Third, generate the site:
+
+    php vendor/bin/sculpin generate
+
+Fourth, there is no step four! Find your freshly generated static site in `output_dev/`!
+
+## Slightly More Advanced Options
+
+### Overriding URL While Generating Site
+
+Unless you have your webserver setup to serve files directly from `output_dev/`,
+you will probably want to specify a custom base URL. This will ensure that
+anything that references {{ site.url }} (like CSS and javascript assets) will
+be found properly.
+
+    sculpin generate --url=http://my.local/websites/getsculpin.com/output_dev
+
+### Environments
+
+Sculpin is aware of environments. Most examples will focus on **prod** (production)
+and **dev** (development).
+
+    sculpin generate --env=prod
+
+Files will output to `output_${env}/` by default.
+
+Configuration files will first be read from `app/config/sculpin_site_${env}.yml`.
+If a site configuration does not exist for the specified environment, the base
+configuration at `app/config/sculpin_site.yml` will be read.
+
+### Environment Specific Configuration Example
+
+To ensure that the URL is always appropriate for your development environment, you
+can create a custom site configuration file for the development environment.
 
 Example:
 
     imports:
         - sculpin_site.yml
     url: http://my.local/websites/getsculpin.com/output_dev
-
-Lastly, generate the site:
-
-    php vendor/bin/sculpin generate
-
-The previous command should be run any time files have changed, whether they be
-content, templates, or assets.
 
 ### Deployment
 
@@ -52,7 +75,7 @@ By default, `--env=prod` will cause Sculpin to place the build in `output_prod/`
 and will try to load configuration from `app/config/sculpin_site_prod.yml`.
 
 
-### Questions?
+## Questions?
 
 Check out the Sculpin [community]({{site.url}}/community) if you have questions.
 

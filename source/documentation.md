@@ -19,7 +19,7 @@ First, clone the repository for the website:
 Second, get Composer and install the project dependencies (including Sculpin):
 
     wget http://getcomposer.org/composer.phar
-    php composer.phar install
+    php composer.phar update
 
 Third, generate the site:
 

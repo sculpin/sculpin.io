@@ -17,14 +17,15 @@ Want to get involved? Check out the Sculpin [community]({{site.url}}/community)!
 
 ## Project Status
 
-Sculpin is currently under development and is really only usable for people
-willing to work with code that is considered **unstable** and lacks documentation.
-Sculpin people are ready to help, though, so please try to get in contact with
-the Sculpin [community]({{site.url}}) so we can work together!
+Sculpin continues to be **unstable**, under heavy development and lacking
+documentation. Be prepared for possible changes in core functionality requiring
+you to fix your existing site.
 
-But please, do not let this scare you away. Sculpin **is** usable.
-[This site](https://github.com/sculpin/getsculpin.com) is currently generated
-by Sculpin. Hurray for being self-hosted! This was a huge milestone.
+But the Sculpin [community]({{site.url}}/community) can help!
 
-Check the [documentation]({{site.url}}/documentation) to see how this site is
+The site you are reading is generated using Sculpin.
+[View the source on GitHub!](https://github.com/sculpin/getsculpin.com) You are
+encouraged to use it as an example of the most up to date feature implementations.
+
+Start by reading the [documentation]({{site.url}}/documentation) to see how this site is
 generated.

@@ -68,7 +68,7 @@ combination of their popularity and maturity (Jekyll and Octopress) or their sim
 [Jekyll](https://github.com/mojombo/jekyll) is wildly popular since it backs
 [GitHub Pages](http://pages.github.com/). [Octopress](http://octopress.org/), based on
 Jekyll, is pretty popular in the tech scene on account of its built-in set of plugins
-and its default pretty and responsive theme.
+and its pretty and responsive hacker-friendly default theme.
 
 [Phrozn](http://www.phrozn.info/) is another PHP static site generator that is similar
 to Sculpin on the surface. It supports several text file formats and uses Twig templates.

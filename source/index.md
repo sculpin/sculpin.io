@@ -55,7 +55,7 @@ Sculpin is written using a selection of Symfony Components.
 
 At its core is [HTTP Kernel](https://github.com/symfony/HttpKernel). This means that
 a bundle written for Symfony 2 could theoretically work "out of the box" with Sculpin.
-While this isn't the case in practice, one useful bundle that is know to work is the
+While this *usually* isn't the case in practice, one useful bundle that is know to work is the
 [GitHub Gist Twig Bundle](https://packagist.org/packages/dflydev/github-gist-twig-bundle).
 
 

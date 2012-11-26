@@ -24,10 +24,9 @@ should be a natural fit.
 
 ### Composer
 
-Sculpin and all of its building blocks can be managed by [Composer](http:/getcomposer.com).
-This may not seem like a big deal, but it means that installing Sculpin, its dependencies,
-and any dependencies specific to a project can be managed by downloading a single file,
-`composer.phar`, and running `php composer.phar install`.
+Sculpin and all of its dependencies are managed by [Composer](http:/getcomposer.com).
+This may not seem like a big deal, but this means that installing Sculpin, its dependencies,
+and any dependencies specific to a project, can be handled quite easily.
 
 
 ### Building Blocks

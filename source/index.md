@@ -79,7 +79,7 @@ the containing template. This severely limits the ability to use the full power 
 the underlying template language by not leveraging template inheritance.
 
 Sculpin, on the other hand, treats the content as if it was a template and properly
-extends the request layouts using Twig template inheritance the way it was intended.
+extends the requested layouts using Twig template inheritance.
 
 
 ## Project Status

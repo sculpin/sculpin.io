@@ -23,7 +23,7 @@ Second, get Composer and install the project dependencies (including Sculpin):
 
 Third, generate the site:
 
-    php vendor/bin/sculpin generate
+    vendor/bin/sculpin generate
 
 Fourth, there is no step four! Find your freshly generated static site in `output_dev/`!
 

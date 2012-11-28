@@ -6,78 +6,72 @@ title: Documentation
 
 # Documentation
 
-## Live Example &mdash; Building getsculpin.com!
+Sculpin currently lacks any in-depth or formal documentation. If you are
+interested in trying out Sculpin anyway you can fire up a Sculpin skeleton site
+to see Sculpin in action.
 
-To see Sculpin in action we are going to generate a copy of [getsculpin.com][0]
-locally. You can browse the source for the site [on GitHub][1].
 
-First, clone the repository for the website:
+## About Skeletons
 
-    git clone https://github.com/sculpin/getsculpin.com.git
-    cd getsculpin.com
+Skeletons are starting points for a new Sculpin based site. While not strictly
+required (you can always start a site from scratch) using a skeleton is a good
+way to get a bunch of structure in place with little or no effort.
 
-Second, get Composer and install the project dependencies (including Sculpin):
+Unless otherwise noted, the following skeletons are **barebones**. They will
+have minimal styles (if any at all) and are not intended to be pretty. You are
+expected to add all of the style magic yourself.
 
-    wget http://getcomposer.org/composer.phar
-    php composer.phar install
+Read another way, these are simply reference sites that you can scour for ideas
+on how to accomplish various things with your own site. Feel free to use as much,
+or as little, of these skeletons as you like.
 
-Third, generate the site:
 
-    vendor/bin/sculpin generate
+## Composer
 
-Fourth, there is no step four! Find your freshly generated static site in `output_dev/`!
+The easiest way to get started with a skeleton is by using [Composer][1]. If
+you are not familiar with it, get familiar with it. Sculpin relies on it
+pretty heavily.
 
-## Slightly More Advanced Options
+Please see the installation instructions for [*nix][2] and [Windows][3] to get
+Composer installed.
 
-### Overriding URL While Generating Site
+For the rest of these examples we will assume that you have Composer available
+as `composer` on your path. If you opt to not install Composer globally use
+`php composer.phar` in place of `composer` in the following commands.
 
-Unless you have your webserver setup to serve files directly from `output_dev/`,
-you will probably want to specify a custom base URL. This will ensure that
-anything that references {{ site.url }} (like CSS and javascript assets) will
-be found properly.
 
-    sculpin generate --url=http://my.local/websites/getsculpin.com/output_dev
+## Blog Skeleton
 
-### Environments
+The blog skeleton ([sculpin/blog-skeleton][4]) sets up a very basic Sculpin
+based blog. Once created you will find the following features:
 
-Sculpin is aware of environments. Most examples will focus on **prod** (production)
-and **dev** (development).
+ * A handful of existing posts in `source/_posts/` to get you started. Feel
+   free to remove these when you are ready.
+ * An about page at `/about`.
+ * An index page at `/`. It displays all posts and paginates them.
+ * A blog archive page at `/blog`. It displays post titles broken down by
+   month and is paginated.
+ * A blog tags page at `/blog/tags`.
+ * A blog tag index at `/blog/tags/$tag`. Similar to the blog archive
+   except broken down by each tag.
+ * A GitHub Gist extension is enabled to support {{ '{{ gist($GIST_ID) }}' }}
+   in posts.
 
-    sculpin generate --env=prod
+### Installation
 
-Files will output to `output_${env}/` by default.
+    composer create-project sculpin/blog-skeleton -s dev sculpin-blog
+    cd sculpin-blog
+    vendor/bin/sculpin generate --watch --server
 
-Configuration files will first be read from `app/config/sculpin_site_${env}.yml`.
-If a site configuration does not exist for the specified environment, the base
-configuration at `app/config/sculpin_site.yml` will be read.
-
-### Environment Specific Configuration Example
-
-To ensure that the URL is always appropriate for your development environment, you
-can create a custom site configuration file for the development environment.
-
-Example:
-
-    imports:
-        - sculpin_site.yml
-    url: http://my.local/websites/getsculpin.com/output_dev
-
-### Deployment
-
-Deployment is not baked into Sculpin yet. A simple script like this is currently
-being used to deploy getsculpin.com:
-
-    sculpin generate --env=prod
-    sculpin assets:install --env=prod output_prod
-    rsync -avze 'ssh -p 999' output_prod/ user@yoursculpin.com:public_html
-
-By default, `--env=prod` will cause Sculpin to place the build in `output_prod/`
-and will try to load configuration from `app/config/sculpin_site_prod.yml`.
+Your newly generated blog is now accessible at `http://localhost:8000/`.
 
 
 ## Questions?
 
 Check out the Sculpin [community]({{site.url}}/community) if you have questions.
 
-[0]: http://getsculpin.com
-[1]: https://github.com/sculpin/getsculpin.com
+
+[1]: http://getcomposer.org
+[2]: http://getcomposer.org/doc/00-intro.md#installation-nix
+[3]: http://getcomposer.org/doc/00-intro.md#installation-windows
+[4]: https://packagist.org/packages/sculpin/blog-skeleton

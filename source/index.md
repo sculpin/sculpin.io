@@ -7,8 +7,6 @@ fancy_index: true
 
 ## PHP Static Site Generator
 
-Sculpin is a PHP static site generator.
-
 Sculpin takes plain old text files (Markdown, Textile, etc.) and combines them with Twig
 templates to produce a set of static HTML files that can be easily deployed to almost any
 hosting platform.

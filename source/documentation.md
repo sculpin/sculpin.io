@@ -60,7 +60,7 @@ based blog. Once created you will find the following features:
 
 ### Installation
 
-    composer create-project sculpin/blog-skeleton -s dev sculpin-blog
+    composer create-project sculpin/blog-skeleton -n -s dev sculpin-blog
     cd sculpin-blog
     vendor/bin/sculpin generate --watch --server
 

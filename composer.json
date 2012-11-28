@@ -1,7 +1,8 @@
 {
     "require": {
-        "sculpin/sculpin": "2.*",
-        "symfony/finder": "2.1.*@stable"
-    },
-    "minimum-stability": "dev"
+        "sculpin/sculpin": "2.*@dev",
+
+        "composer/composer": "1.*@alpha",
+        "netcarver/textile": "2.5.*@dev"
+    }
 }

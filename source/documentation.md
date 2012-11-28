@@ -6,9 +6,9 @@ title: Documentation
 
 # Documentation
 
-Sculpin currently lacks any in-depth or formal documentation. If you are
-interested in trying out Sculpin anyway you can fire up a Sculpin skeleton site
-to see Sculpin in action.
+Sculpin currently lacks any in-depth or formal documentation. It is currently
+"learn by example". If you are interested in trying out Sculpin you should fire
+up a Sculpin skeleton site to see Sculpin in action.
 
 
 ## About Skeletons
@@ -29,15 +29,16 @@ or as little, of these skeletons as you like.
 ## Composer
 
 The easiest way to get started with a skeleton is by using [Composer][1]. If
-you are not familiar with it, get familiar with it. Sculpin relies on it
-pretty heavily.
+you are not familiar with it, get familiar with it. Besides being **awesome**,
+Sculpin relies on it pretty heavily.
 
 Please see the installation instructions for [*nix][2] and [Windows][3] to get
 Composer installed.
 
 For the rest of these examples we will assume that you have Composer available
 as `composer` on your path. If you opt to not install Composer globally use
-`php composer.phar` in place of `composer` in the following commands.
+`php composer.phar` in place of `composer` anytime you see `composer` in the
+following commands.
 
 
 ## Blog Skeleton

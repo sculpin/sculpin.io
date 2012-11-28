@@ -2,7 +2,7 @@ Sculpin Website
 ===============
 
 This repository contains (almost) everything that makes up
-[getsculpin.com](http://getsculpin.com/).
+[sculpin.io](http://sculpin.io).
 
 Powered by [Sculpin](https://github.com/sculpin/sculpin). =)
 
@@ -12,20 +12,16 @@ Powered by [Sculpin](https://github.com/sculpin/sculpin). =)
 Build
 -----
 
-    wget http://getcomposer.org/composer.phar
+    composer install
+    vendor/bin/sculpin generate --server
+
+Your newly generated clone of [sculpin.io](http:/sculpin.io) is now accessible
+at `http://localhost:8000/`.
+
+### If You Need Composer
+
+    curl -s https://getcomposer.org/installer | php
     php composer.phar install
-    php vendor/bin/sculpin generate
+    vendor/bin/sculpin generate --server
 
 
-### Development Configuration
-
-Create a development configuration file (`app/config/sculpin_site_dev.yml`)
-so that the generated URLs will make sense for your environment. By default,
-the development build will be placed into `output_dev` so make sure to include
-that in your URL.
-
-Example:
-
-    imports:
-        - sculpin_site.yml
-    url: http://my.local/websites/getsculpin.com/output_dev

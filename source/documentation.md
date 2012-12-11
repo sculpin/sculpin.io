@@ -60,7 +60,18 @@ based blog. Once created you will find the following features:
 
 ### Installation
 
+#### If You Already Have Composer
+
     composer create-project sculpin/blog-skeleton --prefer-dist -n -s dev sculpin-blog
+    cd sculpin-blog
+    vendor/bin/sculpin generate --watch --server
+
+Your newly generated blog is now accessible at `http://localhost:8000/`.
+
+#### If You Need Composer
+
+    curl -s https://getcomposer.org/installer | php
+    php composer.phar create-project sculpin/blog-skeleton --prefer-dist -n -s dev sculpin-blog
     cd sculpin-blog
     vendor/bin/sculpin generate --watch --server
 

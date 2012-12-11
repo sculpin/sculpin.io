@@ -27,7 +27,7 @@ expect Twig to work (including template inheritance) Sculpin is the right choice
 
 Sculpin is built around **Symfony's HTTP Kernel**. Among other things, this means that
 Sculpin can leverage Symfony's Dependency Injection Container and its Bundle system.
-Learn more about [Symfony Bundles](http://symfony.com/doc/2.0/cookbook/bundles/index.html).
+[Learn more about Symfony Bundles](http://symfony.com/doc/2.0/cookbook/bundles/index.html).
 
 
 ## Community

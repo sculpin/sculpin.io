@@ -12,6 +12,18 @@ templates to produce a set of static HTML files that can be easily deployed to a
 hosting platform.
 
 
+## Why Use a Static Site Generator?
+
+**Security, performance, and simplicity.** A static site, by definition, is a site rendered
+to static HTML. This means no code has to be executed on the server. This means no database
+has to be running on the server. These things mean less load on a server *even during traffic
+spikes*.
+
+It is tempting to consider static site generators a "step back" or placed in the same category
+as the likes of Dreamweaver or FrontPage. This is not really a fair comparison. Modern static
+sit generators *do* output static HTML but they are programmable and developer friendly.
+
+
 ## Why Sculpin?
 
 Sculpin is a **PHP static site generator**. If you like and are familiar with PHP, Sculpin

@@ -2,7 +2,7 @@
     "require": {
         "sculpin/sculpin": "2.*@dev",
 
-        "composer/composer": "1.*@alpha",
-        "netcarver/textile": "2.5.*@dev"
-    }
+        "composer/composer": "1.*@dev"
+    },
+    "minimum-stability": "dev"
 }

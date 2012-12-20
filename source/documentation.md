@@ -58,8 +58,6 @@ based blog. Once created you will find the following features:
  * A blog tags page at `/blog/tags`.
  * A blog tag index at `/blog/tags/$tag`. Similar to the blog archive
    except broken down by each tag.
- * A GitHub Gist extension is enabled to support {{ '{{ gist($GIST_ID) }}' }}
-   in posts.
 
 ### Installation
 

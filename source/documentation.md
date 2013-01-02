@@ -46,6 +46,7 @@ following commands.
 The blog skeleton ([sculpin/blog-skeleton][4]) sets up a very basic Sculpin
 based blog. Once created you will find the following features:
 
+ * Very minimal Bootstrap based theme.
  * A handful of existing posts in `source/_posts/` to get you started. Feel
    free to remove these when you are ready.
  * An about page at `/about`.

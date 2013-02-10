@@ -51,9 +51,9 @@ or mailing list, we are here for you!
 
 ## Project Status
 
-Sculpin continues to be **unstable**, under heavy development, and lacking in-depth documentation.
-Be prepared for possible changes in core functionality requiring you to fix your existing
-site.
+Sculpin is under heavy development and lacking in-depth documentation. Every attempt will be
+made to avoid major breaking changes but please be prepared for the possibility of changes in
+core functionality that may require you to fix your existing site.
 
 If you are interested in trying out Sculpin please check out the
 [documentation]({{site.url}}/documentation).

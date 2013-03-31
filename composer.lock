@@ -1,6 +1,186 @@
 {
-    "hash": "25a0db42a49852ad6d4cbbfeaa2b5598",
+    "hash": "66dd20ae582f57d128cfad4e0bc1fd49",
     "packages": [
+        {
+            "name": "components/html5-boilerplate",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/html5-boilerplate.git",
+                "reference": "4.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/html5-boilerplate/zipball/4.1.0",
+                "reference": "4.1.0",
+                "shasum": ""
+            },
+            "require": {
+                "components/jquery": ">=1.9.1",
+                "components/modernizr": ">=2.6.2",
+                "components/normalize.css": "1.1.*"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "styles": [
+                        "css/main.css"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.",
+            "homepage": "http://html5boilerplate.com",
+            "keywords": [
+                "CSS3",
+                "HTML5"
+            ],
+            "time": "2013-03-31 13:03:04"
+        },
+        {
+            "name": "components/jquery",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jquery.git",
+                "reference": "ab4ae4609b9f93687bfb921d7e520e36e22ae1c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jquery/zipball/ab4ae4609b9f93687bfb921d7e520e36e22ae1c6",
+                "reference": "ab4ae4609b9f93687bfb921d7e520e36e22ae1c6",
+                "shasum": ""
+            },
+            "require": {
+                "robloach/component-installer": "*"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Resig",
+                    "email": "jeresig@gmail.com"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "time": "2013-03-15 01:10:01"
+        },
+        {
+            "name": "components/modernizr",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/modernizr.git",
+                "reference": "c470050f9906b1197ddaa7aace41f73eba5f4ecf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/modernizr/zipball/c470050f9906b1197ddaa7aace41f73eba5f4ecf",
+                "reference": "c470050f9906b1197ddaa7aace41f73eba5f4ecf",
+                "shasum": ""
+            },
+            "require": {
+                "robloach/component-installer": "*"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "modernizr.js"
+                    ],
+                    "shim": {
+                        "exports": "window.Modernizr"
+                    }
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Modernizr",
+                    "homepage": "http://modernizr.com"
+                },
+                {
+                    "name": "Faruk Ates"
+                },
+                {
+                    "name": "Paul Irish"
+                },
+                {
+                    "name": "Alex Sexton"
+                },
+                {
+                    "name": "Ryan Seddon"
+                },
+                {
+                    "name": "Alexander Farkas"
+                },
+                {
+                    "name": "Ben Alman"
+                },
+                {
+                    "name": "Stu Cox"
+                }
+            ],
+            "description": "Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user's browser.",
+            "homepage": "http://modernizr.com",
+            "keywords": [
+                "CSS3",
+                "HTML5",
+                "browser",
+                "feature detection"
+            ],
+            "time": "2013-03-31 12:34:31"
+        },
+        {
+            "name": "components/normalize.css",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/normalize.css.git",
+                "reference": "v1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/normalize.css/zipball/v1.1.0",
+                "reference": "v1.1.0",
+                "shasum": ""
+            },
+            "require": {
+                "robloach/component-installer": "*"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "styles": [
+                        "normalize.css"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Normalize.css is a customisable CSS file that makes browsers render all elements more consistently and in line with modern standards.",
+            "homepage": "http://necolas.github.com/normalize.css/",
+            "time": "2013-03-31 13:13:59"
+        },
         {
             "name": "composer/composer",
             "version": "dev-master",
@@ -17,17 +197,16 @@
             },
             "require": {
                 "justinrainbow/json-schema": "1.1.*",
-                "seld/jsonlint": "1.*",
                 "php": ">=5.3.2",
+                "seld/jsonlint": "1.*",
                 "symfony/console": ">=2.1,<3.0",
                 "symfony/finder": ">=2.1,<3.0",
                 "symfony/process": ">=2.1,<3.0"
             },
             "suggest": {
-                "ext-zip": "Enabling the zip extension allows you to unzip archives, and allows gzip compression of all internet traffic",
-                "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages"
+                "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
+                "ext-zip": "Enabling the zip extension allows you to unzip archives, and allows gzip compression of all internet traffic"
             },
-            "time": "2012-12-17 10:26:58",
             "bin": [
                 "bin/composer"
             ],
@@ -37,7 +216,6 @@
                     "dev-master": "1.0-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Composer": "src/"
@@ -63,10 +241,11 @@
             "description": "Dependency Manager",
             "homepage": "http://getcomposer.org/",
             "keywords": [
-                "package",
+                "autoload",
                 "dependency",
-                "autoload"
-            ]
+                "package"
+            ],
+            "time": "2012-12-17 10:26:58"
         },
         {
             "name": "dflydev/ant-path-matcher",
@@ -85,9 +264,7 @@
             "require": {
                 "php": ">=5.3"
             },
-            "time": "2012-12-03 05:03:00",
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "psr-0": {
                     "dflydev\\util\\antPathMatcher": "src"
@@ -112,11 +289,12 @@
             "description": "Ant Path Matcher Utility",
             "homepage": "http://github.com/dflydev/dflydev-util-antPathMatcher",
             "keywords": [
-                "path",
                 "ant",
-                "pattern",
-                "matcher"
-            ]
+                "matcher",
+                "path",
+                "pattern"
+            ],
+            "time": "2012-12-03 05:03:00"
         },
         {
             "name": "dflydev/apache-mime-types",
@@ -138,14 +316,12 @@
             "require-dev": {
                 "twig/twig": "1.*"
             },
-            "time": "2012-12-06 21:53:05",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.0-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Dflydev\\ApacheMimeTypes": "src"
@@ -169,10 +345,11 @@
             ],
             "description": "Apache MIME Types",
             "keywords": [
-                "mime",
                 "apache",
+                "mime",
                 "mimetypes"
-            ]
+            ],
+            "time": "2012-12-06 21:53:05"
         },
         {
             "name": "dflydev/dot-access-configuration",
@@ -189,9 +366,9 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
                 "dflydev/dot-access-data": "1.*",
-                "dflydev/placeholder-resolver": "1.*"
+                "dflydev/placeholder-resolver": "1.*",
+                "php": ">=5.3.2"
             },
             "require-dev": {
                 "symfony/yaml": ">=2.1,<3.0"
@@ -199,14 +376,12 @@
             "suggest": {
                 "symfony/yaml": "Required for using the YAML Configuration Builders"
             },
-            "time": "2012-10-22 01:33:18",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.0-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Dflydev\\DotAccessConfiguration": "src"
@@ -231,9 +406,10 @@
             "description": "Given a deep data structure representing a configuration, access configuration by dot notation.",
             "homepage": "https://github.com/dflydev/dflydev-dot-access-configuration",
             "keywords": [
-                "configuration",
-                "config"
-            ]
+                "config",
+                "configuration"
+            ],
+            "time": "2012-10-22 01:33:18"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -252,14 +428,12 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2012-07-17 20:32:32",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.0-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Dflydev\\DotAccessData": "src"
@@ -284,11 +458,12 @@
             "description": "Given a deep data structure, access data by dot notation.",
             "homepage": "https://github.com/dflydev/dflydev-dot-access-data",
             "keywords": [
-                "data",
                 "access",
+                "data",
                 "dot",
                 "notation"
-            ]
+            ],
+            "time": "2012-07-17 20:32:32"
         },
         {
             "name": "dflydev/embedded-composer",
@@ -305,8 +480,8 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
                 "composer/composer": "1.*@dev",
+                "php": ">=5.3.2",
                 "seld/jsonlint": "1.*"
             },
             "replace": {
@@ -322,14 +497,12 @@
                 "symfony/console": "~2.1",
                 "symfony/http-kernel": "~2.1"
             },
-            "time": "2012-12-14 05:31:26",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.0-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Dflydev\\EmbeddedComposer": "src"
@@ -356,7 +529,8 @@
                 "composer",
                 "embedded",
                 "extensibility"
-            ]
+            ],
+            "time": "2012-12-14 05:31:26"
         },
         {
             "name": "dflydev/markdown",
@@ -375,14 +549,12 @@
             "require": {
                 "php": ">=5.3"
             },
-            "time": "2012-07-15 16:31:27",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.0-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "dflydev\\markdown": "src"
@@ -416,7 +588,8 @@
             "homepage": "http://github.com/dflydev/dflydev-markdown",
             "keywords": [
                 "markdown"
-            ]
+            ],
+            "time": "2012-07-15 16:31:27"
         },
         {
             "name": "dflydev/placeholder-resolver",
@@ -435,14 +608,12 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2012-10-28 21:08:28",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.0-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Dflydev\\PlaceholderResolver": "src"
@@ -469,7 +640,8 @@
             "keywords": [
                 "placeholder",
                 "resolver"
-            ]
+            ],
+            "time": "2012-10-28 21:08:28"
         },
         {
             "name": "dflydev/symfony-finder-factory",
@@ -489,14 +661,12 @@
                 "php": ">=5.3.2",
                 "symfony/finder": ">=2.0,<3.0"
             },
-            "time": "2012-11-09 16:45:28",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.0-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Dflydev\\Symfony\\FinderFactory": "src"
@@ -523,7 +693,8 @@
                 "factory",
                 "finder",
                 "syfony"
-            ]
+            ],
+            "time": "2012-11-09 16:45:28"
         },
         {
             "name": "doctrine/common",
@@ -542,14 +713,12 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2012-09-20 05:55:18",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.3.x-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Doctrine\\Common": "lib/"
@@ -588,12 +757,13 @@
             "description": "Common Library for Doctrine projects",
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
-                "collections",
-                "spl",
-                "eventmanager",
                 "annotations",
-                "persistence"
-            ]
+                "collections",
+                "eventmanager",
+                "persistence",
+                "spl"
+            ],
+            "time": "2012-09-20 05:55:18"
         },
         {
             "name": "evenement/evenement",
@@ -612,14 +782,12 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-11-03 02:17:23",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.0-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Evenement": "src"
@@ -639,7 +807,8 @@
             "description": "Événement is a very simple event dispatching library for PHP 5.3",
             "keywords": [
                 "event-dispatcher"
-            ]
+            ],
+            "time": "2012-11-03 02:17:23"
         },
         {
             "name": "guzzle/common",
@@ -660,14 +829,12 @@
                 "php": ">=5.3.2",
                 "symfony/event-dispatcher": ">=2.1"
             },
-            "time": "2012-12-10 05:25:04",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "3.0-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Guzzle\\Common": ""
@@ -680,11 +847,12 @@
             "description": "Common libraries used by Guzzle",
             "homepage": "http://guzzlephp.org/",
             "keywords": [
-                "event",
-                "exception",
+                "collection",
                 "common",
-                "collection"
-            ]
+                "event",
+                "exception"
+            ],
+            "time": "2012-12-10 05:25:04"
         },
         {
             "name": "guzzle/http",
@@ -702,20 +870,18 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
+                "ext-curl": "*",
                 "guzzle/common": "self.version",
                 "guzzle/parser": "self.version",
                 "guzzle/stream": "self.version",
-                "ext-curl": "*"
+                "php": ">=5.3.2"
             },
-            "time": "2012-12-10 01:04:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "3.0-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Guzzle\\Http": ""
@@ -735,12 +901,13 @@
             "description": "HTTP libraries used by Guzzle",
             "homepage": "http://guzzlephp.org/",
             "keywords": [
+                "Guzzle",
+                "client",
                 "curl",
                 "http",
-                "http client",
-                "client",
-                "Guzzle"
-            ]
+                "http client"
+            ],
+            "time": "2012-12-10 01:04:00"
         },
         {
             "name": "guzzle/parser",
@@ -760,14 +927,12 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2012-12-07 16:45:11",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "3.0-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Guzzle\\Parser": ""
@@ -780,12 +945,13 @@
             "description": "Interchangeable parsers used by Guzzle",
             "homepage": "http://guzzlephp.org/",
             "keywords": [
-                "http",
-                "url",
-                "message",
+                "URI Template",
                 "cookie",
-                "URI Template"
-            ]
+                "http",
+                "message",
+                "url"
+            ],
+            "time": "2012-12-07 16:45:11"
         },
         {
             "name": "guzzle/stream",
@@ -803,17 +969,15 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "guzzle/common": "self.version"
+                "guzzle/common": "self.version",
+                "php": ">=5.3.2"
             },
-            "time": "2012-12-07 16:45:11",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "3.0-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Guzzle\\Stream": ""
@@ -833,10 +997,11 @@
             "description": "Guzzle stream wrapper component",
             "homepage": "http://guzzlephp.org/",
             "keywords": [
-                "stream",
                 "Guzzle",
-                "component"
-            ]
+                "component",
+                "stream"
+            ],
+            "time": "2012-12-07 16:45:11"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -855,9 +1020,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-02 16:33:17",
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "psr-0": {
                     "JsonSchema": "src/"
@@ -892,7 +1055,79 @@
             "keywords": [
                 "json",
                 "schema"
-            ]
+            ],
+            "time": "2012-01-02 16:33:17"
+        },
+        {
+            "name": "kriswallsmith/assetic",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kriswallsmith/assetic.git",
+                "reference": "50a24301b40cd7df29a7da4efd5573a9ef4622f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/50a24301b40cd7df29a7da4efd5573a9ef4622f8",
+                "reference": "50a24301b40cd7df29a7da4efd5573a9ef4622f8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1",
+                "symfony/process": ">=2.1,<3.0"
+            },
+            "require-dev": {
+                "cssmin/cssmin": "*",
+                "joliclic/javascript-packer": "*",
+                "kamicane/packager": "*",
+                "leafo/lessphp": "*",
+                "leafo/scssphp": "*",
+                "leafo/scssphp-compass": "*",
+                "mrclay/minify": "*",
+                "phpunit/phpunit": "3.7.*",
+                "ptachoire/cssembed": "*",
+                "twig/twig": ">=1.6.0,<2.0"
+            },
+            "suggest": {
+                "leafo/lessphp": "Assetic provides the integration with the lessphp LESS compiler",
+                "leafo/scssphp": "Assetic provides the integration with the scssphp SCSS compiler",
+                "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin",
+                "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
+                "twig/twig": "Assetic provides the integration with the Twig templating engine"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Assetic": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com",
+                    "homepage": "http://kriswallsmith.net/"
+                }
+            ],
+            "description": "Asset Management for PHP",
+            "homepage": "https://github.com/kriswallsmith/assetic",
+            "keywords": [
+                "assets",
+                "compression",
+                "minification"
+            ],
+            "time": "2013-03-25 20:14:55"
         },
         {
             "name": "netcarver/textile",
@@ -911,14 +1146,12 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-12-17 15:02:33",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "3.5-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Netcarver\\Textile": "src/"
@@ -929,7 +1162,8 @@
                 "BSD-3-Clause"
             ],
             "description": "A lightweight markup language that takes (almost) plaintext and converts it into well formed HTML.",
-            "homepage": "https://github.com/netcarver/textile"
+            "homepage": "https://github.com/netcarver/textile",
+            "time": "2012-12-17 15:02:33"
         },
         {
             "name": "react/event-loop",
@@ -950,17 +1184,15 @@
                 "php": ">=5.3.3"
             },
             "suggest": {
-                "ext-libevent": ">=0.0.5",
-                "ext-libev": "*"
+                "ext-libev": "*",
+                "ext-libevent": ">=0.0.5"
             },
-            "time": "2012-11-12 23:00:05",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "0.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "React\\EventLoop": ""
@@ -973,7 +1205,8 @@
             "description": "Event loop abstraction layer that libraries can use for evented I/O.",
             "keywords": [
                 "event-loop"
-            ]
+            ],
+            "time": "2012-11-12 23:00:05"
         },
         {
             "name": "react/http",
@@ -991,19 +1224,17 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3",
-                "react/socket": "0.2.*",
                 "guzzle/http": "3.0.*",
-                "guzzle/parser": "3.0.*"
+                "guzzle/parser": "3.0.*",
+                "php": ">=5.3.3",
+                "react/socket": "0.2.*"
             },
-            "time": "2012-11-10 20:17:27",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "0.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "React\\Http": ""
@@ -1016,7 +1247,8 @@
             "description": "Library for building an evented http server.",
             "keywords": [
                 "http"
-            ]
+            ],
+            "time": "2012-11-10 20:17:27"
         },
         {
             "name": "react/socket",
@@ -1039,14 +1271,12 @@
                 "react/event-loop": "0.2.*",
                 "react/stream": "0.2.*"
             },
-            "time": "2012-11-05 13:25:35",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "0.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "React\\Socket": ""
@@ -1059,7 +1289,8 @@
             "description": "Library for building an evented socket server.",
             "keywords": [
                 "Socket"
-            ]
+            ],
+            "time": "2012-11-05 13:25:35"
         },
         {
             "name": "react/stream",
@@ -1084,14 +1315,12 @@
                 "react/event-loop": "0.2.*",
                 "react/promise": "1.0.*"
             },
-            "time": "2012-11-19 08:24:10",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "0.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "React\\Stream": ""
@@ -1103,9 +1332,55 @@
             ],
             "description": "Basic readable and writable stream interfaces that support piping.",
             "keywords": [
-                "stream",
-                "pipe"
-            ]
+                "pipe",
+                "stream"
+            ],
+            "time": "2012-11-19 08:24:10"
+        },
+        {
+            "name": "robloach/component-installer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RobLoach/component-installer.git",
+                "reference": "81e09b0b22537be13d76e23d6430e87f2ffcdeb6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RobLoach/component-installer/zipball/81e09b0b22537be13d76e23d6430e87f2ffcdeb6",
+                "reference": "81e09b0b22537be13d76e23d6430e87f2ffcdeb6",
+                "shasum": ""
+            },
+            "require": {
+                "kriswallsmith/assetic": "1.1.*",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "composer-installer",
+            "extra": {
+                "class": "ComponentInstaller\\Installer"
+            },
+            "autoload": {
+                "psr-0": {
+                    "ComponentInstaller": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Loach",
+                    "email": "robloach@gmail.com",
+                    "homepage": "http://robloach.net"
+                }
+            ],
+            "description": "Allows installation of Components via Composer.",
+            "time": "2013-03-31 13:33:35"
         },
         {
             "name": "sculpin/sculpin",
@@ -1122,11 +1397,16 @@
                 "shasum": ""
             },
             "require": {
-                "dflydev/markdown": "1.*",
-                "php": ">=5.3.2",
-                "dflydev/dot-access-configuration": "1.*",
-                "dflydev/ant-path-matcher": "1.*",
                 "composer/composer": "1.*@dev",
+                "dflydev/ant-path-matcher": "1.*",
+                "dflydev/apache-mime-types": "1.*",
+                "dflydev/dot-access-configuration": "1.*",
+                "dflydev/embedded-composer": "1.*",
+                "dflydev/markdown": "1.*",
+                "dflydev/symfony-finder-factory": "1.*",
+                "netcarver/textile": "3.5.*",
+                "php": ">=5.3.2",
+                "react/http": "0.2.*",
                 "symfony/class-loader": ">=2.1,<3.0",
                 "symfony/config": ">=2.1,<3.0",
                 "symfony/console": ">=2.1,<3.0",
@@ -1139,24 +1419,18 @@
                 "symfony/process": ">=2.1,<3.0",
                 "symfony/twig-bundle": ">=2.1,<3.0",
                 "symfony/yaml": ">=2.1,<3.0",
-                "twig/twig": ">=1.9.1,<1.10.0",
-                "dflydev/symfony-finder-factory": "1.*",
-                "react/http": "0.2.*",
-                "dflydev/apache-mime-types": "1.*",
-                "netcarver/textile": "3.5.*",
-                "dflydev/embedded-composer": "1.*"
+                "twig/twig": ">=1.9.1,<1.10.0"
             },
             "replace": {
                 "sculpin/core": "self.version",
                 "sculpin/markdown-bundle": "self.version",
                 "sculpin/markdown-twig-compat-bundle": "self.version",
+                "sculpin/posts-bundle": "self.version",
                 "sculpin/sculpin-bundle": "self.version",
                 "sculpin/standalone-bundle": "self.version",
-                "sculpin/twig-bundle": "self.version",
-                "sculpin/posts-bundle": "self.version",
-                "sculpin/textile-bundle": "self.version"
+                "sculpin/textile-bundle": "self.version",
+                "sculpin/twig-bundle": "self.version"
             },
-            "time": "2012-12-14 19:04:22",
             "bin": [
                 "bin/sculpin"
             ],
@@ -1166,7 +1440,6 @@
                     "dev-master": "2.0-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Sculpin": "src"
@@ -1192,9 +1465,10 @@
             "homepage": "http://getsculpin.com",
             "keywords": [
                 "generator",
-                "static",
-                "site"
-            ]
+                "site",
+                "static"
+            ],
+            "time": "2012-12-14 19:04:22"
         },
         {
             "name": "seld/jsonlint",
@@ -1213,12 +1487,10 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-12-13 18:26:19",
             "bin": [
                 "bin/jsonlint"
             ],
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "psr-0": {
                     "Seld\\JsonLint": "src/"
@@ -1239,10 +1511,11 @@
             "description": "JSON Linter",
             "keywords": [
                 "json",
-                "parser",
                 "linter",
+                "parser",
                 "validator"
-            ]
+            ],
+            "time": "2012-12-13 18:26:19"
         },
         {
             "name": "symfony/class-loader",
@@ -1265,14 +1538,12 @@
             "require-dev": {
                 "symfony/finder": "2.2.*"
             },
-            "time": "2012-12-11 10:49:22",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\ClassLoader\\": ""
@@ -1293,7 +1564,8 @@
                 }
             ],
             "description": "Symfony ClassLoader Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-11 10:49:22"
         },
         {
             "name": "symfony/config",
@@ -1313,14 +1585,12 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-16 16:56:50",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Config\\": ""
@@ -1341,7 +1611,8 @@
                 }
             ],
             "description": "Symfony Config Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-16 16:56:50"
         },
         {
             "name": "symfony/console",
@@ -1361,14 +1632,12 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-14 09:43:16",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Console\\": ""
@@ -1389,7 +1658,8 @@
                 }
             ],
             "description": "Symfony Console Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-14 09:43:16"
         },
         {
             "name": "symfony/dependency-injection",
@@ -1410,21 +1680,19 @@
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "symfony/yaml": "2.2.*",
-                "symfony/config": "2.2.*"
+                "symfony/config": "2.2.*",
+                "symfony/yaml": "2.2.*"
             },
             "suggest": {
-                "symfony/yaml": "2.2.*",
-                "symfony/config": "2.2.*"
+                "symfony/config": "2.2.*",
+                "symfony/yaml": "2.2.*"
             },
-            "time": "2012-12-16 15:11:28",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\DependencyInjection\\": ""
@@ -1445,7 +1713,8 @@
                 }
             ],
             "description": "Symfony DependencyInjection Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-16 15:11:28"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1472,14 +1741,12 @@
                 "symfony/dependency-injection": "2.2.*",
                 "symfony/http-kernel": "2.2.*"
             },
-            "time": "2012-11-13 14:08:04",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\EventDispatcher\\": ""
@@ -1500,7 +1767,8 @@
                 }
             ],
             "description": "Symfony EventDispatcher Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-11-13 14:08:04"
         },
         {
             "name": "symfony/filesystem",
@@ -1520,14 +1788,12 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-14 22:27:02",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Filesystem\\": ""
@@ -1548,7 +1814,8 @@
                 }
             ],
             "description": "Symfony Filesystem Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-14 22:27:02"
         },
         {
             "name": "symfony/finder",
@@ -1568,14 +1835,12 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-14 22:27:02",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Finder\\": ""
@@ -1596,7 +1861,8 @@
                 }
             ],
             "description": "Symfony Finder Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-14 22:27:02"
         },
         {
             "name": "symfony/framework-bundle",
@@ -1616,15 +1882,15 @@
             "require": {
                 "doctrine/common": ">=2.2,<2.4-dev",
                 "php": ">=5.3.3",
-                "symfony/dependency-injection": "2.2.*",
                 "symfony/config": "2.2.*",
+                "symfony/dependency-injection": "2.2.*",
                 "symfony/event-dispatcher": "2.2.*",
-                "symfony/http-kernel": "2.2.*",
                 "symfony/filesystem": "2.2.*",
+                "symfony/http-kernel": "2.2.*",
                 "symfony/routing": "2.2.*",
+                "symfony/stopwatch": "2.2.*",
                 "symfony/templating": "2.2.*",
-                "symfony/translation": "2.2.*",
-                "symfony/stopwatch": "2.2.*"
+                "symfony/translation": "2.2.*"
             },
             "require-dev": {
                 "symfony/finder": "2.2.*"
@@ -1635,14 +1901,12 @@
                 "symfony/form": "2.2.*",
                 "symfony/validator": "2.2.*"
             },
-            "time": "2012-12-16 13:02:47",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Bundle\\FrameworkBundle\\": ""
@@ -1663,7 +1927,8 @@
                 }
             ],
             "description": "Symfony FrameworkBundle",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-16 13:02:47"
         },
         {
             "name": "symfony/http-foundation",
@@ -1683,14 +1948,12 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-15 16:49:38",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\HttpFoundation\\": ""
@@ -1714,7 +1977,8 @@
                 }
             ],
             "description": "Symfony HttpFoundation Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-15 16:49:38"
         },
         {
             "name": "symfony/http-kernel",
@@ -1755,14 +2019,12 @@
                 "symfony/dependency-injection": "2.2.*",
                 "symfony/finder": "2.2.*"
             },
-            "time": "2012-12-16 08:41:40",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\HttpKernel\\": ""
@@ -1783,7 +2045,8 @@
                 }
             ],
             "description": "Symfony HttpKernel Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-16 08:41:40"
         },
         {
             "name": "symfony/process",
@@ -1803,14 +2066,12 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-14 22:27:02",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Process\\": ""
@@ -1831,7 +2092,8 @@
                 }
             ],
             "description": "Symfony Process Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-14 22:27:02"
         },
         {
             "name": "symfony/routing",
@@ -1854,22 +2116,20 @@
             "require-dev": {
                 "doctrine/common": ">=2.2,<2.4-dev",
                 "symfony/config": "2.2.*",
-                "symfony/yaml": "2.2.*",
-                "symfony/http-kernel": "2.2.*"
+                "symfony/http-kernel": "2.2.*",
+                "symfony/yaml": "2.2.*"
             },
             "suggest": {
                 "doctrine/common": ">=2.2,<2.4-dev",
                 "symfony/config": "2.2.*",
                 "symfony/yaml": "2.2.*"
             },
-            "time": "2012-12-14 22:50:21",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Routing\\": ""
@@ -1890,7 +2150,8 @@
                 }
             ],
             "description": "Symfony Routing Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-14 22:50:21"
         },
         {
             "name": "symfony/stopwatch",
@@ -1910,14 +2171,12 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-11 10:49:22",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Stopwatch\\": ""
@@ -1938,7 +2197,8 @@
                 }
             ],
             "description": "Symfony Stopwatch Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-11 10:49:22"
         },
         {
             "name": "symfony/templating",
@@ -1958,14 +2218,12 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-11 10:49:22",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Templating\\": ""
@@ -1986,7 +2244,8 @@
                 }
             ],
             "description": "Symfony Templating Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-11 10:49:22"
         },
         {
             "name": "symfony/translation",
@@ -2014,14 +2273,12 @@
                 "symfony/config": "2.2.*",
                 "symfony/yaml": "2.2.*"
             },
-            "time": "2012-12-14 13:10:50",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Translation\\": ""
@@ -2042,7 +2299,8 @@
                 }
             ],
             "description": "Symfony Translation Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-14 13:10:50"
         },
         {
             "name": "symfony/twig-bridge",
@@ -2065,30 +2323,28 @@
             },
             "require-dev": {
                 "symfony/form": "2.2.*",
+                "symfony/http-kernel": "2.2.*",
                 "symfony/routing": "2.2.*",
+                "symfony/security": "2.2.*",
                 "symfony/templating": "2.2.*",
                 "symfony/translation": "2.2.*",
-                "symfony/yaml": "2.2.*",
-                "symfony/security": "2.2.*",
-                "symfony/http-kernel": "2.2.*"
+                "symfony/yaml": "2.2.*"
             },
             "suggest": {
                 "symfony/form": "2.2.*",
+                "symfony/http-kernel": "2.2.*",
                 "symfony/routing": "2.2.*",
+                "symfony/security": "2.2.*",
                 "symfony/templating": "2.2.*",
                 "symfony/translation": "2.2.*",
-                "symfony/yaml": "2.2.*",
-                "symfony/security": "2.2.*",
-                "symfony/http-kernel": "2.2.*"
+                "symfony/yaml": "2.2.*"
             },
-            "time": "2012-12-17 14:01:24",
             "type": "symfony-bridge",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Bridge\\Twig\\": ""
@@ -2109,7 +2365,8 @@
                 }
             ],
             "description": "Symfony Twig Bridge",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-17 14:01:24"
         },
         {
             "name": "symfony/twig-bundle",
@@ -2133,14 +2390,12 @@
             "require-dev": {
                 "symfony/stopwatch": "2.2.*"
             },
-            "time": "2012-12-17 13:59:17",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Bundle\\TwigBundle\\": ""
@@ -2161,7 +2416,8 @@
                 }
             ],
             "description": "Symfony TwigBundle",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-17 13:59:17"
         },
         {
             "name": "symfony/yaml",
@@ -2181,14 +2437,12 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-15 13:02:34",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.2-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Yaml\\": ""
@@ -2209,7 +2463,8 @@
                 }
             ],
             "description": "Symfony Yaml Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2012-12-15 13:02:34"
         },
         {
             "name": "twig/twig",
@@ -2228,14 +2483,12 @@
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2012-08-25 10:32:57",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.9-dev"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "psr-0": {
                     "Twig_": "lib/"
@@ -2259,10 +2512,13 @@
             "homepage": "http://twig.sensiolabs.org",
             "keywords": [
                 "templating"
-            ]
+            ],
+            "time": "2012-08-25 10:32:57"
         }
     ],
-    "packages-dev": null,
+    "packages-dev": [
+
+    ],
     "aliases": [
 
     ],
@@ -2270,5 +2526,11 @@
     "stability-flags": {
         "sculpin/sculpin": 20,
         "composer/composer": 20
-    }
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
 }

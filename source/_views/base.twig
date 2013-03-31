@@ -12,11 +12,8 @@
     <title>{{ page.title }} &mdash; {{ site.title }} &mdash; {{ site.subtitle }}</title>
     {% endif %}
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="{{ site.url }}/css/boilerplate.css">
-    <link rel="stylesheet" href="{{ site.url }}/css/style.css">
-    <link rel="stylesheet" href="{{ site.url }}/css/helpers.css">
+    <link rel="stylesheet" href="{{ site.url }}/components/require.css">
     <link rel="icon" href="{{ site.url }}/favicon.ico">
-    <script src="{{ site.url }}/js/libs/modernizr-2.0.6.min.js"></script>
 </head>
 <body class="{% if page.fancy_index %} fancySite {% endif %}">
     <!-- <a href="http://github.com/sculpin/sculpin" class="forkMeOnGithub"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a> -->
@@ -57,10 +54,7 @@
     </div>
     </div>
     </footer>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="{{site.url}}/js/libs/jquery-1.6.4.min.js"><\/script>')</script>
-    <script defer src="{{ site.url }}/js/plugins.js"></script>
-    <script defer src="{{ site.url }}/js/script.js"></script>
+    <script defer src="{{ site.url }}/components/require.js"></script>
     {% if site.google_analytics_tracking_id %}
     <script type="text/javascript">
 

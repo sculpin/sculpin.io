@@ -9,8 +9,7 @@
     "extra": {
         "component": {
             "styles": [
-                "css/style.css",
-                "css/helpers.css"
+                "css/style.css"
             ],
             "files": [
                 "css/sculpin-mascot-jackson-small@2x.png",
@@ -25,7 +24,8 @@
         }
     },
     "config": {
-        "component-dir": "output_dev/components"
+        "component-dir": "source/components",
+        "component-baseurl": "/components"
     },
     "minimum-stability": "dev"
 }

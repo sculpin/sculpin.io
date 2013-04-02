@@ -1,2 +1,6 @@
 framework:
     secret: not so secret
+sculpin:
+    raw:
+        # Ignore parsing any of the installed third-party Components.
+        - "components/**"

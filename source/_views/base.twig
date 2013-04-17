@@ -12,7 +12,9 @@
     <title>{{ page.title }} &mdash; {{ site.title }} &mdash; {{ site.subtitle }}</title>
     {% endif %}
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="{{ site.url }}/components/require.css">
+    <link rel="stylesheet" href="{{ site.url }}/components/normalize.css/normalize.css">
+    <link rel="stylesheet" href="{{ site.url }}/components/html5-boilerplate/css/main.css">
+    <link rel="stylesheet" href="{{ site.url }}/css/style.css">
     <link rel="icon" href="{{ site.url }}/favicon.ico">
 </head>
 <body class="{% if page.fancy_index %} fancySite {% endif %}">
@@ -54,7 +56,8 @@
     </div>
     </div>
     </footer>
-    <script defer src="{{ site.url }}/components/require.js" data-main="modernizr"></script>
+    <script defer src="{{ site.url }}/components/jquery/jquery.js"></script>
+    <script defer src="{{ site.url }}/components/modernizr/modernizr.js"></script>
     {% if site.google_analytics_tracking_id %}
     <script type="text/javascript">
 

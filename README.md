@@ -12,16 +12,16 @@ Powered by [Sculpin](https://github.com/sculpin/sculpin). =)
 Build
 -----
 
-    composer install
-    vendor/bin/sculpin generate --server
+    sculpin install
+    sculpin generate --server --watch
 
 Your newly generated clone of [sculpin.io](http:/sculpin.io) is now accessible
 at `http://localhost:8000/`.
 
-### If You Need Composer
+### If You Need Sculpin
 
-    curl -s https://getcomposer.org/installer | php
-    php composer.phar install
-    vendor/bin/sculpin generate --server
+    curl -s https://sculpin.io/installer | php
+    php sculpin.phar install
+    php sculpin.phar generate --server --watch
 
 

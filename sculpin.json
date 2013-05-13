@@ -4,11 +4,13 @@
         "components/jquery": ">=1.6.4",
         "components/modernizr": ">=2.0.6",
         "components/html5-boilerplate": ">=4.1.0",
-        "composer/composer": "1.*@dev"
+
+        "composer/composer": "@dev",
+        "dflydev/embedded-composer": "@dev",
+        "symfony/console": "@dev"
     },
     "config": {
         "component-dir": "source/components",
         "component-baseurl": "/components"
-    },
-    "minimum-stability": "dev"
+    }
 }

@@ -26,25 +26,10 @@ on how to accomplish various things with your own site. Feel free to use as much
 or as little, of these skeletons as you like.
 
 
-## Composer
-
-The easiest way to get started with a skeleton is by using [Composer][1]. If
-you are not familiar with it, get familiar with it. Besides being **awesome**,
-Sculpin relies on it pretty heavily.
-
-Please see the installation instructions for [*nix][2] and [Windows][3] to get
-Composer installed.
-
-For the rest of these examples we will assume that you have Composer available
-as `composer` on your path. If you opt to not install Composer globally use
-`php composer.phar` in place of `composer` anytime you see `composer` in the
-following commands.
-
-
 ## Blog Skeleton
 
-The blog skeleton ([sculpin/blog-skeleton][4]) sets up a very basic Sculpin
-based blog. Once created you will find the following features:
+The blog skeleton sets up a very basic Sculpin based blog. Once created you will
+find the following features:
 
  * Very minimal Bootstrap based theme.
  * A handful of existing posts in `source/_posts/` to get you started. Feel
@@ -62,22 +47,24 @@ based blog. Once created you will find the following features:
 
 ### Installation
 
-#### If You Already Have Composer
+First, fork and/or clone the project. ([see project on GitHub](https://github.com/sculpin/sculpin-blog-skeleton))
 
-    composer create-project sculpin/blog-skeleton --prefer-dist -n -s dev sculpin-blog
-    cd sculpin-blog
-    vendor/bin/sculpin generate --watch --server
+    git clone https://github.com/sculpin/sculpin-blog-skeleton.git
 
-Your newly generated blog is now accessible at `http://localhost:8000/`.
+Then...
 
-#### If You Need Composer
+#### If You Already Have Sculpin
 
-    curl -s https://getcomposer.org/installer | php
-    php composer.phar create-project sculpin/blog-skeleton --prefer-dist -n -s dev sculpin-blog
-    cd sculpin-blog
-    vendor/bin/sculpin generate --watch --server
+    sculpin install
+    sculpin generate --watch --server
 
 Your newly generated blog is now accessible at `http://localhost:8000/`.
+
+#### If You Need Sculpin
+
+    curl -sS https://sculpin.io/installer | php
+    php sculpin.phar install
+    php sculpin.phar generate --watch --server
 
 
 ## Questions?
@@ -88,4 +75,3 @@ Check out the Sculpin [community]({{site.url}}/community) if you have questions.
 [1]: http://getcomposer.org
 [2]: http://getcomposer.org/doc/00-intro.md#installation-nix
 [3]: http://getcomposer.org/doc/00-intro.md#installation-windows
-[4]: https://packagist.org/packages/sculpin/blog-skeleton

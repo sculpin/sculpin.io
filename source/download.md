@@ -3,7 +3,22 @@ layout: default
 title: Download
 ---
 
-# Download
+# Download Sculpin
+
+## Using the Sculpin Installer
+
+Run this to get the latest Sculpin version:
+
+    curl -sS https://sculpin.io/installer | php
+
+
+## Using Manual Download
+
+If you prefer to download the phar manually, here is the latest Sculpin version:
+
+[Latest Snapshot](https://download.sculpin.io/sculpin.phar)
+
+# Related
 
 ## Skeletons &mdash; For Users
 

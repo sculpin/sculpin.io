@@ -30,12 +30,10 @@
 }
 
 body, html { height: 100%; }
-body {
-	padding-top: 51px;
-}
 
 .navbar {
 	background-color: #5b7c89;
+	margin-bottom: 0;
 }
 
 .navbar .navbar-toggle {
@@ -147,6 +145,7 @@ p span {
 
 	.site-meta .site-mascot {
 	    background-image: url(sculpin-mascot-jackson-small.png);
+	    background-size: contain;
 	    width: 88px;
 	    height: 85px;
 	    float: right;

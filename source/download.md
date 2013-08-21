@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Download
+nav_name: download
+
 ---
 
 # Download

@@ -4,268 +4,359 @@
    ========================================================================== */
 
 /*
-#5B7C89
-#98BFCC
+#5B7C89 dark blue
+#98BFCC light blue
 #333333
 */
 
-* { -moz-box-sizing: border-box; box-sizing: border-box; }
-
-a {
-    color: #333344;
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
 }
-a:visited {
-    color: #434354;
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
 }
 
-html, body { height: 100%; }
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body, html { height: 100%; }
+body {
+	padding-top: 51px;
+}
+
+.navbar {
+	background-color: #5b7c89;
+}
+
+.navbar .navbar-toggle {
+	border-color: #5b7c89;
+}
+
+.navbar .navbar-toggle .icon-bar {
+	background-color: #ffffff;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+	color: #ffffff;
+}
+
+.navbar-nav > li.active > a,
+.navbar-nav > li.active > a:hover {
+	background-color: #506E79;
+}
+
+.navbar-nav > li > a {
+	color: #B1C4CB;
+}
+
+.navbar-nav > li.active > a,
+.navbar-nav > li.active > a:hover,
+.navbar-nav > li > a:hover {
+	color: #ffffff;
+}
+
+/*
+footer.site,
+section.site-meta {
+	background-color: #B1C4CB;
+}
+*/
+
+section.content {
+	background-color: #ffffff;
+	padding-bottom: 3em;
+}
 
 body {
-    font-size: 1em;
-    color: #333333;
-    font-family: arial, sans-serif;
-    background-color: #5B7C89;
+	background-color: #B1C4CB;
 }
 
-h1, h2, h3, h4, h5 {
-    text-shadow: .05em .05em .1em #aaa;
+section.site-meta a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: .05em .05em .1em #46606A;
+}
+
+section.site-meta a:visited {
+    color: #ffffff;
+}
+
+section.site-meta .site-title {
+    font-size: 3em;
+}
+
+section.site-meta .site-subtitle {
+    font-size: 1.25em;
+}
+
+hr.site-meta {
+	border: none;
+	background-color: #92ACB7;
+	height: 1px;
+	margin: 0;
+	padding: 0;
+}
+
+footer.site > .container,
+section.content > .container,
+section.site-meta .container {
+	padding: 1em;
 }
 
 footer.site {
-    width: 100%;
-    background-color: #5B7C89;
-    border-top: 1px solid #333333;
-}
-
-footer.site div.footerContent {
-    padding: 1em;
-    text-shadow: .1em .1em .1em #333;
-    line-height: 1.5em;
+	font-size: .75em;
 }
 
 footer.site,
-footer.site a,
-footer.site a:visited {
-    color: #f0f0f0;
-}
 footer.site a {
-    text-decoration: none;
+	color: #5B7C89;
 }
 
-footer.site .copyright {
-    font-size: .5em;
+footer.site ul {
+	margin: 0;
+	list-style-type: none;
 }
 
-footer.site .socialMedia {
-    float: right;
-    font-size: 1em;
-    font-weight: bold;
-}
-footer.site .socialMedia ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.jumbo {
+	font-family: sans-serif;
+	padding: 1em 0em;
+	font-size: 1.375em;
+	line-height: 1.375em;
 }
 
-footer.site a:hover {
-    text-decoration: underline;
+p span {
+	font-weight: bolder;
 }
 
-header.site nav ul,
-header.site .siteMeta,
-footer.site .footerContentContainer,
-.mainContent {
-    margin: 0 auto;
-    padding: 0 .25em;
-}
-.mainContent {
-    padding: .25em 1em 5em 1em;
-}
-.mainContentContainer {
-    background-color: #f0f0f0;
-}
-header.site nav ul,
-header.site .siteMeta,
-footer.site .footerContentContainer,
-.mainContent {
-    /*border: 1px solid blue;*/
-}
-
-header.site {
-    border-bottom: 1px solid #333333;
-    background-color: #5B7C89;
-}
-header.site nav {
-    background-color: #98BFCC;
-    border-bottom: 1px solid #333333;
-}
-header.site nav ul li {
-    display: inline-block;
-    padding: .25em .5em .25em 0;
-    font-weight: bold;
-    font-size: .5em;
-}
-header.site nav a {
-    color: #5B7C89;
-    text-decoration: none;
-}
-header.site .siteMeta a {
-    color: #f0f0f0;
-    text-decoration: none;
-    font-weight: bold;
-    text-shadow: .05em .05em .1em #333;
-}
-header.site .siteMeta a:visited {
-    color: #f0f0f0;
-}
-header.site .siteMeta .siteTitle {
-    /*font-size: 1.85em; */
-    font-size: 1.15em;
-    padding: .3em 0;
-    margin-right: .25em;
-}
-header.site .siteMeta .siteSubtitle {
-    /*font-size: .95em;*/
-    font-size: .5em;
-}
-header.site .siteMeta .siteMascot a {
-    display: block;
-    text-indent: -20000px;
-    background-image: url(sculpin-mascot-jackson-micro.png);
-    width: 50px;
-    height: 48px;
-}
-
-.fancySite header.site .siteMeta .siteTitle {
-    display: block;
-    text-align: center;
-    font-size: 3.5em;
-    padding: .25em 0;
-    margin-right: 0;
-}
-.fancySite header.site .siteMeta .siteSubtitle {
-    display: block;
-    text-align: center;
-    font-size: 1em;
-    padding-bottom: 1.25em;
-}
-.fancySite header.site .siteMeta .siteMascot a {
-    margin: 1em auto 0 auto;
-}
-
-pre code {
-    display: block;
-    padding: .5em;
-    margin: .5em;
-    border: 1px solid #ccc;
-
-  -webkit-border-radius: .5em; 
-     -moz-border-radius: .5em; 
-          border-radius: .5em; 
-
-  
-  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
-
-}
 
 @media only screen and (min-width: 320px) {
-    .mainContent {
-        /*clear: both;*/
+
+	/* Small screen, non-retina */
+
+	.site-meta .site-mascot {
+	    background-image: url(sculpin-mascot-jackson-small.png);
+	    width: 88px;
+	    height: 85px;
+	    float: right;
+	}
+
+	.jumbo {
+		font-size: 1.5em;
+	}
+
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 320px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (                min-resolution: 192dpi) and (min-width: 320px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 320px) { 
+
+	/* Small screen, retina, stuff to override above media query */
+
+    .site-meta .site-mascot {
+        background-image: url(sculpin-mascot-jackson-small@2x.png);
+	    background-size: 88px 85px;
     }
-    header.site .siteMeta .siteMascot {
-        float: right;
-    }
-    header.site .siteMeta .siteMascot a {
-        margin-top: -.5em;
-    }
-    .fancySite header.site .siteMeta .siteMascot a {
-        background-image: url(sculpin-mascot-jackson-small.png);
-        width: 88px;
-        height: 85px;
-    }
-    header.site .siteMeta .siteTitle {
-        display: inline-block;
-    }
-    header.site .siteMeta .siteSubtitle {
-        display: inline-block;
-    }
-    header.site nav ul li {
-        font-size: .6em;
-    }
+
 }
 
 @media only screen and (min-width: 480px) {
-    .fancySite header.site .siteMeta .siteMascot {
-        margin-top: -1.25em;
-    }
-    header.site .siteMeta .siteMascot a {
-        background-image: url(sculpin-mascot-jackson-small.png);
-        width: 88px;
-        height: 85px;
-    }
-    .fancySite header.site .siteMeta .siteMascot a {
-        background-image: url(sculpin-mascot-jackson-medium.png);
-        width: 200px;
-        height: 193px;
-    }
-    .fancySite header.site .siteMeta {
-        font-size: 1.25em;
-    }
-    header.site nav ul li {
-        font-size: 1em;
-    }
-    header.site .siteMeta .siteTitle {
-        font-size: 1.85em;
-        margin-right: .5em;
-    }
-    header.site .siteMeta .siteSubtitle {
-        font-size: .95em;
-    }
+
+	/* Medium screen, non-retina */
+
+	section.site-meta .container {
+		padding-top: 1em;
+		padding-bottom: 2em;
+	}
+
+	section.site-meta .site-title,
+	section.site-meta .site-subtitle {
+	    text-align: center;
+	    padding-right: 150px;
+	}
+
+	section.site-meta .site-title {
+	    font-size: 5em;
+	}
+
+	section.site-meta .site-subtitle {
+	    font-size: 1.5em;
+	}
+
+	.site-meta .site-mascot {
+	    background-image: url(sculpin-mascot-jackson-medium.png);
+	    width: 150px;
+	    height: 146px;
+	    margin-bottom: -100%;
+	}
+
 }
 
-@media only screen and (min-width: 768px) {
-    header.site nav ul,
-    header.site .siteMeta,
-    footer.site .footerContentContainer,
-    .mainContent {
-        max-width: 1024px;
-        /* border: 1px solid blue; */
-    }
-    .fancySite header.site .siteMeta .siteMascot a {
-        background-image: url(sculpin-mascot-jackson-large.png);
-        width: 300px;
-        height: 290px;
-    }
-    .fancySite header.site .siteMeta {
-        font-size: 2em;
-    }
-}
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 480px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 480px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 480px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 480px),
+only screen and (                min-resolution: 192dpi) and (min-width: 480px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 480px) { 
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2) {
-    header.site .siteMeta .siteMascot a {
-        background-image: url(sculpin-mascot-jackson-micro@2x.png);
-        background-size: 50px 48px;
-    }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px) {
-    .fancySite header.site .siteMeta .siteMascot a {
-        background-image: url(sculpin-mascot-jackson-small@2x.png);
-        background-size: 88px 85px;
-    }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 480px) {
-    header.site .siteMeta .siteMascot a {
-        background-image: url(sculpin-mascot-jackson-small@2x.png);
-        background-size: 88px 85px;
-    }
-    .fancySite header.site .siteMeta .siteMascot a {
+	/* Medium screen, retina, stuff to override above media query */
+
+    .site-meta .site-mascot {
         background-image: url(sculpin-mascot-jackson-medium@2x.png);
-        background-size: 200px 193px;
+	    background-size: 150px 146px;
     }
+
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px) {
-    .fancySite header.site .siteMeta .siteMascot a {
-        background-image: url(sculpin-mascot-jackson-large@2x.png);
-        background-size: 300px 290px;
+
+@media only screen and (min-width: 600px) {
+
+	/* Medium screen, non-retina */
+
+	section.site-meta .container {
+		padding-top: 2em;
+		padding-bottom: 3em;
+	}
+
+	section.site-meta .site-title,
+	section.site-meta .site-subtitle {
+	    padding-right: 200px;
+	}
+
+	section.site-meta .site-title {
+	    font-size: 7em;
+	}
+
+	section.site-meta .site-subtitle {
+	    font-size: 1.75em;
+	}
+
+	.site-meta .site-mascot {
+	    background-image: url(sculpin-mascot-jackson-medium.png);
+	    width: 200px;
+	    height: 194px;
+	}
+
+	.jumbo {
+		font-size: 1.5em;
+	}
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 600px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 600px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 600px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 600px),
+only screen and (                min-resolution: 192dpi) and (min-width: 600px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 600px) { 
+
+    .site-meta .site-mascot {
+        background-image: url(sculpin-mascot-jackson-medium@2x.png);
+	    background-size: 200px 194px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+	/* Large screen, non-retina */
+
+	section.site-meta .container {
+		padding-top: 3em;
+		padding-bottom: 3em;
+	}
+
+	section.site-meta .site-title,
+	section.site-meta .site-subtitle {
+	    padding-right: 300px;
+	}
+
+	section.site-meta .site-title {
+	    font-size: 9em;
+	}
+
+	section.site-meta .site-subtitle {
+	    font-size: 2.5em;
+	}
+
+	.site-meta .site-mascot {
+	    background-image: url(sculpin-mascot-jackson-large.png);
+	    width: 240px;
+	    height: 232px;
+	}
+
+	.jumbo {
+		font-size: 1.875em;
+	}
+
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 992px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 992px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 992px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 992px),
+only screen and (                min-resolution: 192dpi) and (min-width: 992px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 992px) { 
+
+	/* Large screen, retina, stuff to override above media query */
+
+    .site-meta .site-mascot {
+        background-image: url(sculpin-mascot-jackson-medium@2x.png);
+	    background-size: 240px 232px;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+	section.site-meta .container {
+		padding-top: 5em;
+		padding-bottom: 5em;
+	}
+
+	section.site-meta .site-title {
+	    font-size: 11em;
+	}
+
+	section.site-meta .site-subtitle {
+	    font-size: 2.75em;
+	}
+
+	.site-meta .site-mascot {
+	    /*background-image: url(sculpin-mascot-jackson-large.png);*/
+	    width: 300px;
+	    height: 290px;
+	}
+
+	.jumbo {
+		font-size: 2.25em;
+	}
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1200px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1200px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1200px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1200px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1200px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1200px) { 
+    .site-meta .site-mascot {
+        /*background-image: url(sculpin-mascot-jackson-medium@2x.png);*/
+	    background-size: 300px 290px;
     }
 }

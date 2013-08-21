@@ -3,4 +3,6 @@
 /app/config/sculpin_site_*.yml
 /output_*/
 /vendor/
+/source/components/
+.sculpin
 composer.phar

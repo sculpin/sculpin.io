@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Community
+nav_name: community
 
 ---
 

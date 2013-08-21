@@ -12,53 +12,84 @@
     <title>{{ page.title }} &mdash; {{ site.title }} &mdash; {{ site.subtitle }}</title>
     {% endif %}
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="{{ site.url }}/css/boilerplate.css">
-    <link rel="stylesheet" href="{{ site.url }}/css/style.css">
-    <link rel="stylesheet" href="{{ site.url }}/css/helpers.css">
     <link rel="icon" href="{{ site.url }}/favicon.ico">
     <script src="{{ site.url }}/js/libs/modernizr-2.0.6.min.js"></script>
+    <link rel="stylesheet" href="{{ site.url }}/css/custom-bootstrap.css">
+    <link rel="stylesheet" href="{{ site.url }}/css/style.css">
 </head>
-<body class="{% if page.fancy_index %} fancySite {% endif %}">
-    <!-- <a href="http://github.com/sculpin/sculpin" class="forkMeOnGithub"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a> -->
+<body>
     <header class="site">
-        <nav>
-            <ul>
-                <li><a href="{{ site.url }}/">Home</a></li>
-                <li><a href="{{ site.url }}/documentation/">Documentation</a></li>
-                <li><a href="{{ site.url }}/download/">Download</a></li>
-                <li><a href="{{ site.url }}/community/">Community</a></li>
-                <li><a href="https://github.com/sculpin/sculpin">GitHub</a></li>
-            </ul>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ site.url }}/">
+                        Sculpin
+                        <span class="site-mascot" href="{{ site.url }}/mascot/"></span>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li {% if page.nav_name == "home" %} class="active"{% endif %}>
+                            <a href="{{ site.url }}/">Home</a>
+                        </li>
+                        <li {% if page.nav_name == "documentation" %} class="active"{% endif %}>
+                            <a href="{{ site.url }}/documentation/">Documentation</a>
+                        </li>
+                        <li {% if page.nav_name == "download" %} class="active"{% endif %}>
+                            <a href="{{ site.url }}/download/">Download</a>
+                        </li>
+                        <li {% if page.nav_name == "community" %} class="active"{% endif %}>
+                            <a href="{{ site.url }}/community/">Community</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <div class="siteMeta">
-            <div class="siteMascot"><a href="{{ site.url }}/mascot/">Meet Jackson, the Sculpin mascot</a></div>
-            <div class="siteTitle"><a href="{{ site.url }}/">Sculpin</a></div>
-            <div class="siteSubtitle"><a href="{{ site.url }}/">Static Site Generator</a></div>
-        </div>
     </header>
-    <div class="mainContentContainer">
-    <div class="mainContent">
-    {% block content %}Fallback content. :){% endblock %}
-    </div>
-    </div>
+    {% if page.nav_name == "home" %}
+        <section class="site-meta">
+            <div class="container">
+                <div class="site-mascot ir">
+                    <a href="{{ site.url }}/mascot/">Meet Jackson, the Sculpin mascot</a>
+                </div>
+                <div class="site-title">
+                    <a href="{{ site.url }}/">Sculpin</a>
+                </div>
+                <div class="site-subtitle">
+                    <a href="{{ site.url }}/">Static Site Generator</a>
+                </div>
+            </div>
+        </section>
+        <hr class="site-meta">
+    {% endif %}
+    <section class="content">
+        <div class="container">
+            {% block content %}Fallback content. :){% endblock %}
+        </div>
+    </section>
     <footer class="site">
-    <div class="footerContentContainer">
-    <div class="footerContent">
-    {% block footer %}
-    <div class="socialMedia">
-        <ul>
-            <li class="twitter"><a href="http://twitter.com/getsculpin">@getsculpin</a></li>
-        </ul>
-    </div>
-    <div class="copyright">
-        &copy;<a href="http://dflydev.com/">Dragonfly Development Inc</a>, 2011-2012
-    </div>
-    {% endblock %}
-    </div>
-    </div>
+        <div class="container">
+            {% block footer %}
+                <div class="pull-right">
+                    <ul>
+                        <li class="twitter"><a href="http://twitter.com/getsculpin">@getsculpin</a></li>
+                    </ul>
+                </div>
+                <div class="pull-left copyright">
+                    &copy;<a href="http://dflydev.com/">Dragonfly Development Inc</a>, 2011-2013
+                </div>
+            {% endblock %}
+        </div>
     </footer>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="{{site.url}}/js/libs/jquery-1.6.4.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{site.url}}/js/libs/jquery-1.9.1.min.js"><\/script>')</script>
+    <script defer src="{{ site.url }}/js/custom-bootstrap.min.js"></script>
     <script defer src="{{ site.url }}/js/plugins.js"></script>
     <script defer src="{{ site.url }}/js/script.js"></script>
     {% if site.google_analytics_tracking_id %}

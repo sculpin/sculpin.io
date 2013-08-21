@@ -2,7 +2,14 @@
     "require": {
         "sculpin/sculpin": "2.*@dev",
 
-        "composer/composer": "1.*@dev"
+        "components/jquery": "~1.9.1",
+        "components/bootstrap": "~3.0.0",
+        "components/font-awesome": "~3.2.1",
+
+        "dflydev/embedded-composer": "@dev",
+        "composer/composer": "@dev"
     },
-    "minimum-stability": "dev"
+    "config": {
+        "component-dir": "source/components"
+    }
 }

@@ -2,7 +2,6 @@
 /app/config/sculpin_kernel_*.yml
 /app/config/sculpin_site_*.yml
 /output_*/
-/vendor/
 /source/components/
-.sculpin
+/.sculpin/
 composer.phar

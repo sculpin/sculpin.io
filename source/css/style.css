@@ -124,18 +124,60 @@ footer.site a {
 
 footer.site ul {
 	margin: 0;
+	padding: 0;
 	list-style-type: none;
 }
 
-.jumbo {
-	font-family: sans-serif;
-	padding: 1em 0em;
-	font-size: 1.375em;
+footer.site .social ul li {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+footer.site .copyright {
+	margin-top: 1em;
+}
+
+.marketing {
+	font-size: .675em;
+}
+
+.marketing .jumbo {
+	font-weight: normal;
+	font-size: 1.25em;
 	line-height: 1.375em;
 }
 
-p span {
-	font-weight: bolder;
+.marketing .jumbo strong {
+	color: #658998;
+}
+
+
+.marketing h1 {
+	color: #658998;
+}
+
+.marketing p span {
+	font-weight: normal;
+	color: #658998;
+}
+
+.marketing h1 {
+	font-size: 2em;
+	line-height: 1.5em;
+	font-weight: lighter;
+	margin: 1em 0 0em 0;
+}
+
+.marketing p {
+	color: #7495A2;
+	font-weight: lighter;
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 1em 0;
+}
+
+.marketing p strong {
+	font-weight: strong;
 }
 
 
@@ -151,8 +193,16 @@ p span {
 	    float: right;
 	}
 
-	.jumbo {
-		font-size: 1.5em;
+	.marketing {
+		font-size: .75em;
+	}
+
+	.marketing .jumbo {
+		margin: 1em 0;
+	}
+
+	.marketing hr {
+		margin: 2em 0 0;
 	}
 
 }
@@ -204,6 +254,9 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
 	    margin-bottom: -100%;
 	}
 
+	.marketing {
+		font-size: 1em;
+	}
 }
 
 @media
@@ -251,8 +304,20 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 480px) 
 	    height: 194px;
 	}
 
-	.jumbo {
+	.marketing {
 		font-size: 1.5em;
+	}
+
+	footer.site .social ul {
+		float: right;
+	}
+
+	footer.site .copyright {
+		margin-top: 0;
+	}
+	footer.site .social ul li {
+		margin-left: 1em;
+		margin-right: 0;
 	}
 }
 
@@ -299,10 +364,9 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 600px) 
 	    height: 232px;
 	}
 
-	.jumbo {
+	.marketing {
 		font-size: 1.875em;
 	}
-
 }
 
 @media
@@ -342,8 +406,8 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 992px) 
 	    height: 290px;
 	}
 
-	.jumbo {
-		font-size: 2.25em;
+	.marketing {
+		font-size: 2em;
 	}
 }
 

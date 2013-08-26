@@ -48,19 +48,6 @@
                             <a href="{{ site.url }}/community/">Community</a>
                         </li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="https://github.com/sculpin"><i class="icon icon-github"></i> sculpin</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/sculpin"><i class="icon icon-twitter"></i> @getsculpin</a>
-                        </li>
-                        <!--
-                        <li>
-                            <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>
-                        </li>
-                        -->
-                    </ul>
                 </div>
             </div>
         </nav>
@@ -89,12 +76,22 @@
     <footer class="site">
         <div class="container">
             {% block footer %}
-                <div class="pull-right hidden-xs">
+                <div class="social">
                     <ul>
-                        <li class="twitter"><a href="http://twitter.com/getsculpin"><i class="icon icon-twitter"></i> @getsculpin</a></li>
+                        <li>
+                            <a href="https://github.com/sculpin"><i class="icon icon-github"></i> sculpin</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/sculpin"><i class="icon icon-twitter"></i> @getsculpin</a>
+                        </li>
+                        <!--
+                        <li>
+                            <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>
+                        </li>
+                        -->
                     </ul>
                 </div>
-                <div class="pull-left copyright">
+                <div class="copyright">
                     &copy;<a href="http://dflydev.com/">Dragonfly Development Inc</a>, 2011-2013
                 </div>
             {% endblock %}

@@ -183,11 +183,6 @@ footer.site .copyright {
 	color: #658998;
 }
 
-
-.marketing h1 {
-	color: #658998;
-}
-
 .marketing p span {
 	font-weight: normal;
 	color: #658998;
@@ -197,9 +192,6 @@ footer.site .copyright {
 	margin: 1em 0 0em 0;
 }
 
-.marketing {
-	color: #7495A2;
-}
 
 .marketing p {
 	font-weight: lighter;
@@ -229,6 +221,26 @@ footer.site .copyright {
 	font-size: .75em;
 }
 
+
+section.content {
+	color: #7495A2;
+}
+
+section.content h1,
+section.content h2,
+section.content h3,
+section.content h4,
+section.content h5 {
+	color: #658998;
+}
+
+section.content h1 small,
+section.content h2 small,
+section.content h3 small,
+section.content h4 small,
+section.content h5 small {
+	color: #C0CFD5;
+}
 
 section.content a {
 	color: inherit;

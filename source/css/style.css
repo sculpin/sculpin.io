@@ -221,6 +221,17 @@ footer.site .copyright {
 	font-size: .75em;
 }
 
+.marketing .powered-by .powered-by-site .source {
+	color: #C0CFD5;
+}
+.marketing .powered-by .powered-by-site .source:hover {
+	color: #DFE7EA;
+}
+
+.marketing .powered-by .powered-by-site .source:hover .icon-github:after {
+	content: " source";
+}
+
 
 section.content {
 	color: #7495A2;
@@ -347,10 +358,6 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
 	.marketing p {
 		font-size: 1em;
 	}
-
-	.marketing .powered-by .powered-by-site {
-		font-size: 1.25em;
-	}
 }
 
 @media
@@ -416,6 +423,10 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 480px) 
 
 	footer.site {
 		text-align: left;
+	}
+
+	.marketing .powered-by .powered-by-site {
+		font-size: 1em;
 	}
 }
 

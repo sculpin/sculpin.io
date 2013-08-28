@@ -250,6 +250,14 @@ section.content h5 {
 	color: #658998;
 }
 
+section.content h1 a,
+section.content h2 a,
+section.content h3 a,
+section.content h4 a,
+section.content h5 a {
+	text-decoration: none;
+}
+
 section.content h1 small,
 section.content h2 small,
 section.content h3 small,
@@ -311,7 +319,7 @@ only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 320px),
 only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 320px),
 only screen and (        min-device-pixel-ratio: 2)      and (min-width: 320px),
 only screen and (                min-resolution: 192dpi) and (min-width: 320px),
-only screen and (                min-resolution: 2dppx)  and (min-width: 320px) { 
+only screen and (                min-resolution: 2dppx)  and (min-width: 320px) {
 
 	/* Small screen, retina, stuff to override above media query */
 
@@ -371,7 +379,7 @@ only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 480px),
 only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 480px),
 only screen and (        min-device-pixel-ratio: 2)      and (min-width: 480px),
 only screen and (                min-resolution: 192dpi) and (min-width: 480px),
-only screen and (                min-resolution: 2dppx)  and (min-width: 480px) { 
+only screen and (                min-resolution: 2dppx)  and (min-width: 480px) {
 
 	/* Medium screen, retina, stuff to override above media query */
 
@@ -441,7 +449,7 @@ only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 600px),
 only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 600px),
 only screen and (        min-device-pixel-ratio: 2)      and (min-width: 600px),
 only screen and (                min-resolution: 192dpi) and (min-width: 600px),
-only screen and (                min-resolution: 2dppx)  and (min-width: 600px) { 
+only screen and (                min-resolution: 2dppx)  and (min-width: 600px) {
 
     .site-meta .site-mascot {
         background-image: url(sculpin-mascot-jackson-medium@2x.png);
@@ -489,7 +497,7 @@ only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 992px),
 only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 992px),
 only screen and (        min-device-pixel-ratio: 2)      and (min-width: 992px),
 only screen and (                min-resolution: 192dpi) and (min-width: 992px),
-only screen and (                min-resolution: 2dppx)  and (min-width: 992px) { 
+only screen and (                min-resolution: 2dppx)  and (min-width: 992px) {
 
 	/* Large screen, retina, stuff to override above media query */
 
@@ -534,7 +542,7 @@ only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1200px)
 only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1200px),
 only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1200px),
 only screen and (                min-resolution: 192dpi) and (min-width: 1200px),
-only screen and (                min-resolution: 2dppx)  and (min-width: 1200px) { 
+only screen and (                min-resolution: 2dppx)  and (min-width: 1200px) {
     .site-meta .site-mascot {
         /*background-image: url(sculpin-mascot-jackson-medium@2x.png);*/
 	    background-size: 300px 290px;

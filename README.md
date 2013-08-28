@@ -22,6 +22,6 @@ accessible at `http://localhost:8000/`.
 
 ### If You Need Sculpin
 
-    curl -sS -O https://download.sculpin.io/sculpin.phar
+    curl -O https://download.sculpin.io/sculpin.phar
     php sculpin.phar install
     php sculpin.phar generate --watch --server

@@ -9,6 +9,17 @@
 #333333
 */
 
+code {
+	color: #5B7C89;
+	background-color: #EEF2F4;
+}
+
+pre {
+	color: #5B7C89;
+	background-color: #EEF2F4;
+	border: 1px solid #D0DBDF;
+}
+
 .ir {
     background-color: transparent;
     border: 0;

@@ -23,7 +23,7 @@ accessible at `http://localhost:8000/`.
 ### If You Need Sculpin
 
 ***Security Notice:*** *Never run anything you haven't personally reviewed
-first. This first `curl url | php` command should be treated with care.*
+first. This `curl url | php` command should be done with care.*
 
     curl -sS https://sculpin.io/installer | php
     php sculpin.phar install

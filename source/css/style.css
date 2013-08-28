@@ -237,6 +237,11 @@ section.content {
 	color: #7495A2;
 }
 
+
+section.content h1 {
+	font-size: 3em;
+}
+
 section.content h1,
 section.content h2,
 section.content h3,

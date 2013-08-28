@@ -18,5 +18,5 @@ there! Have questions? Ask the [Sculpin community!][4]
 
 [1]: {{site.url}}/download/
 [2]: https://github.com/sculpin/sculpin-blog-skeleton
-[3]: {{site.url}}
+[3]: {{site.url}}/
 [4]: {{site.url}}/community/

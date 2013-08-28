@@ -228,7 +228,7 @@ footer.site .copyright {
 	color: #DFE7EA;
 }
 
-.marketing .powered-by .powered-by-site .source:hover .icon-github:after {
+.marketing .powered-by .powered-by-site .icon-github:after {
 	content: " source";
 }
 

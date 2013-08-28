@@ -14,7 +14,7 @@ Sculpin, and your level of experience with Composer, one of the other options
 *may* be more appropriate.
 
 Confused about which option is best for your use case? Ask the
-[Sculpin community]({{site.url}}/community/)! They will be happy to help. :)
+Sculpin [community]({{site.url}}/community/)! They will be happy to help. :)
 
 <br>
 

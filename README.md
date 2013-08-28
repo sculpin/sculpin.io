@@ -12,16 +12,19 @@ Powered by [Sculpin](https://github.com/sculpin/sculpin). =)
 Build
 -----
 
-    composer install
-    vendor/bin/sculpin generate --server
+### If You Already Have Sculpin
 
-Your newly generated clone of [sculpin.io](http:/sculpin.io) is now accessible
-at `http://localhost:8000/`.
+    sculpin install
+    sculpin generate --watch --server
 
-### If You Need Composer
+Your newly generated clone of [sculpin.io](https://sculpin.io) is now
+accessible at `http://localhost:8000/`.
 
-    curl -s https://getcomposer.org/installer | php
-    php composer.phar install
-    vendor/bin/sculpin generate --server
+### If You Need Sculpin
+
+    curl -sS https://sculpin.io/installer | php
+    php sculpin.phar install
+    php sculpin.phar generate --watch --server
 
 
+***Security Notice:** Never run anything you haven't personally reviewed first.*

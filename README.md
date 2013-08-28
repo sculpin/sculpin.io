@@ -22,10 +22,9 @@ accessible at `http://localhost:8000/`.
 
 ### If You Need Sculpin
 
-    curl -sS https://sculpin.io/installer | php
-
 ***Security Notice:*** *Never run anything you haven't personally reviewed
-first.*
+first. This first `curl url | php` command should be treated with care.*
 
+    curl -sS https://sculpin.io/installer | php
     php sculpin.phar install
     php sculpin.phar generate --watch --server

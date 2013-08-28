@@ -215,31 +215,31 @@ footer.site .copyright {
 	font-weight: strong;
 }
 
-.marketing .powered-by .row a {
+.powered-by .row a {
 	text-decoration: none;
 	padding: .25em 0;
 	display: inline-block;
 }
 
-.marketing .powered-by .powered-by-site {
+.powered-by .powered-by-site {
 	font-size: 1.5em;
 }
-.marketing .powered-by .powered-by-site .title {
+.powered-by .powered-by-site .title {
 }
 
-.marketing .powered-by .powered-by-site .url,
-.marketing .powered-by .powered-by-site .source {
+.powered-by .powered-by-site .url,
+.powered-by .powered-by-site .source {
 	font-size: .75em;
 }
 
-.marketing .powered-by .powered-by-site .source {
+.powered-by .powered-by-site .source {
 	color: #C0CFD5;
 }
-.marketing .powered-by .powered-by-site .source:hover {
+.powered-by .powered-by-site .source:hover {
 	color: #DFE7EA;
 }
 
-.marketing .powered-by .powered-by-site .icon-github:after {
+.powered-by .powered-by-site .icon-github:after {
 	content: " source";
 }
 
@@ -470,7 +470,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 600px) 
 }
 
 @media only screen and (min-width: 768px) {
-	.marketing .powered-by .powered-by-site .source {
+	.powered-by .powered-by-site .source {
 		font-size: .5em;
 	}
 }

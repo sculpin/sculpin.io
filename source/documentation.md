@@ -13,7 +13,7 @@ First, [download Sculpin][1], then check out the [Sculpin blog skeleton][2]
 
 After that, check out the list of sites powered by Sculpin on the [home page][3]
 for sites that have their source published. There should be a lot of great ideas
-there! Have questions? Ask the [Sculpin community!][4]
+there! Have questions? Ask the Sculpin [community!][4]
 
 
 [1]: {{site.url}}/download/

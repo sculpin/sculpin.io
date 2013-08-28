@@ -7,20 +7,13 @@ nav_name: download
 
 # Download
 
-Sculpin can be downloaded several ways depending on your level of experience
-with Sculpin, Composer, and how you want to organize your project or site.
-
-
-## System Requirements
-
- * PHP 5.3.2+
-
+<br>
 
 ## Download the Phar
 
 Downloading `sculpin.phar` is the best way to get up and running with Sculpin.
 It is a self-contained archive containing all of its dependencies and is ready
-to run. You can get it by downloading it like this:
+to run. You can download it like this:
 
     curl -sS -O https://download.sculpin.io/sculpin.phar
 
@@ -39,6 +32,9 @@ example, assuming `~/bin` is in your `$PATH`, you can do the following:
 
     mv sculpin ~/bin/
 
+That's it! You're all set to run Sculpin. :)
+
+<br>
 
 ## Download via Composer
 
@@ -58,6 +54,7 @@ Installation via Composer is considered advanced functionality. Running a
 globally installed version of Sculpin against a project that has Sculpin
 included via Composer can have unexpected results. Never mix and match!
 
+<br>
 
 ## Download via Git
 
@@ -80,4 +77,8 @@ following:
 This will allow you to have a globally installed version of Sculpin (like maybe
 `sculpin.phar`) along side a development version of Sculpin (`sculpin-dev`).
 
+### Important Notice Regarding Git
 
+Installation via git is considered advanced functionality. This method of
+downloading Sculpin is only recommended for people who intend to work directly
+on Sculpin itself.

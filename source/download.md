@@ -7,13 +7,22 @@ nav_name: download
 
 # Download
 
+There are a number of ways to download Sculpin. The easiest way is to download
+the phar. Most of the examples will assume this is how Sculpin has been
+installed. Depending on what you want to do, your level of experience with
+Sculpin, and your level of experience with Composer, one of the other options
+*may* be more appropriate.
+
+Confused about which option is best for your use case? Ask the
+[Sculpin community]({{site.url}}/community/)! They will be happy to help. :)
+
 <br>
 
 ## Download the Phar
 
-Downloading `sculpin.phar` is the best way to get up and running with Sculpin.
-It is a self-contained archive containing all of its dependencies and is ready
-to run. You can download it like this:
+Downloading `sculpin.phar` is the best way to get up and running with Sculpin
+since it is a ready to run self-contained archive. You can download it like
+this:
 
     curl -sS -O https://download.sculpin.io/sculpin.phar
 

@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "6abce7e64257e8a02f5234cb3cd6751b",
+    "hash": "291639cd8e6497a9a8b6ff330e351957",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -219,16 +219,16 @@
         },
         {
             "name": "robloach/component-installer",
-            "version": "0.0.11",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RobLoach/component-installer.git",
-                "reference": "0.0.11"
+                "reference": "eb76ddb2e2a9224d9457c0e73d8d4c4d6d9ba68c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobLoach/component-installer/zipball/0.0.11",
-                "reference": "0.0.11",
+                "url": "https://api.github.com/repos/RobLoach/component-installer/zipball/eb76ddb2e2a9224d9457c0e73d8d4c4d6d9ba68c",
+                "reference": "eb76ddb2e2a9224d9457c0e73d8d4c4d6d9ba68c",
                 "shasum": ""
             },
             "require": {
@@ -259,7 +259,7 @@
                 }
             ],
             "description": "Allows installation of Components via Composer.",
-            "time": "2013-05-10 04:14:46"
+            "time": "2013-08-28 11:45:20"
         }
     ],
     "packages-dev": [
@@ -271,6 +271,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "sculpin/sculpin": 20,
+        "robloach/component-installer": 20,
         "dflydev/embedded-composer-console": 20,
         "dflydev/embedded-composer-core": 20,
         "composer/composer": 20

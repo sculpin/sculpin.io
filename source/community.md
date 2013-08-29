@@ -16,7 +16,7 @@ The Sculpin community is small but growing! Please join in!
 Have questions or what to get involved? Here are the best ways to find us:
 
 <div class="row">
-	<div class="col-sm-6x col-md-4">
+	<div class="col-sm-4">
 		<h3><a href="irc://irc.freenode.org/%23sculpin">IRC <small><i class="icon icon-comment"></i></small></a></h3>
 		<p>
 			Join the <a href="irc://irc.freenode.org/%23sculpin">#sculpin</a>
@@ -24,14 +24,14 @@ Have questions or what to get involved? Here are the best ways to find us:
 			currently!
 		</p>
 	</div>
-	<div class="col-sm-6x col-md-4">
+	<div class="col-sm-4">
 		<h3><a href="https://twitter.com/getsculpin">Twitter <small><i class="icon icon-twitter"></i></small></a></h3>
 		<p>
 			Mention <a href="https://twitter.com/getsculpin">@getsculpin</a> on
 			Twitter. This is a great way to call attention to yourself!
 		</p>
 	</div>
-	<div class="col-sm-6x col-md-4">
+	<div class="col-sm-4">
 		<h3><a href="https://groups.google.com/group/sculpin-users">Mailing List <small><i class="icon icon-group"></i></small></a></h3>
 		<p>
 			Join the <a href="https://groups.google.com/group/sculpin-users">

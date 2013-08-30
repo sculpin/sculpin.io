@@ -24,7 +24,7 @@ Downloading `sculpin.phar` is the best way to get up and running with Sculpin
 since it is a ready to run self-contained archive. You can download it like
 this:
 
-    curl -sS -O https://download.sculpin.io/sculpin.phar
+    curl -O https://download.sculpin.io/sculpin.phar
 
 You can execute Sculpin by running `php sculpin.phar` but if you want to skip
 the `php` part, you can make `sculpin.phar` executable like this:

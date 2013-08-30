@@ -55,8 +55,8 @@
     {% if page.nav_name == "home" %}
         <section class="site-meta">
             <div class="container">
-                <div class="site-mascot ir">
-                    <a href="{{ site.url }}/mascot/">Meet Jackson, the Sculpin mascot</a>
+                <div class="site-mascot">
+                    <a class="ir" href="{{ site.url }}/mascot/">Meet Jackson, the Sculpin mascot</a>
                 </div>
                 <div class="site-title">
                     <a href="{{ site.url }}/">Sculpin</a>
@@ -76,6 +76,9 @@
     <footer class="site">
         <div class="container">
             {% block footer %}
+                <div class="mascot">
+                    <a class="ir" href="{{ site.url }}/mascot/">Meet Jackson, the Sculpin mascot</a>
+                </div>
                 <div class="social">
                     <ul>
                         <li>
@@ -90,7 +93,7 @@
                     </ul>
                 </div>
                 <div class="copyright">
-                    &copy;<a href="http://dflydev.com/">Dragonfly Development Inc</a>, 2011-2013
+                    &copy;<a href="http://dflydev.com/">Dragonfly Development Inc</a>, 2011
                 </div>
             {% endblock %}
         </div>

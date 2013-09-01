@@ -488,7 +488,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 480px) 
 		position: absolute;
 		left: 50%;
 		margin-left: -50px;
-		margin-top: -10px;
+		margin-top: -15px;
 	}
 
 	.meet-jackson .mascot {

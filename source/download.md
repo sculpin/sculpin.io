@@ -48,11 +48,20 @@ That's it! You're all set to run Sculpin. :)
 ## Download via Composer
 
 Sculpin can be added to any existing Composer managed project by simply
-requiring Sculpin in `composer.json`.
+requiring Sculpin (and a couple of other dev dependencies) in `composer.json`.
 
     {
-        "sculpin/sculpin": "2.*@dev"
+        "sculpin/sculpin": "2.*@dev",
+
+        "dflydev/embedded-composer-console": "@dev",
+        "dflydev/embedded-composer-core": "@dev",
+        "composer/composer": "@dev"
     }
+
+Sculpin currently relies on Embedded Composer and Composer, neither of which
+have a stable release. In order to avoid having to set `minimum-stability` to
+dev, these packages can be flagged as `@dev` to ensure Composer will install
+everything correctly.
 
 By default this will install Sculpin to `vendor/bin/sculpin`.
 

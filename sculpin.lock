@@ -11,16 +11,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/components/bootstrap.git",
-                "reference": "3435dd168267c956d0cf7510d038cf439dc6d978"
+                "reference": "2207fc66e5d4194967287bdc8517150b7cc9d85d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/components/bootstrap/zipball/3435dd168267c956d0cf7510d038cf439dc6d978",
-                "reference": "3435dd168267c956d0cf7510d038cf439dc6d978",
+                "url": "https://api.github.com/repos/components/bootstrap/zipball/2207fc66e5d4194967287bdc8517150b7cc9d85d",
+                "reference": "2207fc66e5d4194967287bdc8517150b7cc9d85d",
                 "shasum": ""
             },
             "require": {
-                "components/jquery": "1.9.*"
+                "components/jquery": ">=1.9"
             },
             "suggest": {
                 "components/bootstrap-default": "Provide a theme for Bootstrap as components/bootstrap only provides the CSS as file assets"
@@ -58,7 +58,7 @@
                 "bootstrap",
                 "css"
             ],
-            "time": "2013-08-21 14:15:25"
+            "time": "2013-08-31 14:21:43"
         },
         {
             "name": "components/font-awesome",
@@ -223,12 +223,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RobLoach/component-installer.git",
-                "reference": "eb76ddb2e2a9224d9457c0e73d8d4c4d6d9ba68c"
+                "reference": "1864f25db21fc173e02a359f646acd596c1b0460"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobLoach/component-installer/zipball/eb76ddb2e2a9224d9457c0e73d8d4c4d6d9ba68c",
-                "reference": "eb76ddb2e2a9224d9457c0e73d8d4c4d6d9ba68c",
+                "url": "https://api.github.com/repos/RobLoach/component-installer/zipball/1864f25db21fc173e02a359f646acd596c1b0460",
+                "reference": "1864f25db21fc173e02a359f646acd596c1b0460",
                 "shasum": ""
             },
             "require": {
@@ -259,7 +259,7 @@
                 }
             ],
             "description": "Allows installation of Components via Composer.",
-            "time": "2013-08-28 11:45:20"
+            "time": "2013-08-31 23:46:48"
         }
     ],
     "packages-dev": [

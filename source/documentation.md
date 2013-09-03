@@ -16,6 +16,244 @@ for sites that have their source published. There should be a lot of great ideas
 there! Have questions? Ask the Sculpin [community!][4]
 
 
+## Basic Sculpin Project
+
+A Sculpin project is capable of building exactly one static site. By default,
+Sculpin assumes a basic filesystem structure for any Sculpin project.
+
+    |-- app/
+    |  `-- config/
+    |     |-- SculpinKernel.php        # Custom Sculpin kernel (optional)
+    |     |-- sculpin_kernel.yml       # Sculpin's configuration (optional)
+    |     |-- sculpin_site.yml         # Site meta data (optional)
+    |     `-- sculpin_site_${env}.yml  # Environment specific meta data (optional)
+    |-- output_${env}/                 # Environment specific generated static files
+    |-- source/
+    |  |-- _posts/                     # Individual blog posts live here (optional)
+    |  `-- _views/                     # Templates (optional)
+    `-- sculpin.json                   # Dependencies (optional)
+
+### Hello World Project
+
+#### Hello World Directory Structure
+
+    |-- source/
+       `-- index.md
+
+#### Smallest Source File
+
+    ---
+    ---
+
+    # Hello World
+
+#### Run
+
+    sculpin generate --watch --serve
+
+Visit [localhost:8000](http://localhost:8000) to see your new static site!
+
+
+#### Ouput
+
+Explore the `output_dev` directory to see what is happening behind the scenes:
+
+    |-- output_dev/
+    |  `-- index.html
+
+
+## Configuration
+
+### sculpin_site.yml and sculpin_site_${env}.yml
+
+The easiest way to "configure" Sculpin is to add site meta data. Site meta data
+can be added to any of the following files:
+
+    |-- app/
+    |  `-- config/
+    |     |-- sculpin_site.yml         # Site meta data (optional)
+    |     `-- sculpin_site_${env}.yml  # Environment specific meta data (optional)
+
+
+Environment specific meta data overrides generic meta data so sane defaults can
+be added to `sculpin_site.yml` and overridden on an environment-by-environment
+basis. This can be useful for things like Google Analytics identifiers. Set the
+default development version in `sculpin_site.yml` and set the production value
+in `sculpin_site_prod.yml`.
+
+Merging the `sculpin_site.yml` is not automatic. It must be imported into an
+enviornment specific configuration file like this:
+
+    imports:
+    - sculpin_site.yml
+    google_analytics_tracking_id: UA-PRODUCTION-372
+
+### sculpin_kernel.yml
+
+Some parts of Sculpin, specifically anything configured as a bundle, must be
+configured at the kernel level. This can be done by modifying the
+`sculpin_kernel.yml` file.
+
+    |-- app/
+    |  `-- config/
+    |     `-- sculpin_kernel.yml       # Sculpin's configuration (optional)
+
+
+For example, tho configure something like the default permalink for posts, one
+would need to configure the posts bundle's configuration:
+
+    sculpin_posts:
+        permalink: blog/:year/:month/:day/:filename/
+
+Or if one wanted to change the default Markdown parser class, one would:
+
+    sculpin_markdown:
+        parser_class: Michelf\Markdown
+
+It is up to a bundle to define whether or not it can be configured using site
+meta data or kernel configuration. In general, kernel configuration is probably
+where configuration will happen for things that are not source (read, runtime
+based on stuff in `source/`) dependant.
+
+
+## Sources
+
+By default, sources are objects represented by each file under `source/`.
+Sources that have YAML frontmatter are considered special in that they can be
+formatted.
+
+What is YAML frontmatter? It is best to compare examples:
+
+    # This is a markdown file without YAML frontmatter
+
+... compared to...
+
+    ---
+    layout: default
+    ---
+
+    # This is a markdown file with YAML frontmatter
+
+As you can see, there is a chunk of YAML in the second example. It is delimited
+by `---`. The YAML frontmatter is parsed and injected into every page rendering
+and is accessible as `page.KEY`.
+
+
+### Deep Frontmatter YAML Structures
+
+Sculpin will read deep structures in YAML frontmatter. Just use a `.` to
+indicate that you want to descend into a structure. For example:
+
+    ---
+    layout: default
+    something:
+        here:
+            very: deep
+            also: deep
+    ---
+
+    {% verbatim %}We can reference `{{ page.something.here.also }} === deep`.{% endverbatim %}
+
+
+## Sources and Layouts
+
+Many static site generators, including Jekyll and Phrozn, will render each
+source first, and inject the resulting output into the layout. While this
+approach (the "russian dolls" approach) is simpler, it means you end up losing
+the inheritance capabilities thare built into both Twig and Liquid.
+
+Sculpin attempts to solve this problem by wrapping each source in a block named
+"content." So, given the following file:
+
+    ---
+    layout: default
+    ---
+
+    # This is a markdown file with YAML frontmatter
+
+Internally, Sculpin treats this file like the following:
+
+    {% verbatim %}{% extends "default" %}{% endverbatim %}
+    {% verbatim %}{% {% endverbatim %}block content{% verbatim %} %}{% endverbatim %}
+
+    # This is a markdown file with YAML frontmatter
+    {% verbatim %}{% {% endverbatim %}endblock{% verbatim %} %}{% endverbatim %}
+
+
+
+
+The end result is that each source file can be rendered together in one go
+rather than rendering the content by itself and injecting the content into the
+wrapper template. This means that additional data can be passed from the source
+into the wrapper template!
+
+Given a source file like this:
+
+    ---
+    layout: default
+    special_value: nice
+    ---
+
+    # This is a markdown file with YAML frontmatter
+
+One can reference the `special_value` key in the `default` template like this:
+
+    {% verbatim %}<html>
+    {% if page.special_value is defined %}
+        Special value exists and is <strong>{{ page.special_value }}</strong>!.
+    {% endif %}{% endverbatim %}
+    {% verbatim %}{% {% endverbatim %}block content{% verbatim %} %}{% endverbatim %}Fallback content{% verbatim %}{% {% endverbatim %}endblock{% verbatim %} %} {% endverbatim %}
+    </html>
+
+
+
+
+
+After rendering, the final result will be:
+
+    <html>
+        Special value exists and is <strong>nice</strong>!.
+    <h1>This is a markdown file with YAML frontmatter</h1>
+    </html>
+
+
+## Converters
+
+Converters will convert incoming markup to something else, generally HTML.
+Sculpin ships with two converters, Markdown and Textile.
+
+### Markdown Converter
+
+The Markdown Converter will convert `.md`, `.mdown`, and `.markdown` files
+using [michelf/php-markdown](https://packagist.org/packages/michelf/php-markdown).
+
+#### Configuration
+
+The Markdown Converter can be configured by adjusting the following
+`sculpin_kernel.yml` settings:
+
+ * **sculpin_markdown.parser_class**:
+   Can be one of `Michelf\MarkdownExtra` or `Michelf\Markdown`. Default value is `Michelf\MarkdownExtra`.
+ * **sculpin_markdown.extensions**:
+   Default value is `['.md', '.mdown', '.markdown']`.
+
+
+### Textile Converter
+
+The Textile Converter will convert `.textile` files using
+[netcarver/textile](https://packagist.org/packages/netcarver/textile).
+
+#### Configuration
+
+The Textile Converter can be configured by adjusting the following
+`sculpin_kernel.yml` settings:
+
+ * **sculpin_textile.extensions**:
+   Default value is `['.textile']`.
+
+## Formatters
+
+
 ## Sculpin and Embedded Composer
 
 ### What is Embedded Composer?

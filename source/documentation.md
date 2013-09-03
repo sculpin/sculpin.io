@@ -253,6 +253,87 @@ The Textile Converter can be configured by adjusting the following
 
 ## Formatters
 
+Formatters are responsible for formatting sources. This can be considered a view
+or template layer.
+
+Sculpin ships with one formatter, Twig.
+
+
+### Twig Formatter
+
+The Twig Formatter is responsible for laying out individual sources into nicer
+"complete" files. Most of the time this will be formatting into an HTML file but
+there are definitely cases when files will be formatted as CSS, JavaScript, or
+XML (Atom or RSS).
+
+
+#### Configuration
+
+The Twig Formatter can be configured by adjusting the following
+`sculpin_kernel.yml` settings:
+
+ * **sculpin_twig.view_paths**:
+   List of directories (relative to `source/`) that should be searched for Twig
+   templates.
+   Default value is `['_views']`.
+ * **sculpin_twig.extensions**:
+   List of extensions for files that should be used to indicate a file is a Twig
+   template.
+   Default value is `['', 'twig', 'html', 'html.twig', 'twig.html']`.
+
+
+## Generators
+
+Generators are used to fabricate new virtual sources based on existing concrete
+sources.
+
+A good example of this would be tags or categories for posts. One would not want
+to create a tag or category index page for every tag that may ever be created. A
+generator can be used to create a tag or category index page dynamically based
+on meta data from posts.
+
+Another example would be pagination. If a list of posts needs to be paginated,
+one would not want to create an index page for page 1 and page 2 and page 3. One
+would prefer to have those pages generated automatically.
+
+
+## Lifecycle
+
+The following represents the lifecycle of a single pass through all of the
+sources.
+
+ * Generate (Generators)
+ * Permalink Creation
+ * Convert
+ * Format
+ * Output
+
+For a single "run" (think `sculpin generate`) there is only one run and every
+source is considered dirty and needs to be written.
+
+For multiple "runs" (think `scupin generate --watch`) there are many runs. For
+the first "run", every source is considered dirty and needs to be written. After
+that, each additional "run" will determine whether or not a source is dirty
+based on whether it has been updated since the previous run.
+
+### Events
+
+ * **Sculpin\Core\Sculpin::EVENT_BEFORE_RUN**
+   Called very early on into the run lifecycle. Suitable for setting up sources
+   before anything else is done. Is passed a `SourceSetEvent` instance.
+ * **Sculpin\Core\Sculpin::EVENT_AFTER_RUN**
+   Called very late into the run lifecycle. Suitable for cleanup. Is passed a
+   `SourceSetEvent` instance.
+ * **Sculpin\Core\Sculpin::EVENT_BEFORE_CONVERT**
+   Called just before a source is converted. Suitable for massaging a source
+   prior to converion. Passed a `ConvertEvent` instance.
+ * **Sculpin\Core\Sculpin::EVENT_AFTER_CONVERT**
+   Called just after a source is converted. Suitable for massaging a source
+   after conversion. Passed a `ConvertEvent` instance.
+ * **Sculpin\Core\Sculpin::EVENT_BEFORE_FORMAT**
+   Called just before a source is formatted. Passed a `FormatEvent` instance.
+ * **Sculpin\Core\Sculpin::EVENT_AFTER_FORMAT**
+   Called just after a source is formatted. Passed a `FormatEvent instance.
 
 ## Sculpin and Embedded Composer
 

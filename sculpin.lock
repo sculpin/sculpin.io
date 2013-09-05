@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "291639cd8e6497a9a8b6ff330e351957",
+    "hash": "6abce7e64257e8a02f5234cb3cd6751b",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -219,7 +219,7 @@
         },
         {
             "name": "robloach/component-installer",
-            "version": "dev-master",
+            "version": "0.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RobLoach/component-installer.git",
@@ -271,7 +271,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "sculpin/sculpin": 20,
-        "robloach/component-installer": 20,
         "dflydev/embedded-composer-console": 20,
         "dflydev/embedded-composer-core": 20,
         "composer/composer": 20

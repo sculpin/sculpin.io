@@ -463,6 +463,14 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 480px) 
 		font-size: 1.5em;
 	}
 
+	.marketing p {
+		font-size: .75em;
+	}
+
+	section.content .marketing h1 {
+		font-size: 2em;
+	}
+
 	footer.site .social ul {
 		float: right;
 	}

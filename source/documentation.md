@@ -99,7 +99,7 @@ configured at the kernel level. This can be done by modifying the
     |     `-- sculpin_kernel.yml       # Sculpin's configuration (optional)
 
 
-For example, tho configure something like the default permalink for posts, one
+For example, to configure something like the default permalink for posts, one
 would need to configure the posts bundle's configuration:
 
     sculpin_posts:

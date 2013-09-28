@@ -406,7 +406,8 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
 	}
 
 	.marketing .jumbo {
-		font-size: 1.25em;
+		font-size: 1.125em;
+		margin: .75em 0 .5em;
 	}
 
 	.marketing p {
@@ -623,8 +624,9 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 992px) 
 	.marketing {
 		font-size: 2em;
 	}
+
 	.marketing .jumbo {
-		font-size: 1.5em;
+		font-size: 1.25em;
 	}
 
 	.meet-jackson {

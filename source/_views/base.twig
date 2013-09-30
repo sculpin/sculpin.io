@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ site.url }}/components/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ site.url }}/css/style.css?v={{ site.assets_version }}">
     <link rel="stylesheet" href="{{ site.url }}/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ site.url }}/components/highlightjs/styles/github.css" />
 </head>
 <body>
     <a class="fork-me-on-github" href="https://github.com/sculpin/sculpin"><img src="{{ site.url }}/assets/right-red@2x.png" alt="Fork me on GitHub"></a>
@@ -120,5 +121,7 @@
 
     </script>
     {% endif %}
+    <script src="{{ site.url }}/components/highlightjs/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

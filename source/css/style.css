@@ -9,12 +9,12 @@
 #333333
 */
 
-code {
+html code, html pre code {
 	color: #5B7C89;
 	background-color: #EEF2F4;
 }
 
-pre {
+html pre {
 	color: #5B7C89;
 	background-color: #EEF2F4;
 	border: 1px solid #D0DBDF;

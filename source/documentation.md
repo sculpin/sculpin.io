@@ -7,14 +7,28 @@ nav_name: documentation
 
 # Documentation
 
-Until Sculpin has more formal documentation it is best to "learn by example."
-First, [download Sculpin][1], then check out the [Sculpin blog skeleton][2]
-(instructions in the README) to quickly fire up a basic Sculpin powered blog.
+Until Sculpin has more documentation it may be best to "learn by example." If
+you are interested in going that route, first [download Sculpin][1] and then
+check out the [Sculpin blog skeleton][2] (instructions in the README). The end
+result will be a simple Sculpin blog you can start playing with.
 
 After that, check out the list of sites powered by Sculpin on the [home page][3]
 for sites that have their source published. There should be a lot of great ideas
-there! Have questions? Ask the Sculpin [community!][4]
+there!
 
+And as always, if you have questions please get in touch with the Sculpin
+[community][4]! We will try to get you answers quickly. :)
+
+## Bundles
+
+Sculpin can be extended by building Symfony Bundles that have Sculpin's
+lifecycle and events in mind. In fact, the heart of Scupin is a Symfony Bundle
+called SculpinBundle. It is used to wire up everything that Sculpin needs to
+run.
+
+Some of the default Sculpin bundles have documentation available:
+
+ * [SculpinPostsBundle][6] Adds blogging capabilities to Sculpin
 
 ## Basic Sculpin Project
 
@@ -405,3 +419,4 @@ Composer `vendor/` directory).
 [3]: {{site.url}}/
 [4]: {{site.url}}/community/
 [5]: https://speakerdeck.com/simensen/embedded-composer-sflive-portland-2013?slide=71
+[6]: {{site.url}}/documentation/bundles/SculpinPostsBundle/

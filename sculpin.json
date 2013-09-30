@@ -2,9 +2,10 @@
     "require": {
         "sculpin/sculpin": "2.*@dev",
 
-        "components/jquery": "~1.9.1",
         "components/bootstrap": "~3.0.0",
         "components/font-awesome": "~3.2.1",
+        "components/highlightjs": "7.3.0",
+        "components/jquery": "~1.9.1",
 
         "dflydev/embedded-composer-console": "@dev",
         "dflydev/embedded-composer-core": "@dev",

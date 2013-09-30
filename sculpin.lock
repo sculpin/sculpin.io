@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "6abce7e64257e8a02f5234cb3cd6751b",
+    "hash": "08ceb59a8b8205c7ad26dcf8975499f1",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -100,6 +100,51 @@
             ],
             "description": "The iconic font designed for use with Twitter Bootstrap.",
             "time": "2013-07-27 07:29:06"
+        },
+        {
+            "name": "components/highlightjs",
+            "version": "7.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/highlightjs.git",
+                "reference": "60f5b260c3ae12578f7241e15e8102e9b65c4d3b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/highlightjs/zipball/60f5b260c3ae12578f7241e15e8102e9b65c4d3b",
+                "reference": "60f5b260c3ae12578f7241e15e8102e9b65c4d3b",
+                "shasum": ""
+            },
+            "require": {
+                "robloach/component-installer": "*"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "highlight.pack.js"
+                    ],
+                    "files": [
+                        "styles/*"
+                    ],
+                    "shim": {
+                        "exports": "hljs"
+                    }
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Sagalaev",
+                    "email": "maniac@softwaremaniacs.org",
+                    "homepage": "http://softwaremaniacs.org"
+                }
+            ],
+            "description": "Highlight.js highlights syntax in code examples on blogs, forums and in fact on any web pages.",
+            "time": "2013-04-24 15:11:49"
         },
         {
             "name": "components/jquery",

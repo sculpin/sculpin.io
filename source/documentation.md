@@ -63,7 +63,7 @@ Sculpin assumes a basic filesystem structure for any Sculpin project.
 
 #### Run
 
-    sculpin generate --watch --serve
+    sculpin generate --watch --server
 
 Visit [localhost:8000](http://localhost:8000) to see your new static site!
 

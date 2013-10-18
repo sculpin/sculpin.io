@@ -51,11 +51,13 @@ Sculpin can be added to any existing Composer managed project by simply
 requiring Sculpin (and a couple of other dev dependencies) in `composer.json`.
 
     {
-        "sculpin/sculpin": "2.*@dev",
-
-        "dflydev/embedded-composer-console": "@dev",
-        "dflydev/embedded-composer-core": "@dev",
-        "composer/composer": "@dev"
+        "require": {
+            "sculpin/sculpin": "2.*@dev",
+    
+            "dflydev/embedded-composer-console": "@dev",
+            "dflydev/embedded-composer-core": "@dev",
+            "composer/composer": "@dev"
+        }
     }
 
 Sculpin currently relies on Embedded Composer and Composer, neither of which

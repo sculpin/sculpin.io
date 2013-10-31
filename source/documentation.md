@@ -22,7 +22,7 @@ And as always, if you have questions please get in touch with the Sculpin
 ## Bundles
 
 Sculpin can be extended by building Symfony Bundles that have Sculpin's
-lifecycle and events in mind. In fact, the heart of Scupin is a Symfony Bundle
+lifecycle and events in mind. In fact, the heart of Sculpin is a Symfony Bundle
 called SculpinBundle. It is used to wire up everything that Sculpin needs to
 run.
 
@@ -68,7 +68,7 @@ Sculpin assumes a basic filesystem structure for any Sculpin project.
 Visit [localhost:8000](http://localhost:8000) to see your new static site!
 
 
-#### Ouput
+#### Output
 
 Explore the `output_dev` directory to see what is happening behind the scenes:
 
@@ -96,7 +96,7 @@ default development version in `sculpin_site.yml` and set the production value
 in `sculpin_site_prod.yml`.
 
 Merging the `sculpin_site.yml` is not automatic. It must be imported into an
-enviornment specific configuration file like this:
+environment specific configuration file like this:
 
     imports:
     - sculpin_site.yml
@@ -127,7 +127,7 @@ Or if one wanted to change the default Markdown parser class, one would:
 It is up to a bundle to define whether or not it can be configured using site
 meta data or kernel configuration. In general, kernel configuration is probably
 where configuration will happen for things that are not source (read, runtime
-based on stuff in `source/`) dependant.
+based on stuff in `source/`) dependent.
 
 
 ## Sources
@@ -174,7 +174,7 @@ indicate that you want to descend into a structure. For example:
 Many static site generators, including Jekyll and Phrozn, will render each
 source first, and inject the resulting output into the layout. While this
 approach (the "russian dolls" approach) is simpler, it means you end up losing
-the inheritance capabilities thare built into both Twig and Liquid.
+the inheritance capabilities that are built into both Twig and Liquid.
 
 Sculpin attempts to solve this problem by wrapping each source in a block named
 "content." So, given the following file:
@@ -325,7 +325,7 @@ sources.
 For a single "run" (think `sculpin generate`) there is only one run and every
 source is considered dirty and needs to be written.
 
-For multiple "runs" (think `scupin generate --watch`) there are many runs. For
+For multiple "runs" (think `sculpin generate --watch`) there are many runs. For
 the first "run", every source is considered dirty and needs to be written. After
 that, each additional "run" will determine whether or not a source is dirty
 based on whether it has been updated since the previous run.

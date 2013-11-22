@@ -384,36 +384,6 @@ If there is a `sculpin.json`, you should run `sculpin install`. If there is a
 Sculpin will run *without* a `sculpin.json`. It is only needed if you need to
 add additional dependencies specific to your site or project.
 
-
-### Which dependencies are required in sculpin.json?
-
-Unfortunately, Composer is still a ways off from a stable release. The end
-result is that anything that depends upon Composer must require `dev` stability
-for `composer/composer`.
-
-Sculpin also depends on Embedded Composer. Since this project depends on
-Composer itself, it won't be stable for quite some time either.
-
-If you need to create a `sculpin.json`, the bare minimum you'll need in order to
-successfully run `sculpin install` will be the following:
-
-    {
-        "require": {
-            "sculpin/sculpin": "2.*@dev",
-
-            "dflydev/embedded-composer-console": "@dev",
-            "dflydev/embedded-composer-core": "@dev",
-            "composer/composer": "@dev"
-        }
-    }
-
-If you add additional dependencies to `sculpin.json`, they will be evaluated
-against the dependencies shipped with Sculpin itself. Anything new will be
-downloaded and installed into `.sculpin/` (which is exactly like a typical
-Composer `vendor/` directory).
-
-
-
 [1]: {{site.url}}/download/
 [2]: https://github.com/sculpin/sculpin-blog-skeleton
 [3]: {{site.url}}/

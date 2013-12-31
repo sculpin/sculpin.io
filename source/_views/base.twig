@@ -38,13 +38,16 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
                         <li {% if page.nav_name == "home" %} class="active"{% endif %}>
-                            <a href="{{ site.url }}/">Home</a>
+                            <a href="{{ site.url }}/">About</a>
                         </li>
-                        <li {% if page.nav_name == "documentation" %} class="active"{% endif %}>
-                            <a href="{{ site.url }}/documentation/">Documentation</a>
+                        <li {% if page.nav_name == "getstarted" %} class="active"{% endif %}>
+                            <a href="{{ site.url }}/getstarted/">Get Started</a>
                         </li>
                         <li {% if page.nav_name == "download" %} class="active"{% endif %}>
                             <a href="{{ site.url }}/download/">Download</a>
+                        </li>
+                        <li {% if page.nav_name == "documentation" %} class="active"{% endif %}>
+                            <a href="{{ site.url }}/documentation/">Documentation</a>
                         </li>
                         <li {% if page.nav_name == "community" %} class="active"{% endif %}>
                             <a href="{{ site.url }}/community/">Community</a>

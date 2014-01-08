@@ -7,46 +7,46 @@ nav_name: home
 ---
 
 <div class="marketing">
-	<h1 class="sr-only">PHP Static Site Generator</h1>
+  <h1 class="sr-only">PHP Static Site Generator</h1>
 
-	<p class="jumbo">
-		Sculpin is a <strong>static site generator</strong> written in <strong>PHP</strong>. It converts <strong>Markdown files</strong> and formats <strong>Twig templates</strong> into a set of <strong>static HTML files</strong> that can be <strong>easily deployed</strong>.
-	</p>
+  <p class="jumbo">
+    Sculpin is a <strong>static site generator</strong> written in <strong>PHP</strong>. It converts <strong>Markdown files</strong>, <strong>Twig templates</strong> or standard HTML into a <strong>static HTML site</strong> that can be <strong>easily deployed</strong>.
+  </p>
 
-	<hr>
+  <hr>
 
-	<h1>Why Sculpin?</h1>
+  <h1>Why Sculpin?</h1>
+  <ul>
+      <li><strong>PHP based static site generator.</strong> Fast and easy to get started. If your language of choice is PHP, you'll feel right at home if you need to extend sculpin.
+      <li><strong>Embedded Composer.</strong> Forget about managing library versions manually! <a href="http://getcomposer.org/" target="_blank">Composer</a> will keep your source control focused and projects consistent.
+      <li><strong>Twig templates.</strong> <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a> is a full-featured modern template engine. It's simple to learn, extendable, documented, concise and flexible.
+      <li><strong>Symfony's HTTP Kernel</strong> is a key part of Sculpin. This lets you use Symfony Bundles to extend sculpin for any advanced functionality you need without extending sculpin directly.
+  </ul>
 
-	<p>
-		<span>Sculpin is a <strong>PHP static site generator</strong>.</span> If PHP is your language of choice and you want to hack on a static site generator, you should feel right at home with Sculpin.
-	</p>
+  <hr>
 
-	<p>
-		<span>Sculpin runs <strong>Embedded Composer</strong>.</span> If you love using Composer to manage dependencies, you'll love that Sculpin can manage your site's dependencies by way of Embedded Composer.
-	</p>
+  <h1>Get started</h1>
 
-	<p>
-		<span>Sculpin uses the <strong>Twig template engine</strong>.</span> If you are used to Twig and want to leverage its template inheritance, Sculpin was designed specifically with this in mind.
-	</p>
+  <p>Ready for a taste of sculpin? check out the <a href="{{site.url}}/getstarted/">quick start guide!</a></p>
 
-	<p>
-		<span>Sculpin is built around <strong>Symfony's HTTP Kernel</strong>.</span> If you already know how to write a Symfony bundle, you already know how to extend Sculpin.
-	</p>
+  <hr>
 
-	<hr>
 
-	<h1>Powered by Sculpin</h1>
-	<p>
-		Here is a quick sampling of Sculpin powered sites in the wild. Have a Sculpin powered site you'd like to have showcased here? Send a Pull Request to the <a href="https://github.com/sculpin/sculpin.io">sculpin.io</a> repository on GitHub!
-	</p>
-	{% include 'includes/powered-by.html' %}
+  <h1>Community</h1>
 
-	<hr>
+  <p>
+    If you have questions please make sure to check in with the Sculpin <a href="{{site.url}}/community/">community</a>! Whether it be <a href="irc://irc.freenode.net/%23sculpin">IRC</a>, <a href="https://twitter.com/getsculpin">Twitter</a>, or <a href="http://groups.google.com/group/sculpin-users">mailing list</a>, we are here for you!
+  </p>
 
-	<h1>Community</h1>
+  <hr>
 
-	<p>
-		If you have questions please make sure to check in with the Sculpin <a href="{{site.url}}/community/">community</a>! Whether it be <a href="irc://irc.freenode.net/%23sculpin">IRC</a>, <a href="https://twitter.com/getsculpin">Twitter</a>, or <a href="http://groups.google.com/group/sculpin-users">mailing list</a>, we are here for you!
-	</p>
+  <h1>Powered by Sculpin</h1>
+  <p>
+    Here is a quick sampling of Sculpin powered sites in the wild. Have a Sculpin powered site you'd like to have showcased here? Send a Pull Request to the <a href="https://github.com/sculpin/sculpin.io">sculpin.io</a> repository on GitHub!
+  </p>
+  {% include 'includes/powered-by.html' %}
+
+  <hr>
+
 </div>
 

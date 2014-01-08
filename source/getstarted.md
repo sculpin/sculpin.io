@@ -7,7 +7,7 @@ nav_name: getstarted
 
 # Welcome to Sculpin
 
-This guide will explain the easiest way to get up and published. More features and ways of using sculpin can be found on the documentation page.
+This guide will explain the easiest way to get up and published. More features and ways of using Sculpin can be found on the documentation page.
 
 There are four quick steps to follow:
 
@@ -20,20 +20,20 @@ There are four quick steps to follow:
 
 ## Get Sculpin
 
-The best way to get sculpin is to download the PHAR. This is a PHP based command line executable which is used to manage any sculpin project.
+The best way to get Sculpin is to download the PHAR. This is a PHP based command line executable which is used to manage any Sculpin project.
 
 From your command line, use this to download the PHAR file and make it executable.
 
     curl -O https://download.sculpin.io/sculpin.phar
     chmod +x sculpin.phar
 
-Since it's handy to run sculpin from any directory you can move it to your bin directory.
+Since it's handy to run Sculpin from any directory you can move it to your bin directory.
 
     mv sculpin.phar ~/bin/sculpin
 
 You should now be able to type `sculpin` from any directory. If not, you likely do not have your user's bin directory assigned to your shell's `$PATH` variable. On bash, you can fix this by entering:
 
-    PATH=#PATH:$HOME/bin
+    PATH=$PATH:$HOME/bin
 
 You will want to add that line into your bash startup scrip also (`.bashrc` or `.bash_profile` in your home directory).
 
@@ -41,7 +41,7 @@ You will want to add that line into your bash startup scrip also (`.bashrc` or `
 
 ## Run Sculpin
 
-Great, you've already installed sculpin on your system! Sculpin generates a static site from a sculpin project. The skeleton blog is a great place to start.
+Great, you've already installed Sculpin on your system! Sculpin generates a static site from a Sculpin project. The skeleton blog is a great place to start.
 
 Go back to your home directory and download the skeleton:
 
@@ -49,15 +49,15 @@ Go back to your home directory and download the skeleton:
     git clone https://github.com/sculpin/sculpin-blog-skeleton.git myblog
     cd myblog
 
-Now we must tell sculpin to install all the project's dependencies from composer. You will see some JavaScript libraries and other bundles get installed.
+Now we must tell Sculpin to install all the project's dependencies from Composer. You will see some JavaScript libraries and other bundles get installed.
 
     sculpin install
 
-Now we can use sculpin to generate the blog's static files, watch for changes, and run a local webserver we can use to see the results as we work.
+Now we can use Sculpin to generate the blog's static files, watch for changes, and run a local webserver we can use to see the results as we work.
 
     sculpin generate --watch --server
 
-The `watch` flag tells sculpin to watch the files for changes, and when changed to re-generate the site automatically. `server` launches PHP's web server which lets you see your work in progress from [localhost:8000](http://localhost:8000).
+The `watch` flag tells Sculpin to watch the files for changes, and when changed to re-generate the site automatically. `server` launches PHP's web server which lets you see your work in progress from [localhost:8000](http://localhost:8000).
 
 Please note, the server command may crash from time to time. If this happens, simply re-run the command.
 
@@ -72,7 +72,7 @@ Your project directory will have an app directory which contains all the logic f
 
 Here you'll see all the components that make up your blog, so lets go ahead and create a new post.
 
-    cd _posts`
+    cd _posts
 
 Lets make a new file here and publish an article in the year 2020:
 
@@ -90,7 +90,7 @@ Using your favorite text editor open up the file and lets write a message in the
     ---
 
     # Hello world.
-    
+
     I am in the future.
 
     *Markdown is cool.*
@@ -107,7 +107,7 @@ If something didn't generate fully with --watch (like a page for a new tag) re-r
 
 ## Publish Sculpin
 
-Great! You've installed sculpin, got a blog running and wrote a new post. Now publish it!
+Great! You've installed Sculpin, got a blog running and wrote a new post. Now publish it!
 
 Create a production ready version of your static site:
 

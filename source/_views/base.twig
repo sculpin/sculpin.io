@@ -78,7 +78,9 @@
     {% endif %}
     <section class="content">
         <div class="container">
+            {% block content_wrapper %}
             {% block content %}Fallback content. :){% endblock %}
+            {% endblock %}
         </div>
     </section>
     <footer class="site">

@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+{% block content_wrapper %}
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="sculpin-sidebar">
+				<ul class="nav">
+					{% for doc in site.docs %}
+						<li {% if doc.slug == page.slug %}class="active" {% endif %}><a href="{{ site.url }}/{{ doc.url }}">{{ doc.name }}</a>
+							{% if doc.children %}
+								<ul class="nav">
+									{% for child_doc in doc.children %}
+										<li {% if child_doc.slug == page.slug %} class="active" {% endif %}><a href="{{ site.url }}/{{ child_doc.url }}">{{ child_doc.name }}</a>
+									{% endfor %}
+								</ul>
+							{% endif %}
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-9">
+			<h1>{{ page.title }}</h1>
+            {% block content %}Fallback content. :){% endblock %}
+        </div>
+    </div>
+{% endblock %}

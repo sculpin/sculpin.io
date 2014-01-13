@@ -302,6 +302,41 @@ section.content h4 {
 	padding: 0 0 1em;
 }
 
+ul.nav ul.nav li a {
+	padding-left: 2em;
+	display: block;
+}
+
+.sculpin-sidebar {
+	border-radius: 1em;
+	color: #5B7C89;
+	background-color: #FAFBFC;
+	border: 1px solid #D0DBDF;
+	padding: .25em;
+}
+
+section.content .sculpin-sidebar a {
+	padding: .25em .5em;
+}
+
+section.content .sculpin-sidebar a {
+	text-decoration: none;
+}
+
+section.content .sculpin-sidebar a:hover,
+section.content .sculpin-sidebar a:focus {
+	border-radius: .75em;
+	color: #fff;
+	background-color: #5b7c89;
+}
+
+section.content .sculpin-sidebar li.active > a {
+	border-radius: .75em;
+	color: #fff;
+	background-color: #89a6b1;
+}
+
+
 @media only screen and (min-width: 320px) {
 
 	/* Small screen, non-retina */

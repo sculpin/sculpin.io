@@ -1,11 +1,12 @@
 ---
-layout: default
-title: Get started
+layout: doc
+title: Get Started
 nav_name: getstarted
+slug: get-started
 
 ---
 
-# Welcome to Sculpin
+## Welcome to Sculpin!
 
 This guide will explain the easiest way to get up and published. More features and ways of using Sculpin can be found on the documentation page.
 
@@ -16,7 +17,7 @@ There are four quick steps to follow:
 1. Use Sculpin
 1. Publish your Sculpin site
 
-<hr>
+---
 
 ## Get Sculpin
 
@@ -37,7 +38,7 @@ You should now be able to type `sculpin` from any directory. If not, you likely 
 
 You will want to add that line into your bash startup scrip also (`.bashrc` or `.bash_profile` in your home directory).
 
-<hr>
+---
 
 ## Run Sculpin
 
@@ -61,7 +62,7 @@ The `watch` flag tells Sculpin to watch the files for changes, and when changed 
 
 Please note, the server command may crash from time to time. If this happens, simply re-run the command.
 
-<hr>
+---
 
 ## Use Sculpin
 
@@ -103,7 +104,7 @@ There you go! With just one file you've updated the blog listing, created a page
 
 If something didn't generate fully with --watch (like a page for a new tag) re-run the `sculpin generate` command for a full rebuild.
 
-<hr>
+---
 
 ## Publish Sculpin
 
@@ -127,7 +128,7 @@ GitHub pages change from time to time, it is best to [read their instructions][1
 
 The skeleton site comes with a `s3-publish.sh` script which you may edit and use to upload to your bucket.
 
-<hr>
+---
 
 ## What's next?
 

@@ -1,3 +1,70 @@
 title: Sculpin
 subtitle: PHP Static Site Generator
 assets_version: 3
+docs:
+    -
+        name: Get Started
+        url: getstarted/
+        slug: get-started
+    -
+        name: Basic Project
+        url: documentation/basic-project/
+        slug: basic-project
+    -
+        name: Configuration
+        url: documentation/configuration/
+        slug: configuration
+    -
+        name: Sources
+        url: documentation/sources/
+        slug: sources
+    -
+        name: Layouts
+        url: documentation/layouts/
+        slug: layouts
+    -
+        name: Converters
+        url: documentation/converters/
+        slug: converters
+    -
+        name: Formatters
+        url: documentation/formatters/
+        slug: formatters
+    -
+        name: Generators
+        url: documentation/generators/
+        slug: generators
+    -
+        name: Content Types
+        url: documentation/content-types/
+        slug: content-types
+        children:
+            -
+                name: Posts
+                url: documentation/content-types/posts/
+                slug: content-types/posts
+            -
+                name: Custom Types
+                url: documentation/content-types/custom-types/
+                slug: content-types/custom-types
+    -
+        name: Embedded Composer
+        url: documentation/embedded-composer/
+        slug: embedded-composer
+    -
+        name: Extending Sculpin
+        url: documentation/extending-sculpin
+        slug: extending-sculpin
+        children:
+            -
+                name: Configuration
+                url: documentation/extending-sculpin/configuration/
+                slug: extending-sculpin/configuration
+            -
+                name: Creating Bundles
+                url: documentation/extending-sculpin/creating-bundles/
+                slug: extending-sculpin/creating-bundles
+            -
+                name: Lifecycle
+                url: documentation/extending-sculpin/lifecycle/
+                slug: extending-sculpin/lifecycle

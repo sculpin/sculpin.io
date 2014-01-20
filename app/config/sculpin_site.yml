@@ -1,6 +1,6 @@
 title: Sculpin
 subtitle: PHP Static Site Generator
-assets_version: 4
+assets_version: 5
 docs:
     -
         name: Get Started

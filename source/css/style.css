@@ -195,7 +195,7 @@ footer.site .copyright {
 }
 
 .marketing p span {
-	font-weight: normal;
+	font-weight: bold;
 	color: #658998;
 }
 
@@ -205,7 +205,6 @@ footer.site .copyright {
 
 
 .marketing p {
-	font-weight: lighter;
 	font-size: 1.25em;
 	line-height: 1.375em;
 	margin: 1em 0;

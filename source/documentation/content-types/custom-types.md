@@ -122,10 +122,10 @@ The following is a quick sample of a template that can be used to list all
 projects.
 
     ---
-    use: projects
+    use: [projects]
     ---
     {% verbatim %}<ul>
-        {% for project in page.projects %}
+        {% for project in data.projects %}
             <li><a href="{{ project.url }}">{{ project.title }}</a></li>
         {% endfor %}
     </ul>{% endverbatim %}

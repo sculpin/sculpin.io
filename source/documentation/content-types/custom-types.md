@@ -136,10 +136,10 @@ The following is a quick sample of a template that can be used to list all
 tags that have been used to tag projects.
 
     ---
-    use: projects_tags
+    use: [projects_tags]
     ---
     {% verbatim %}<ul>
-        {% for tag,projects in page.projects_tags %}
+        {% for tag,projects in data.projects_tags %}
             <li><a href="{{ site.url }}/projects/tags/{{ tag|url_encode(true) }}">{{ tag }}</a></li>
         {% endfor %}
     </ul>{% endverbatim %}

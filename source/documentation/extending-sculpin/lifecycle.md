@@ -24,18 +24,18 @@ based on whether it has been updated since the previous run.
 ### Events
 
  * **Sculpin\Core\Sculpin::EVENT_BEFORE_RUN**
-   Called very early on into the run lifecycle. Suitable for setting up sources
+   Called very early in the run lifecycle. Suitable for setting up sources
    before anything else is done. Is passed a `SourceSetEvent` instance.
- * **Sculpin\Core\Sculpin::EVENT_AFTER_RUN**
-   Called very late into the run lifecycle. Suitable for cleanup. Is passed a
-   `SourceSetEvent` instance.
  * **Sculpin\Core\Sculpin::EVENT_BEFORE_CONVERT**
    Called just before a source is converted. Suitable for massaging a source
-   prior to converion. Passed a `ConvertEvent` instance.
+   prior to conversion. Passed a `ConvertEvent` instance.
  * **Sculpin\Core\Sculpin::EVENT_AFTER_CONVERT**
    Called just after a source is converted. Suitable for massaging a source
    after conversion. Passed a `ConvertEvent` instance.
  * **Sculpin\Core\Sculpin::EVENT_BEFORE_FORMAT**
    Called just before a source is formatted. Passed a `FormatEvent` instance.
  * **Sculpin\Core\Sculpin::EVENT_AFTER_FORMAT**
-   Called just after a source is formatted. Passed a `FormatEvent instance.
+   Called just after a source is formatted. Passed a `FormatEvent` instance.
+ * **Sculpin\Core\Sculpin::EVENT_AFTER_RUN**
+   Called very late into the run lifecycle. Suitable for cleanup. Is passed a
+   `SourceSetEvent` instance.

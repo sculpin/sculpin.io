@@ -238,7 +238,8 @@ footer.site .copyright {
 	color: #DFE7EA;
 }
 
-.powered-by .powered-by-site .icon-github:after {
+.powered-by .powered-by-site .icon-github:after,
+.powered-by .powered-by-site .icon-bitbucket:after {
 	content: " src";
 }
 

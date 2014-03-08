@@ -1,6 +1,6 @@
 ---
 title: Configuration
-slug: extending-sculping/configuration
+slug: extending-sculpin/configuration
 
 ---
 

@@ -99,9 +99,9 @@ Additionally you can create custom permalinks using the following tags:
 - `:title`: Slugified title of the page
 - `:slug_title`: Slug or slugified title of the page if no slug exists
 - `:filename`: Filename of the page, for example, `about.html`
-- `:basename`: Basename of the page, for example, `source/_projects/sculpin.html` would result in `sculpin.html`
-- `:pretty_basename`: Also removes the file extension from the basename of the page, for example, `source/_projects/sculpin.html` would result in `sculpin`
 - `:slug_filename`: Slug or filename if no slug exists
+- `:basename`: Basename of the page, for example, `source/_projects/sculpin.html` would result in `sculpin`
+- `:basename_real`: Basename of the page including the extension, for example, `source/_projects/sculpin.html` would result in `sculpin.html`
 
 A custom permalink configuraton could look like this:
 

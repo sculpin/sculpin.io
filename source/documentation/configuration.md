@@ -79,3 +79,31 @@ It is up to a bundle to define whether or not it can be configured using site
 meta data or kernel configuration. In general, kernel configuration is probably
 where configuration will happen for things that are not source (read, runtime
 based on stuff in `source/`) dependent.
+
+## Permalinks
+
+Sculpin supports multiple styles of permalinks.
+
+- `none`: The pathname of your source file. For example: `source/about.html` would result in `about.html` and `source/_projects/sculpin.html` would result in `_projects/sculpin.html`
+- `date`: Replaces dashes with slashes to have a permalink popular in many blogs. For example: `source/2014-04-10-article.html` would result in `2014/04/10/article.html`
+- `pretty`: This style adds `index.html` to the name of the source file, allowing you to have permalinks without the `.html` file extension. For example: `source/about.html` would result in `about/index.html`. It also supports files with dates, for example, `source/2014-04-10-article.html` would result in `2014/04/10/article/index.html`.
+
+Additionally you can create custom permalinks using the following tags:
+
+- `:year`: A full numeric representation of a year, 4 digits
+- `:yr`: A two digit representation of a year
+- `:month`: Numeric representation of a month, with leading zeros
+- `:mo`: Numeric representation of a month, without leading zeros
+- `:day`: Day of the month, 2 digits with leading zeros
+- `:dy`: Day of the month without leading zeros
+- `:title`: Slugified title of the page
+- `:slug_title`: Slug or slugified title of the page if no slug exists
+- `:filename`: Filename of the page, for example, `about.html`
+- `:slug_filename`: Slug or filename if no slug exists
+- `:basename`: Basename of the page, for example, `source/_projects/sculpin.html` would result in `sculpin`
+- `:basename_real`: Basename of the page including the extension, for example, `source/_projects/sculpin.html` would result in `sculpin.html`
+
+A custom permalink configuraton could look like this:
+
+    sculpin:
+        permalink: blog/:year/:month/:day/:slug_title

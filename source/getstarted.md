@@ -108,9 +108,7 @@ Using your favorite text editor open up the file and let's write a message in th
 
     *Markdown is cool.*
 
-    **So is twig, because it knows this page's name is: { { page.title }}**
-
-Note: You will need to remove the space between the two { on the last line so that it renders `page.title` as a twig variable.
+    {% verbatim %}**So is twig, because it knows this page's name is: {{ page.title }}**{% endverbatim %}
 
 Save the file.
 

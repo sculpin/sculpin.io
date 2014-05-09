@@ -13,6 +13,7 @@ In this guide you'll learn the easiest way to get up and published using a blog 
 To create and publish your first Sculpin site, you will need to complete the following steps:
 
 1. Download and Install Sculpin
+1. Download and Install a Starter Kit
 1. Run Sculpin
 1. Add Content to Sculpin
 1. Generate a Production-Ready Site
@@ -39,22 +40,29 @@ You should now be able to type `sculpin` from any directory. If not, you likely 
 
 You will want to add that line into your bash startup scrip also (`.bashrc` or `.bash_profile` in your home directory).
 
-One of the most popular ways to use Sculpin is as a blogging platform. (This use of Sculpin is similar to using the blogging tool Jekyll.) The blog template isn't included in the Sculpin project because Sculpin itself is not limited to a blogging platform. As a result, you will need to download the blog starter kit separately. The remainder of this tutorial assumes you have this starter kit in place, so please complete the following steps as well.
+## Download and Install a Starter Kit
 
-Download the blog skeleton from GitHub:
+One of the most popular ways to use Sculpin is as a blogging platform. (This use of Sculpin is similar to using the blogging tool Jekyll.) The blog starter kit isn't included in the Sculpin project because Sculpin itself is not limited to a blogging platform. As a result, you will need to download this starter kit separately. The remainder of this tutorial assumes you have this starter kit in place, so please complete the following steps as well.
+
+Download the starter kit from GitHub:
 
     cd ~
     git clone https://github.com/sculpin/sculpin-blog-skeleton.git myblog
     cd myblog
 
-Your project directory contains several directories as well as a few configuration files in the main directory for your project.
+You will notice several configuration files in the main directory for your project as well as the following directories:
 
 - `app` contains all the logic for generating the blog.
 - `source` contains the raw content for your blog.
 
-Now we must tell Sculpin to install all the project's dependencies from Composer for the blog project. You will see some JavaScript libraries and other bundles get installed.
+Now we must tell Sculpin to install any relevant dependencies for your project. You will see some JavaScript libraries and other bundles get installed. You must run this command for each new project you start! Make sure you are in the root directory for your project, and then run the install command.
 
+    cd ~/myblog
     sculpin install
+
+If you get permisson errors, you may need to run this command as your root user:
+
+    sudo sculpin install
 
 You are now ready to start the server, and add content to your new Sculpin site.
 

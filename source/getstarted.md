@@ -60,10 +60,6 @@ Now we must tell Sculpin to install any relevant dependencies for your project. 
     cd ~/myblog
     sculpin install
 
-If you get permisson errors, you may need to run this command as your root user:
-
-    sudo sculpin install
-
 You are now ready to start the server, and add content to your new Sculpin site.
 
 ---

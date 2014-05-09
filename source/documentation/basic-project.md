@@ -8,8 +8,8 @@ A Sculpin project is capable of building exactly one static site. By default,
 Sculpin assumes a basic filesystem structure for any Sculpin project.
 
     |-- app/
+    |  |-- SculpinKernel.php           # Custom Sculpin kernel
     |  `-- config/
-    |     |-- SculpinKernel.php        # Custom Sculpin kernel
     |     |-- sculpin_kernel.yml       # Sculpin's configuration
     |     |-- sculpin_site.yml         # Site meta data
     |     `-- sculpin_site_${env}.yml  # Env specific meta data

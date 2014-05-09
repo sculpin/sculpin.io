@@ -41,11 +41,16 @@ You will want to add that line into your bash startup scrip also (`.bashrc` or `
 
 One of the most popular ways to use Sculpin is as a blogging platform. (This use of Sculpin is similar to using the blogging tool Jekyll.) The blog template isn't included in the Sculpin project because Sculpin itself is not limited to a blogging platform. As a result, you will need to download the blog starter kit separately. The remainder of this tutorial assumes you have this starter kit in place, so please complete the following steps as well.
 
-Go back to your home directory for your Sculpin project and download the blog skeleton:
+Download the blog skeleton from GitHub:
 
     cd ~
     git clone https://github.com/sculpin/sculpin-blog-skeleton.git myblog
     cd myblog
+
+Your project directory contains several directories as well as a few configuration files in the main directory for your project.
+
+- `app` contains all the logic for generating the blog.
+- `source` contains the raw content for your blog.
 
 Now we must tell Sculpin to install all the project's dependencies from Composer for the blog project. You will see some JavaScript libraries and other bundles get installed.
 
@@ -61,7 +66,7 @@ Now we can use Sculpin to generate static files, watch for changes, and run a lo
 
     sculpin generate --watch --server
 
-The `watch` flag tells Sculpin to watch the files for changes, and when changed to re-generate the site automatically. `server` launches PHP's web server which lets you see your work in progress from [localhost:8000](http://localhost:8000).
+The `watch` flag tells Sculpin to watch the files for changes, and when changed to re-generate the site automatically. `server` launches PHP's web server which lets you see your work in progress from [localhost:8000](http://localhost:8000). After having run this command, a new directory, `output_dev`, will appear in your project, folder.
 
 Please note, the server command may crash from time to time. If this happens, simply re-run the command.
 
@@ -69,17 +74,9 @@ Please note, the server command may crash from time to time. If this happens, si
 
 ## Add Content to Sculpin
 
-You are now ready to add blog posts to your new site.
+You are now ready to add blog posts to your new site. Your blog posts will be in Markdown format, and contain metadata in YAML format. (Don't worry, it's easy.)
 
-Your project directory contains several important directories.
-
-- `app` contains all the logic for generating the blog.
-- `output_dev` contains all the generated static files.
-- `source` contains the raw content for your blog.
-
-There are also some configuration files in the main directory of your project.
- 
- Jump right into the source directory.
+Jump right into the source directory.
 
     cd source
 
@@ -116,8 +113,7 @@ With this one file you've updated the blog listing, created a page for the post,
 
 Assuming you are still running the server with the command `sculpin generate --watch --server`, the new pages are now available on your local server ([localhost:8000](http://localhost:8000)). You will need to refresh the browser to see your new content.
 
-If the content hasn't generated fully (perhaps there is a page
-missing for one of the tags). Simply stop and then restart the server from the command line:
+If the content hasn't generated fully (perhaps there is a page missing for one of the tags). Simply stop and then restart the server from the command line:
 
     control-C
     sculpin generate --watch --server

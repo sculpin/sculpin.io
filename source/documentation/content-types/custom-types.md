@@ -56,6 +56,23 @@ the following keys are available:
  * **enabled**:
    Whether or not the content type should be enabled. Defaults to `true`.
 
+### Frontmatter YAML Structures
+
+The YAML frontmatter is parsed and injected into every page rendering
+and is accessible as `page.KEY`.
+
+Sculpin will read deep structures in YAML frontmatter. In your output file, use the dot notation to indicate that you want to descend into a structure. For example:
+
+    ---
+    layout: default
+    something:
+        here:
+            very: deep
+            also: deep
+    ---
+
+    {% verbatim %}We can reference `{{ page.something.here.also }} === deep`.{% endverbatim %}
+
 ---
 
 ## A Sample Content Type

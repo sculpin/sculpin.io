@@ -79,7 +79,7 @@ really need to set all of them.
             taxonomies:
                 - tags
 
-The same configurationc an be achieved by the following:
+The same configuration can be achieved by the following:
 
     sculpin_content_types:
         projects:

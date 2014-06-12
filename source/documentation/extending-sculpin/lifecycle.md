@@ -35,7 +35,7 @@ based on whether it has been updated since the previous run.
  * **Sculpin\Core\Sculpin::EVENT_BEFORE_FORMAT**
    Called just before a source is formatted. Passed a `FormatEvent` instance.
  * **Sculpin\Core\Sculpin::EVENT_AFTER_FORMAT**
-   Called just after a source is formatted. Passed a `FormatEvent` instance.
+   Called just after a source is formatted. Passed a `SourceSetEvent` instance.
  * **Sculpin\Core\Sculpin::EVENT_AFTER_RUN**
    Called very late into the run lifecycle. Suitable for cleanup. Is passed a
    `SourceSetEvent` instance.

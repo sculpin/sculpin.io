@@ -56,7 +56,7 @@ set based on the Kernel's environment. If the environment is `prod`, the value
 is set to `false`. In all other cases, the value is set to `true`.
 
 The end result is that in the default `dev` environment drafts will be
-published. If `---env=prod` is specified, drafts will not be published.
+published. If `--env=prod` is specified, drafts will not be published.
 
 If drafts are set to be published, any Post that is marked as draft will
 automatically be tagged with the "drafts" tag.

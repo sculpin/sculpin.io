@@ -70,6 +70,11 @@ one would need to configure the Sculpin bundle's configuration:
     sculpin:
         permalink: pretty
 
+Or if one need to ignore all the files ending with ~, one could:
+
+    sculpin:
+        ignore: ["**/*~"]
+
 Or if one wanted to change the theme, one would:
 
     sculpin_theme:

@@ -4,7 +4,7 @@ slug: extending-sculpin/creating-bundles
 
 ---
 
-To start creating bundles to extend Sculpin, check the Syfmony 2 section on
+To start creating bundles to extend Sculpin, check the Symfony 2 section on
 [Bundles][1], especially the
 [How to use Best Practices for Structuring Bundles][2] documentation. There
 really is not much more to extending Sculpin that writing Symfony 2 bundles

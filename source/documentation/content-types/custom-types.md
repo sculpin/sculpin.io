@@ -159,3 +159,20 @@ generator to create a new page for every tag and list its projects.
         {% endfor %}
     </ul>{% endverbatim %}
 
+### Pagination of custom types
+
+Custom types can be paginated just as simply as posts.
+
+    ---
+    generator: pagination
+    pagination:
+      provider: data.projects
+    use:
+      - projects
+    ---
+    <h1>Paginated Projects</h1>
+    {% for project in page.pagination.items %}
+      <li><a href="{{ project.url }}">{{ project.title }}</a></li>
+    {% endfor %}
+
+The use list will load all the items in each given provider into the key data.{{provider_name}}. So, in this example, all the projects available will be loaded into `data.projects`. Now, simply setting the provider of pagination to `data.projects` we are able to paginate our custom type instead.

@@ -32,7 +32,7 @@ collection of sources like you can get from a data provider.
    The default maximum number of items to show per page. This value can be
    overridden on a source-by-source basis. Default value is **10**.
 
-### Source Level Meta Configuraton
+### Source Level Meta Configuration
 
  * **pagination.max_per_page**: The maximum number of items to show per page.
    Default value is set by the `sculpin_pagination.max_per_page` kernel

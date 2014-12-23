@@ -43,6 +43,10 @@ example, assuming `~/bin` is in your `$PATH`, you can do the following:
 
 That's it! You're all set to run Sculpin. :)
 
+You can also download stable releases of Sculpin at the following URLs:
+
+ * [https://download.sculpin.io/release/v2.0.0/sculpin.phar](https://download.sculpin.io/release/v2.0.0/sculpin.phar)
+
 <br>
 
 ## Download via Composer
@@ -52,7 +56,7 @@ requiring Sculpin (and a couple of other dev dependencies) in `composer.json`.
 
     {
         "require": {
-            "sculpin/sculpin": "2.*@dev",
+            "sculpin/sculpin": "~2.0",
     
             "dflydev/embedded-composer-console": "@dev",
             "dflydev/embedded-composer-core": "@dev",

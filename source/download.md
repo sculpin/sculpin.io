@@ -45,7 +45,7 @@ That's it! You're all set to run Sculpin. :)
 
 You can also download stable releases of Sculpin at the following URLs:
 
- * [https://download.sculpin.io/release/v2.0.0/sculpin.phar](https://download.sculpin.io/release/v2.0.0/sculpin.phar)
+ * v2.0.0 - [https://download.sculpin.io/release/v2.0.0/sculpin.phar](https://download.sculpin.io/release/v2.0.0/sculpin.phar)
 
 <br>
 

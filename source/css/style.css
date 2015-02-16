@@ -70,8 +70,8 @@ body, html { height: 100%; }
 }
 
 .navbar[role="navigation"] .navbar-nav > li > a i.icon {
-	font-size: .5em;
-	opacity: .5;
+	font-size: 1em;
+	opacity: .25;
 }
 
 .navbar[role="navigation"] .navbar-nav > li > a:hover i.icon {

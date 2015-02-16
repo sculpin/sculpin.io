@@ -60,14 +60,18 @@ the following keys are available:
 
 ## A Sample Content Type
 
-The following is a sample content type called **projects**. This can be used as
-a reference to see how everything fits together.
+The following is a sample content type called **projects**.
 
+    sculpin_content_types:
+        projects:
+
+That's it! It wires everything up using defaults. Isn't magic fun?
 
 ### Configuration
 
-For demonstration purposes, we'll include all of the values even though we don't
-really need to set all of them.
+The default values are expanded below. Please note that **you do not have to
+specify all of these options**, this merely shows you the configuration options
+you *can* set, if you need to deviate from the defaults.
 
     sculpin_content_types:
         projects:
@@ -79,20 +83,13 @@ really need to set all of them.
             taxonomies:
                 - tags
 
-The same configuration can be achieved by the following:
-
-    sculpin_content_types:
-        projects:
-
-Magic is fun!
-
 
 ### Data Providers and Generators
 
 Given the above configuration, a few data providers and a generator will be made
 available:
 
- * **projects**:
+ * **projects** (data provider):
    This is created based on the name of the type. It contains a sorted list of
    all of the sources that are discovered for the content type.
     * **next_project**:
@@ -103,10 +100,10 @@ available:
       Each item in the **projects** collection will have a **previous_project**
       meta data that contains either **null** or the previous project in the
       collection.
- * **projects_tags**:
+ * **projects_tags** (data provider):
    This is a `Sculpin\Contrib\Taxonomy\ProxySourceTaxonomyDataProvider` that
    contains a mapping from tags to projects.
- * **projects_tag_index**:
+ * **projects_tag_index** (generator):
    This is a `Sculpin\Contrib\Taxonomy\ProxySourceTaxonomyIndexGenerator` that
    will create a page for each tag.
     * **tag**:
@@ -114,7 +111,13 @@ available:
       will contain the name of the tag for which the index is being generated.
     * **tag_projects**:
       Each generated tag index will have a piece of meta data named
-      **tag_projects** that will be the collection of all projects with this tag.
+      **tag_projects** that will be the collection of all projects with this
+      tag.
+ * **project.tag_html_index_permalinks** (source property):
+   Each source (in this case, each project source) will have have a map of each
+   taxon to its indexes for each type (html, json, xml) if any are available.
+   If there is an HTML page that uses the `projects_tag_index` generator, then
+   `tag_html_index_permalinks` will be added to each project source.
 
 ### Sample Projects Index Page
 

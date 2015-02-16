@@ -69,6 +69,15 @@ body, html { height: 100%; }
 	color: #F7F8FF;
 }
 
+.navbar[role="navigation"] .navbar-nav > li > a i.icon {
+	font-size: .5em;
+	opacity: .5;
+}
+
+.navbar[role="navigation"] .navbar-nav > li > a:hover i.icon {
+	opacity: 1;
+}
+
 .navbar[role="navigation"] .navbar-nav > li.active > a,
 .navbar[role="navigation"] .navbar-nav > li.active > a:hover,
 .navbar[role="navigation"] .navbar-nav > li > a:hover {

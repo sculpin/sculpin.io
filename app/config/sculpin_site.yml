@@ -23,6 +23,10 @@ docs:
         url: documentation/layouts/
         slug: layouts
     -
+        name: Themes
+        url: documentation/themes/
+        slug: themes
+    -
         name: Converters
         url: documentation/converters/
         slug: converters

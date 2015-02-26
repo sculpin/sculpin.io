@@ -37,8 +37,8 @@ the following keys are available:
    path or on some meta information.
  * **path**:
    If `type: path`, the path that will be used to locate this type. Defaults to
-   the singularized version of the type name with a `_` prepended. (so, for a
-   content type named `talks`, the default path would be `_talks`)
+   the type name with a `_` prepended. (so, for a content type named `talks`, 
+   the default path would be `_talks`)
  * **meta_key**:
    If `type: meta`, the meta key that will be used to locate this type. Defaults
    to the singularized version of the type name.

@@ -108,7 +108,7 @@ Additionally you can create custom permalinks using the following tags:
 - `:basename`: Basename of the page, for example, `source/_projects/sculpin.html` would result in `sculpin`
 - `:basename_real`: Basename of the page including the extension, for example, `source/_projects/sculpin.html` would result in `sculpin.html`
 
-A custom permalink configuraton could look like this:
+A custom permalink configuration could look like this:
 
     sculpin:
         permalink: blog/:year/:month/:day/:slug_title

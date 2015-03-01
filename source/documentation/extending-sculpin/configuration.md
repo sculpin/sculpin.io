@@ -6,7 +6,7 @@ slug: extending-sculpin/configuration
 
 To configure Sculpin for additional bundles, a custom Sculpin kernel must be
 created. Sculpin will automatically look for this file in
-`app/SculpinKernel.php`. If this file exists, it it is loaded. If not, Sculpin
+`app/SculpinKernel.php`. If this file exists, it is loaded. If not, Sculpin
 simply loads a default kernel.
 
 If this file does not yet exist, you can use this template to create it:

@@ -209,7 +209,7 @@ footer.site .copyright {
 }
 
 .marketing h1 {
-	margin: 1em 0 0em 0;
+	margin: 1em 0 0 0;
 }
 
 
@@ -220,7 +220,7 @@ footer.site .copyright {
 }
 
 .marketing p strong {
-	font-weight: strong;
+	font-weight: bold;
 }
 
 .powered-by .row a {

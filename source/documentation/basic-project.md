@@ -57,7 +57,7 @@ For now, just type this in exactly.
 
 Your project now has everything Sculpin needs to know in order to generate your
 Hello World project. For now, we are going to use the `--watch` and `--server`
-flags. This tells Sculpind to *watch* the source directory for changes (so it
+flags. This tells Sculpin to *watch* the source directory for changes (so it
 can regenerate the site as you edit your files) and to *serve* the site using an
 embedded web server.
 

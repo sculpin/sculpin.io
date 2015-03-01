@@ -89,7 +89,7 @@ Either clone the Sculpin project directly or fork and clone the fork.
     cd sculpin
     composer install
 
-At this point, `bin/sculpin` should be useable.
+At this point, `bin/sculpin` should be usable.
 
 If you want to make your development version of Sculpin available, create a
 symlink to it from somewhere in your `$PATH`. For example, to create a

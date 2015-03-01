@@ -66,7 +66,7 @@ You are now ready to start the server, and add content to your new Sculpin site.
 
 ## Run Sculpin
 
-Now we can use Sculpin to generate static files, watch for changes, and run a local webserver we can use to see the results as we work.
+Now we can use Sculpin to generate static files, watch for changes, and run a local web server we can use to see the results as we work.
 
     sculpin generate --watch --server
 

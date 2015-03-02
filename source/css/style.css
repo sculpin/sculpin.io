@@ -55,6 +55,10 @@ body, html { height: 100%; }
 	background-color: #ffffff;
 }
 
+.navbar[role="navigation"] .site-mascot img {
+   height: 22px;
+}
+
 .navbar[role="navigation"] .navbar-brand,
 .navbar[role="navigation"] .navbar-brand:hover {
 	color: #ffffff;
@@ -349,6 +353,15 @@ section.content .sculpin-sidebar li.active > a {
 @media only screen and (min-width: 320px) {
 
 	/* Small screen, non-retina */
+
+    header.site .site-mascot {
+        background-image: url(sculpin-mascot-jackson-micro.png);
+        background-size: 33px 32px;
+        height: 32px;
+        width: 33px;
+        margin: 9px 0.75em;
+        float: left;
+    }
 
 	.site-meta .site-mascot a {
 	    background-image: url(sculpin-mascot-jackson-small.png);

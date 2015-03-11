@@ -2,3 +2,5 @@ sculpin_content_types:
     docs:
         path: documentation
         permalink: pretty
+    posts:
+        enabled: false

@@ -72,3 +72,7 @@ docs:
                 name: Lifecycle
                 url: documentation/extending-sculpin/lifecycle/
                 slug: extending-sculpin/lifecycle
+            -
+                name: Useful Extensions
+                url: documentation/extending-sculpin/useful-extensions/
+                slug: extending-sculpin/useful-extensions

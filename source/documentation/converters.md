@@ -24,6 +24,12 @@ The Markdown Converter can be configured by adjusting the following
  * **sculpin_markdown.extensions**:
    Default value is `['.md', '.mdown', '.markdown']`.
 
+### Other Markdown Classes
+
+Third party extensions are available to support other Markdown varieties.  See the individual package README files for specific installation information.
+
+ * **[Bcremer\Sculpin\Bundle\CommonMarkBundle\SculpinCommonMarkBundle](https://github.com/bcremer/sculpin-commonmark-bundle)** - Bundle that integrates the [league/commonmark](https://github.com/thephpleague/commonmark) markdown parser.
+
 ---
 
 ## Textile Converter

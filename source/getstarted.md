@@ -38,7 +38,7 @@ You should now be able to type `sculpin` from any directory. If not, you likely 
 
     PATH=$PATH:$HOME/bin
 
-You will want to add that line into your bash startup scrip also (`.bashrc` or `.bash_profile` in your home directory).
+You will want to add that line into your bash startup script also (`.bashrc` or `.bash_profile` in your home directory).
 
 ## Download and Install a Starter Kit
 

@@ -82,13 +82,13 @@ layout: default
     This will use a stylesheet from 
     sources/themes/myApp/myTheme/css/style.css 
   #}
-  <link rel="stylesheet" href="{{ theme_path("css/style.css" }} />
+  <link rel="stylesheet" href="{{ theme_path("css/style.css") }}" />
   
   {#
     This will use a stylesheet from sources/css/page.css,
     which overrides the page.css in childTheme
   #}
-  <link rel="stylesheet" href="{{ theme_path("css/page.css") }} />
+  <link rel="stylesheet" href="{{ theme_path("css/page.css") }}" />
 {% endblock}
 
 {% block logo %}

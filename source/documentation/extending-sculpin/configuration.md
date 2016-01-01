@@ -23,7 +23,7 @@ If this file does not yet exist, you can use this template to create it:
     }
 
 In order to enable a Scupin bundle, just make sure that its class name is a part
-of the array returned from `getAdditionalSculpinBundles`. For exmaple, to load
+of the array returned from `getAdditionalSculpinBundles`. For example, to load
 the [mavimo/sculpin-redirect-bundle][1], whose class is
 `Mavimo\Sculpin\Bundle\RedirectBundle\SculpinRedirectBundle`, you would do
 the following:
@@ -41,7 +41,7 @@ the following:
     }
 
 Please note that you must return the class name as a string! This is slightly
-different from traditional Symony 2 usage.
+different from traditional Symfony 2 usage.
 
 That's it! This will ensure that your bundle will be registered correctly.
 

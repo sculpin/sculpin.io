@@ -178,4 +178,4 @@ Custom types can be paginated just as simply as posts.
       <li><a href="{{ project.url }}">{{ project.title }}</a></li>
     {% endfor %}
 
-The use list will load all the items in each given provider into the key data.{{provider_name}}. So, in this example, all the projects available will be loaded into `data.projects`. Now, simply setting the provider of pagination to `data.projects` we are able to paginate our custom type instead.
+The `use` list will load all the items in each given provider into the key data.{{provider_name}}. So, in this example, all the projects available will be loaded into `data.projects`. Now, simply setting the provider of pagination to `data.projects` we are able to paginate our custom type instead.

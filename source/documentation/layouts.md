@@ -29,7 +29,7 @@ approach (the "russian dolls" approach) is simpler, it means you end up losing
 the inheritance capabilities that are built into both Twig and Liquid.
 
 Sculpin attempts to solve this problem by wrapping each source in a block named
-"content." So, given the following file:
+`content`. So, given the following file:
 
     ---
     layout: default

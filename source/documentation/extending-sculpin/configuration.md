@@ -22,7 +22,7 @@ If this file does not yet exist, you can use this template to create it:
         }
     }
 
-In order to enable a Scupin bundle, just make sure that its class name is a part
+In order to enable a Sculpin bundle, just make sure that its class name is a part
 of the array returned from `getAdditionalSculpinBundles`. For example, to load
 the [mavimo/sculpin-redirect-bundle][1], whose class is
 `Mavimo\Sculpin\Bundle\RedirectBundle\SculpinRedirectBundle`, you would do

@@ -13,11 +13,11 @@ to configure Sculpin: site meta data and kernel configuration.
 ## Development and Production Environments
 
 Sculpin can be run in two modes, dev and production. These are known as
-enviornments. By default Sculpin will generate your site for the dev
+environments. By default Sculpin will generate your site for the `dev`
 environment. This is important to know because configuration can be based on
 environment.
 
-In order to generate your site for a production environment (prod), you need to
+In order to generate your site for a production environment (`prod`), you need to
 specify this in your command line:
 
     sculpin generate --watch --server --env=prod
@@ -48,7 +48,7 @@ Merging the `sculpin_site.yml` is not automatic. It must be imported into an
 environment specific configuration file like this:
 
     imports:
-    - sculpin_site.yml
+        - sculpin_site.yml
     google_analytics_tracking_id: UA-PRODUCTION-372
 
 ---

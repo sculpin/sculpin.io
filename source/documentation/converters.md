@@ -20,7 +20,7 @@ The Markdown Converter can be configured by adjusting the following
 `sculpin_kernel.yml` settings:
 
  * **sculpin_markdown.parser_class**:
-   Can be one of `Sculpin\Bundle\MarkdownBundle\PhpMarkdownExtraParser` or `Sculpin\Bundle\MarkdownBundle\PhpMarkdownExtraParser`. Default value is `Sculpin\Bundle\MarkdownBundle\PhpMarkdownParser`. A custom parser must implement the `Sculpin\Core\Converter\ParserInterface`.
+   Can be one of `Sculpin\Bundle\MarkdownBundle\PhpMarkdownParser` or `Sculpin\Bundle\MarkdownBundle\PhpMarkdownExtraParser`. Default value is `Sculpin\Bundle\MarkdownBundle\PhpMarkdownParser`. A custom parser must implement the `Sculpin\Core\Converter\ParserInterface`.
  * **sculpin_markdown.extensions**:
    Default value is `['md', 'mdown', 'mkdn', 'markdown']`.
 

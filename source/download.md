@@ -7,45 +7,12 @@ nav_name: download
 
 # Download
 
-There are a number of ways to download Sculpin. The easiest way is to download
-the phar. Most of the examples will assume this is how Sculpin has been
-installed. Depending on what you want to do, your level of experience with
-Sculpin, and your level of experience with Composer, one of the other options
-*may* be more appropriate.
+There are a few of ways to download Sculpin. The easiest way is to add Sculpin
+and any of its development dependencies to the `composer.json` for your site.
+Don't have a `composer.json` yet? Create one!
 
 Confused about which option is best for your use case? Ask the
 Sculpin [community]({{site.url}}/community/)! They will be happy to help. :)
-
-<br>
-
-## Download the Phar
-
-Downloading `sculpin.phar` is the best way to get up and running with Sculpin
-since it is a ready to run self-contained archive. You can download it like
-this:
-
-    curl -O https://download.sculpin.io/sculpin.phar
-
-You can execute Sculpin by running `php sculpin.phar` but if you want to skip
-the `php` part, you can make `sculpin.phar` executable like this:
-
-    chmod +x sculpin.phar
-
-To make things even easier, `sculpin.phar` can be renamed to `sculpin` like
-this:
-
-    mv sculpin.phar sculpin
-
-Finally, if you move `sculpin` to your path it can be run from anywhere. For
-example, assuming `~/bin` is in your `$PATH`, you can do the following:
-
-    mv sculpin ~/bin/
-
-That's it! You're all set to run Sculpin. :)
-
-You can also download stable releases of Sculpin at the following URLs:
-
- * v2.0.0 - [https://download.sculpin.io/release/v2.0.0/sculpin.phar](https://download.sculpin.io/release/v2.0.0/sculpin.phar)
 
 <br>
 
@@ -56,27 +23,23 @@ requiring Sculpin (and a couple of other dev dependencies) in `composer.json`.
 
     {
         "require": {
-            "sculpin/sculpin": "~2.0",
+            "sculpin/sculpin": "^2.1@dev",
     
-            "dflydev/embedded-composer-console": "@dev",
-            "dflydev/embedded-composer-core": "@dev",
-            "composer/composer": "@dev"
+            "dflydev/embedded-composer": "@dev"
         }
     }
 
-Sculpin currently relies on Embedded Composer and Composer, neither of which
-have a stable release. In order to avoid having to set `minimum-stability` to
-dev, these packages can be flagged as `@dev` to ensure Composer will install
-everything correctly.
-
 By default this will install Sculpin to `vendor/bin/sculpin`.
 
+The best version of Sculpin to be running right now is the most recent
+develompent version for 2.1. Since there are no public releases for
+2.1.*, you'll need to specify `@dev` for your Sculpin dependency.
 
-### Important Notice Regarding Composer
+Sculpin currently relies on Embedded Composer which does not have a stable
+release. In order to avoid having to set `minimum-stability` to dev,
+these packages can be flagged as `@dev` to ensure Composer will
+install everything correctly.
 
-Installation via Composer is considered advanced functionality. Running a
-globally installed version of Sculpin against a project that has Sculpin
-included via Composer can have unexpected results. Never mix and match!
 
 <br>
 
@@ -103,6 +66,9 @@ This will allow you to have a globally installed version of Sculpin (like maybe
 
 ### Important Notice Regarding Git
 
-Installation via git is considered advanced functionality. This method of
-downloading Sculpin is only recommended for people who intend to work directly
-on Sculpin itself.
+Global installation is not recommended as each Sculpin site could have runtime
+dependencies that are not compatible with the globally installed version of
+Sculpin. This has been a popular method of maintaining Sculpin sites in
+the past, though, so notes are still left here. Just keep in mind that
+it will probably be better to run the Sculpin that gets installed
+specifically for your site.

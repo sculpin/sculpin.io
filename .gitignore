@@ -2,5 +2,5 @@
 /app/config/sculpin_*_dev.yml
 /output_*/
 /source/components/
-/.sculpin/
+/vendor/
 composer.phar

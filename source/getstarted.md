@@ -12,7 +12,7 @@ In this guide you'll learn the easiest way to get up and published using a blog 
 
 To create and publish your first Sculpin site, you will need to complete the following steps:
 
-1. Download and Install Sculpin
+1. Download and Install Composer
 1. Download and Install a Starter Kit
 1. Run Sculpin
 1. Add Content to Sculpin
@@ -21,20 +21,17 @@ To create and publish your first Sculpin site, you will need to complete the fol
 
 ---
 
-## Download and Install Sculpin
+## Download and Install Composer
 
-The best way to get Sculpin is to download the PHAR. This is a PHP based command line executable which is used to manage any Sculpin project.
+The best way to get Sculpin is to use Composer. This is a PHP based package management tool which is used to manage Sculpin's dependencies.
 
-From your command line, use this to download the PHAR file and make it executable.
+Use the instructions on the [Composer download page](https://getcomposer.org/download/) to get started.
 
-    curl -O https://download.sculpin.io/sculpin.phar
-    chmod +x sculpin.phar
+Since it's handy to run Composer from any directory you can move it to your bin directory.
 
-Since it's handy to run Sculpin from any directory you can move it to your bin directory.
+    mv composer.phar ~/bin/composer
 
-    mv sculpin.phar ~/bin/sculpin
-
-You should now be able to type `sculpin` from any directory. If not, you likely do not have your user's bin directory assigned to your shell's `$PATH` variable. On bash, you can fix this by entering:
+You should now be able to type `composer` from any directory. If not, you likely do not have your user's bin directory assigned to your shell's `$PATH` variable. On bash, you can fix this by entering:
 
     PATH=$PATH:$HOME/bin
 
@@ -58,7 +55,7 @@ You will notice several configuration files in the main directory for your proje
 Now we must tell Sculpin to install any relevant dependencies for your project. You will see some JavaScript libraries and other bundles get installed. You must run this command for each new project you start! Make sure you are in the root directory for your project, and then run the install command.
 
     cd ~/myblog
-    sculpin install
+    composer install
 
 You are now ready to start the server, and add content to your new Sculpin site.
 
@@ -68,11 +65,11 @@ You are now ready to start the server, and add content to your new Sculpin site.
 
 Now we can use Sculpin to generate static files, watch for changes, and run a local web server we can use to see the results as we work.
 
-    sculpin generate --watch --server
+    vendor/bin/sculpin generate --watch --server
 
 The `watch` flag tells Sculpin to watch the files for changes, and when changed to re-generate the site automatically. `server` launches PHP's web server which lets you see your work in progress from [localhost:8000](http://localhost:8000). After having run this command, a new directory, `output_dev`, will appear in your project, folder.
 
-Please note, the server command may crash from time to time. If this happens, simply re-run the command.
+Please note, the server command may crash from time to time. This is usually as a result of in-progress or partly-saved updates that can cause unrecoverable errors. If this happens, simply re-run the command - this usually resolves the issue, or helps provide more information about the cause.
 
 ---
 
@@ -120,7 +117,7 @@ Assuming you are still running the server with the command `sculpin generate --w
 If the content hasn't generated fully (perhaps there is a page missing for one of the tags). Simply stop and then restart the server from the command line:
 
     control-C
-    sculpin generate --watch --server
+    vendor/bin/sculpin generate --watch --server
 
 ---
 
@@ -130,7 +127,7 @@ Great! You've installed Sculpin, got a blog running and wrote a new post. Now pu
 
 Create a production ready version of your static site:
 
-    sculpin generate --env=prod
+    vendor/bin/sculpin generate --env=prod
 
 This will create the directory `output_prod` in your project's directory. The contents of this file can now be uploaded.
 

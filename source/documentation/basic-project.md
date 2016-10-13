@@ -17,7 +17,7 @@ Sculpin assumes a basic filesystem structure for any Sculpin project.
     |-- source/
     |  |-- _posts/                     # Individual blog posts live here
     |  `-- _views/                     # Templates
-    `-- sculpin.json                   # Dependencies
+    `-- composer.json                   # Dependencies
 
 ---
 
@@ -61,7 +61,7 @@ flags. This tells Sculpin to *watch* the source directory for changes (so it
 can regenerate the site as you edit your files) and to *serve* the site using an
 embedded web server.
 
-    sculpin generate --watch --server
+    vendor/bin/sculpin generate --watch --server
 
 Visit [localhost:8000](http://localhost:8000) to see your new static site!
 

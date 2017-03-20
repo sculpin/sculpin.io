@@ -41,7 +41,7 @@ the following keys are available:
    the default path would be `_talks`)
  * **meta_key**:
    If `type: meta`, the meta key that will be used to locate this type. Defaults
-   to the singularized version of the type name.
+   to `type`.
  * **meta**:
    If `type: meta`, the value of the meta key that will be used to locate this
    type. Defaults to the singularized name.

@@ -78,5 +78,21 @@ After rendering, the final result will be:
     <h1>This is a markdown file with YAML frontmatter</h1>
     </html>
 
+### Content Wrapper
 
+When working with multiple levels of view inheritance, wrap `page.blocks.content` or `{% verbatim %}{% {% endverbatim %}block content{% verbatim %} %}{% {% endverbatim %}endblock {% verbatim %}%}{% endverbatim %}` or `{% verbatim %}{% {% endverbatim %}block content ''{% verbatim %} %}{% endverbatim %}` in a `content_wrapper` block, like in this example `_views/project.html` layout:
 
+    {% verbatim %}{% {% endverbatim %}extends 'default'{% verbatim %} %}{% endverbatim %}
+    
+    {% verbatim %}{% {% endverbatim %}block content_wrapper{% verbatim %} %}{% endverbatim %}
+    <article>
+      <header>
+        <h2>{% verbatim %}{{ {% endverbatim %}page.title{% verbatim %} }}{% endverbatim %}</h2>
+      </header>
+      <section class="main_body">
+        {% verbatim %}{{ {% endverbatim %}page.blocks.content{% verbatim %} }}{% endverbatim %}
+      </section>
+    </article>
+    {% verbatim %}{% {% endverbatim %}endblock{% verbatim %} %}{% endverbatim %}
+
+This will help ensure that inheritance properly applies, so that the content gets embedded in the `project` view, which then gets embedded in the `default` view.

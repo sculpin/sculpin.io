@@ -23,17 +23,12 @@ requiring Sculpin (and a couple of other dev dependencies) in `composer.json`.
 
     {
         "require": {
-            "sculpin/sculpin": "^2.1@dev",
-    
-            "dflydev/embedded-composer": "@dev"
+            "dflydev/embedded-composer": "@dev",
+            "sculpin/sculpin": "^2.1"
         }
     }
 
 By default this will install Sculpin to `vendor/bin/sculpin`.
-
-The best version of Sculpin to be running right now is the most recent
-develompent version for 2.1. Since there are no public releases for
-2.1.*, you'll need to specify `@dev` for your Sculpin dependency.
 
 Sculpin currently relies on Embedded Composer which does not have a stable
 release. In order to avoid having to set `minimum-stability` to dev,

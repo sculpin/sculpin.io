@@ -15,10 +15,10 @@ If this file does not yet exist, you can use this template to create it:
 
     class SculpinKernel extends \Sculpin\Bundle\SculpinBundle\HttpKernel\AbstractKernel
     {
-        protected function getAdditionalSculpinBundles()
+        protected function getAdditionalSculpinBundles(): array
         {
-            return array(
-            );
+            return [
+            ];
         }
     }
 
@@ -32,11 +32,11 @@ the following:
 
     class SculpinKernel extends \Sculpin\Bundle\SculpinBundle\HttpKernel\AbstractKernel
     {
-        protected function getAdditionalSculpinBundles()
+        protected function getAdditionalSculpinBundles(): array
         {
-            return array(
+            return [
                 'Mavimo\Sculpin\Bundle\RedirectBundle\SculpinRedirectBundle'
-            );
+            ];
         }
     }
 

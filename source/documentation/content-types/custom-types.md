@@ -58,6 +58,84 @@ the following keys are available:
 
 ---
 
+## The Content Create Command
+
+New in Sculpin 3.0, the `sculpin content:create` command will automatically
+define the YML changes and create placeholder HTML/Markdown for your specified
+content type.
+
+### Usage
+
+Running this command will create a new "**Projects**" content type with
+boilerplate files as well as the taxonomy "**Tags**" for organizing the
+project entries by custom tags.
+
+    vendor/bin/sculpin content:create -b -t tags projects
+
+This will output:
+
+    Generating new content type: projects
+    =============================================
+    YAML to add to app/config/sculpin_kernel.yml:
+    =============================================
+
+    sculpin_content_types:
+        projects:
+            type: path
+            path: _projects
+            singular_name: project
+            layout: project
+            enabled: true
+            permalink: projects/:title
+            taxonomies:
+                - tags
+
+    =================END OF YAML=================
+
+
+    Generating boilerplate for portfolio
+
+> Don't forget to add the YAML to your `sculpin_kernel.yml` file.
+
+The following boilerplate files and directories will be generated,
+thanks to the `-b`/`--boilerplate` option:
+
+    |-- source/
+    |  `-- _projects/          - Folder that stores Projects
+    |  `-- _views/
+    |     `-- project.html     - Layout file for Projects
+    |  `-- projects/
+    |     `-- tags/
+    |        `-- tag.html      - Listing template for individaul "tags"
+    |     `-- tags.html        - Main list for "tags" taxonomy
+    |  `-- projects.html       - Template for the list of projects
+
+All of these files are extremely bare-bones placeholders, meant to
+provide a toehold for getting started with building your site and taking
+advantage of Sculpin's features for aggregation (taxonomies) and
+pagination.
+
+Once you apply the YAML changes, you can create your first Project entry
+and see how the defaults look:
+
+*%PROJECT_DIR%/source/_projects/sculpin.md*
+
+    ---
+    layout: project
+    title: Project SCULPIN
+    tags: [blog, howto]
+    ---
+    Lorem ipsum dolor belta lowdah ...
+
+> Run `vendor/bin/sculpin generate --watch --server` and browse to your
+> sculpin site's projects folder (e.g., `http://localhost:8000/projects`)
+> to see your new Project entry.
+
+Continue reading for an overview of how these files tie together to
+deliver custom content.
+
+---
+
 ## A Sample Content Type
 
 The following is a sample content type called **projects**.

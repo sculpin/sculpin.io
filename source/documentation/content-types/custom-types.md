@@ -100,15 +100,15 @@ This will output:
 The following boilerplate files and directories will be generated,
 thanks to the `-b`/`--boilerplate` option:
 
-    |-- source/
-    |  `-- _projects/          - Folder that stores Projects
-    |  `-- _views/
-    |     `-- project.html     - Layout file for Projects
-    |  `-- projects/
-    |     `-- tags/
-    |        `-- tag.html      - Listing template for individaul "tags"
-    |     `-- tags.html        - Main list for "tags" taxonomy
-    |  `-- projects.html       - Template for the list of projects
+    `-- source/
+       |-- _projects/          - Folder that stores Projects
+       |-- _views/
+       |   `-- project.html    - Layout file for Projects
+       |-- projects/
+       |   |-- tags/
+       |   |   `-- tag.html    - Listing template for individual "tags"
+       |   `-- tags.html       - Main list for "tags" taxonomy
+       `-- projects.html       - Template for the list of projects
 
 All of these files are extremely bare-bones placeholders, meant to
 provide a toehold for getting started with building your site and taking

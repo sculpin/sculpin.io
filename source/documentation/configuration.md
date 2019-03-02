@@ -107,6 +107,7 @@ Additionally you can create custom permalinks using the following tags:
 - `:slug_filename`: Slug or filename if no slug exists
 - `:basename`: Basename of the page, for example, `source/_projects/sculpin.html` would result in `sculpin`
 - `:basename_real`: Basename of the page including the extension, for example, `source/_projects/sculpin.html` would result in `sculpin.html`
+- `:folder`: The folder the page is in. Type folders are filtered out. If no subfolder is present, folder does nothing. See example below for more details.
 
 A custom permalink configuration could look like this:
 
@@ -119,3 +120,10 @@ If you wish your generated permalinks to have a trailing slash, you just have to
         permalink: blog/:title/
 
 The generated files will then have a `blog/your-title/index.html` file, while the link will be `blog/your-title/` for it. Remember to use the same trailing slashes in your own internal links as well.
+
+To use the `:folder` configuration an example config could look like this:
+
+    sculpin:
+        permalink: blog/:folder:basename.html
+
+Now a file in `source/_posts/somefolder/mypost.md` would render as `/blog/somefolder/mypost.html` while a file in `source/_posts/nofolder.md` would still render in `/blog/nofolder.html`. Without the `:folder` directive, both posts would be directly under blog, all folder structure would be ignored.

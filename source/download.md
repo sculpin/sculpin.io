@@ -9,7 +9,10 @@ nav_name: download
 
 There are a few of ways to download Sculpin. The easiest way is to add Sculpin
 and any of its development dependencies to the `composer.json` for your site.
-Don't have a `composer.json` yet? Create one!
+
+> Don't have a `composer.json` yet? No worries - running the `composer
+> require` command can automatically create one for you. Or, you can run
+> `composer init` to create a blank starting point.
 
 Confused about which option is best for your use case? Ask the
 Sculpin [community]({{site.url}}/community/)! They will be happy to help. :)
@@ -18,30 +21,29 @@ Sculpin [community]({{site.url}}/community/)! They will be happy to help. :)
 
 ## Download via Composer
 
-Sculpin can be added to any existing Composer managed project by simply
-requiring Sculpin (and a couple of other dev dependencies) in `composer.json`.
+Sculpin can be added to any existing Composer managed project by
+requiring Sculpin in `composer.json`.
 
     {
         "require": {
-            "sculpin/sculpin": "^2.1@dev",
-    
-            "dflydev/embedded-composer": "@dev"
+            "sculpin/sculpin": "^3.0"
         }
     }
 
-By default this will install Sculpin to `vendor/bin/sculpin`.
+Or you can run the `composer require` command directly on your console:
 
-The best version of Sculpin to be running right now is the most recent
-develompent version for 2.1. Since there are no public releases for
-2.1.*, you'll need to specify `@dev` for your Sculpin dependency.
+    $ composer require sculpin/sculpin
 
-Sculpin currently relies on Embedded Composer which does not have a stable
-release. In order to avoid having to set `minimum-stability` to dev,
-these packages can be flagged as `@dev` to ensure Composer will
-install everything correctly.
+Using `composer require` directly is handy because it means you won't
+have to run `composer install` or `composer update` after manually
+modifying the `composer.json`.
 
+Both of these approaches will install the Sculpin console command to
+`vendor/bin/sculpin`.
 
-<br>
+> The best version of Sculpin to be running right now is version 3.0.
+
+---
 
 ## Download via Git
 
@@ -69,6 +71,6 @@ This will allow you to have a globally installed version of Sculpin (like maybe
 Global installation is not recommended as each Sculpin site could have runtime
 dependencies that are not compatible with the globally installed version of
 Sculpin. This has been a popular method of maintaining Sculpin sites in
-the past, though, so notes are still left here. Just keep in mind that
+the past, though, so notes are still left here. Please keep in mind that
 it will probably be better to run the Sculpin that gets installed
 specifically for your site.

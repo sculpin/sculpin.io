@@ -69,7 +69,7 @@ Now we can use Sculpin to generate static files, watch for changes, and run a lo
 
 The `watch` flag tells Sculpin to watch the files for changes, and when changed to re-generate the site automatically. `server` launches PHP's web server which lets you see your work in progress from [localhost:8000](http://localhost:8000). After having run this command, a new directory, `output_dev`, will appear in your project, folder.
 
-Please note, the server command may crash from time to time. This is usually as a result of in-progress or partly-saved updates that can cause unrecoverable errors. If this happens, simply re-run the command - this usually resolves the issue, or helps provide more information about the cause.
+Please note, the server command may crash from time to time. This is usually as a result of in-progress or partly-saved updates that can cause unrecoverable errors. If this happens, try running the command again - this usually resolves the issue, or helps provide more information about the cause.
 
 ---
 
@@ -114,7 +114,7 @@ With this one file you've updated the blog listing, created a page for the post,
 
 Assuming you are still running the server with the command `sculpin generate --watch --server`, the new pages are now available on your local server ([localhost:8000](http://localhost:8000)). You will need to refresh the browser to see your new content.
 
-If the content hasn't generated fully (perhaps there is a page missing for one of the tags). Simply stop and then restart the server from the command line:
+If the content hasn't generated fully (perhaps there is a page missing for one of the tags), you can stop and then restart the server from the command line:
 
     control-C
     vendor/bin/sculpin generate --watch --server

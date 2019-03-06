@@ -1,0 +1,385 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#5b7c89">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>SculpinPostsBundle &mdash; Sculpin &mdash; PHP Static Site Generator</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="https://sculpin.io/favicon.ico">
+    <link rel="stylesheet" href="https://sculpin.io/components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://sculpin.io/css/style.css?v=6">
+    <link rel="stylesheet" href="https://sculpin.io/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://sculpin.io/components/highlightjs/styles/github.css" />
+
+    <link rel="apple-touch-startup-image" href="/images/jackson/2048x2048.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="76x76" href="/images/jackson/76x76.png">
+    <link rel="shortcut icon" sizes="120x120" href="/images/jackson/120x120.png">
+    <link rel="shortcut icon" sizes="128x128" href="/images/jackson/128x128.png">
+    <link rel="shortcut icon" sizes="152x152" href="/images/jackson/152x152.png">
+    <link rel="shortcut icon" sizes="196x196" href="/images/jackson/196x196.png">
+    <link rel="shortcut icon" sizes="512x512" href="/images/jackson/512x512.png">
+    <link rel="shortcut icon" sizes="1024x1024" href="/images/jackson/1024x1024.png">
+    <link rel="shortcut icon" sizes="2048x2048" href="/images/jackson/2048x2048.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/jackson/76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/jackson/120x120.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="/images/jackson/128x128.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/jackson/152x152.png">
+    <link rel="apple-touch-icon" sizes="196x196" href="/images/jackson/196x196.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/jackson/512x512.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="/images/jackson/1024x1024.png">
+    <link rel="apple-touch-icon" sizes="2048x2048" href="/images/jackson/2048x2048.png">
+</head>
+<body>
+    <a class="fork-me-on-github" href="https://github.com/sculpin/sculpin"><img src="https://sculpin.io/assets/right-red@2x.png" alt="Fork me on GitHub"></a>
+    <header class="site">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="site-mascot" title="Meet Jackson, the Sculpin mascot"></div>
+                    <a class="navbar-brand" href="https://sculpin.io/">Sculpin</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="https://sculpin.io/">About</a>
+                        </li>
+                        <li >
+                            <a href="https://sculpin.io/getstarted/">Get Started</a>
+                        </li>
+                        <li >
+                            <a href="https://sculpin.io/download/">Download</a>
+                        </li>
+                        <li >
+                            <a href="https://sculpin.io/documentation/">Documentation</a>
+                        </li>
+                        <li >
+                            <a href="https://sculpin.io/community/">Community</a>
+                        </li>
+                        <li>
+                            <a href="http://blog.sculpin.io">Blog <i class="icon icon-external-link"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <section class="content">
+        <div class="container">
+                        <h1 id="sculpinpostsbundle">SculpinPostsBundle</h1>
+
+<p>The default behavior of Sculpin is that no one source has any meaning over any
+other Source.  <a href="https://github.com/sculpin/posts-bundle">PostsBundle</a> allows for
+treating some sources as if they are Posts. For all intents and purposes, it
+adds blogging capabilities to Sculpin.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>The bundle should be included in Sculpin and enabled by default.</p>
+
+<p>If you are building your own custom Sculpin from the ground up, you need to
+require either <a href="https://packagist.org/packages/sculpin/sculpin">sculpin/sculpin</a>
+or <a href="https://packagist.org/packages/sculpin/posts-bundle">sculpin/posts-bundle</a>
+via <a href="https://getcomposer.org/">Composer</a> and you need to ensure that
+<code>Sculpin\Bundle\PostsBundle\SculpinPostsBundle</code> is registered.</p>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>The default configuration is as follow:</p>
+
+<pre><code class="yaml">sculpin_posts:
+    paths: ["_posts"]
+    publish_drafts: null
+    permalink: pretty
+    layout: post
+</code></pre>
+
+<h3 id="paths">paths</h3>
+
+<p>Paths is a list of directories in which sources should be considered Posts.
+default setting is <code>["_posts"]</code> which means any source under <code>sources/_posts</code>
+will be considered a Post.</p>
+
+<h3 id="publish_drafts">publish_drafts</h3>
+
+<p>Posts may be considered draft if they have a <code>draft</code> top level metadata key in
+their YAML frontmatter.</p>
+
+<p>The default behavior is that if <code>publish_drafts</code> is not set (<code>null</code>) it will be
+set based on the Kernel's environment. If the environment is <code>prod</code>, the value
+is set to <code>false</code>. In all other cases, the value is set to <code>true</code>.</p>
+
+<p>The end result is that in the default <code>dev</code> environment drafts will be
+published. If <code>--env=prod</code> is specified, drafts will not be published.</p>
+
+<p>If drafts are set to be published, any Post that is marked as draft will
+automatically be tagged with the "drafts" tag.</p>
+
+<h3 id="permalink">permalink</h3>
+
+<p>The default permalink to use if one is not specified by the source itself.
+Defaults to <code>pretty</code>.</p>
+
+<p>To use a common date based format, you could set the permalink to something
+like:</p>
+
+<pre><code>blog/:year/:month/:day/:filename/
+</code></pre>
+
+<h3 id="layout">layout</h3>
+
+<p>The default layout to use if one is not specified by the source itself. Defaults
+to <code>post</code>.</p>
+
+<h2 id="post">Post</h2>
+
+<p>A Post is a tiny wrapper over a <code>ProxySource</code>. A <code>ProxySource</code> is a more
+view-friendly interface around a <code>SourceInterface</code>. The Post wrapper provides a
+little bit of extra functionality specific to posts.</p>
+
+<h3 id="drafts">Drafts</h3>
+
+<p>A Post may be marked as draft by setting the <code>drafts</code> top level metadata key to
+<code>true</code>. A Post with this setting will be treated as a draft and subject to the
+<code>publish_drafts</code> rules listed above.</p>
+
+<pre><code>---
+draft: true
+title: This is a WIP
+---
+# More to come later
+</code></pre>
+
+<p>If a draft Post is published it will automatically have the "drafts" tag added
+to it.</p>
+
+<h3 id="title">Title</h3>
+
+<p>A Post has a title as a first class concept. It is set by the <code>title</code> top level
+metadata key. If a Post is used from a data provider, title can be easily found
+by requesting <code>post.title</code>.</p>
+
+<p>This is simply a shortcut for <code>post.meta.title</code>.</p>
+
+<p>Example:</p>
+
+<pre><code>---
+title: The Best Title Ever
+---
+# Hello World
+</code></pre>
+
+<h3 id="date">Date</h3>
+
+<p>A Post has a notion of a date. It is a "calculated" value based on either
+information in the filename ("YYYY-MM-DD-rest-of-filename.md") or read from the
+<code>date</code> top level metadata key. If a Post is used from a data provider, date can
+be easily found by requesting <code>post.date</code>.</p>
+
+<p>Example of a date being specified by YAML frontmatter:</p>
+
+<pre><code>---
+title: The Best Title Ever
+date: 2013-09-29 20:05
+---
+# Hello World
+</code></pre>
+
+<p>Example of a date being specified by a filename (example,
+"2013-09-29-the-best-title-ever.md"):</p>
+
+<pre><code>---
+title: The Best Title Ever
+---
+# Hello World
+</code></pre>
+
+<h3 id="tags-and-categories">Tags and Categories</h3>
+
+<p>Posts have special support for tags and categories. These can be added to a post
+by including <code>tags</code> and <code>categories</code> top level metadata keys.</p>
+
+<pre><code>---
+title: The Best Title Ever
+tags: ["simple", "example", "php"]
+categories: ["opinion", "software"]
+---
+# Hello World
+</code></pre>
+
+<h3 id="previous-post-and-next-post">Previous Post and Next Post</h3>
+
+<p>A Post has a concept of the Post that comes before and after it. These are set
+as a part of the Posts initialization. They are available as <code>post.nextPost</code> and
+<code>post.previousPost</code>. They will be <code>null</code> where appropriate.</p>
+
+<p>These are also available via metadata by accessing <code>post.meta.next_post</code> and
+<code>post.meta.previous_post</code>.</p>
+
+<h2 id="posts-dataprovider">Posts DataProvider</h2>
+
+<p>Posts can be injected into any source by using them with <code>use: ["posts"]</code>.</p>
+
+<pre><code>---
+use:
+    - posts
+---
+</code></pre>
+
+<p>DataProvider provided data behaves in a way that is similar to a standard source
+but there are a few differences.</p>
+
+<p>First, standard YAML frontmatter is accessible via <code>post.meta</code>. Second, in order
+to get access to the content for the source, its appropriate block must be
+access like <code>post.blocks.content</code>.</p>
+
+<h2 id="extending-posts-behavior-with-a-map">Extending Posts Behavior with a Map</h2>
+
+<p>A custom Map can be applied to posts by registering a service that implements
+<code>Sculpin\Core\Source\MapInterface</code> that is tagged with
+<code>sculpin_posts.posts_map</code>.</p>
+
+<p>A trivial example would be a map that looks at the title of every post and
+automatically tags important words. The use case would be that if you write
+about Silex very often and want to ensure that every post with the word Silex in
+the title has the silex tag even if you forget.</p>
+
+<h3 id="autotagfromtitle-class">AutoTagFromTitle Class</h3>
+
+<p>This is a trivial implementation of a Sculpin Source Map. Every Source that is
+determined to be a post will be sent to this service.</p>
+
+<pre><code class="php">namespace Acme\SculpinBlog;
+
+use Sculpin\Core\Source\Map\MapInterface;
+use Sculpin\Core\Source\SourceInterface;
+
+class AutoTagFromTitleMap implements MapInterface
+{
+    private $tags;
+
+    public function __construct(array $tags = array())
+    {
+        $this-&gt;tags = array_map(function ($value) {
+            return strtolower($value);
+        }, $tags);
+    }
+
+    public function process(SourceInterface $source)
+    {
+        $tags = array();
+
+        // Break out the title into words.
+        $nameParts = explode(' ', $source-&gt;data()-&gt;get('title'));
+
+        foreach ($nameParts as $name) {
+            if (in_array(strtolower($name), $this-&gt;tags)) {
+                // If this is a word we care about, we should add
+                // it to our tags list.
+                $tags[] = strtolower($name);
+            }
+        }
+
+        $existingTags = $source-&gt;data()-&gt;get('tags');
+        if (null === $existingTags) {
+            // The Post had no tags to begin with
+            $existingTags = array();
+        } else {
+            if (!is_array($existingTags)) {
+                if ($existingTags) {
+                    // Normalize in case people did something
+                    // not smart.
+                    $existingTags = array($existingTags);
+                } else {
+                    // Just in case...
+                    $existingTags = array();
+                }
+            }
+        }
+
+        // Combine the tags we added with the existing tags making
+        // sure that we do not duplicate tags.
+        $source-&gt;data()-&gt;set('tags', array_unique(array_merge(
+            $tags,
+            $existingTags
+        )));
+    }
+}
+</code></pre>
+
+<h3 id="register-the-service">Register the Service</h3>
+
+<p>This can be handled in any number of ways. The best way would probably be to
+publish it as a bundle and require it with <code>sculpin.json</code> or <code>composer.json</code>.
+For the sake of brevity, we'll show an example of loading this through
+<code>sculpin_services.yml</code> just to show how to wire up the service.</p>
+
+<pre><code class="yaml">#
+# app/config/sculpin_services.yml
+#
+
+parameters:
+services:
+    acme_sculpin_blog_auto_tag_from_title_map:
+        class: Acme\SculpinBlog\AutoTagFromTitleMap
+        arguments:
+            - ["yolo", "silex", "symfony"]
+        tags:
+            - { name: sculpin_posts.posts_map }
+</code></pre>
+                    </div>
+    </section>
+    <footer class="site">
+        <div class="container">
+                            <div class="mascot">
+                    <a class="ir" href="https://sculpin.io/mascot/">Meet Jackson, the Sculpin mascot</a>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/sculpin"><i class="icon icon-github"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/getsculpin"><i class="icon icon-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/getsculpin"><i class="icon icon-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/116539064425497686827" rel="publisher"><i class="icon icon-google-plus"></i></a>
+                        </li>
+                        <li>
+                            <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    &copy;2019 <a href="http://dflydev.com/projects/sculpin">Dragonfly Development</a>
+                </div>
+                    </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://sculpin.io/components/jquery/jquery.min.js"><\/script>')</script>
+    <script defer src="https://sculpin.io/components/bootstrap/js/bootstrap.min.js"></script>
+          <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-6757870-20', 'sculpin.io');
+        ga('send', 'pageview');
+      </script>
+    </body>
+</html>

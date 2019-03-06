@@ -1,0 +1,722 @@
+
+/* ==|== primary styles =====================================================
+   Author: Beau Simensen <beau@dflydev.com>
+   ========================================================================== */
+
+/*
+#5B7C89 dark blue
+#98BFCC light blue
+#333333
+*/
+
+html code, html pre code {
+    color: #547989;
+	background-color: #FAFBFC;
+}
+
+html pre {
+	color: #5B7C89;
+	background-color: #FAFBFC;
+	border: 1px solid #D0DBDF;
+}
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body, html { height: 100%; }
+
+.navbar[role="navigation"] {
+	background-color: #5b7c89;
+	margin-bottom: 0;
+}
+
+.navbar[role="navigation"] .navbar-toggle {
+	border-color: #5b7c89;
+}
+
+.navbar[role="navigation"] .navbar-toggle .icon-bar {
+	background-color: #ffffff;
+}
+
+.navbar[role="navigation"] .site-mascot img {
+   height: 22px;
+}
+
+.navbar[role="navigation"] .navbar-brand,
+.navbar[role="navigation"] .navbar-brand:hover {
+	color: #ffffff;
+}
+
+.navbar[role="navigation"] .navbar-nav > li.active > a,
+.navbar[role="navigation"] .navbar-nav > li.active > a:hover {
+	background-color: #506E79;
+}
+
+.navbar[role="navigation"] .navbar-nav > li > a {
+	color: #F7F8FF;
+}
+
+.navbar[role="navigation"] .navbar-nav > li > a i.icon {
+	font-size: 1em;
+	opacity: .25;
+}
+
+.navbar[role="navigation"] .navbar-nav > li > a:hover i.icon {
+	opacity: 1;
+}
+
+.navbar[role="navigation"] .navbar-nav > li.active > a,
+.navbar[role="navigation"] .navbar-nav > li.active > a:hover,
+.navbar[role="navigation"] .navbar-nav > li > a:hover {
+	color: #ffffff;
+}
+
+/*
+footer.site,
+section.site-meta {
+	background-color: #B1C4CB;
+}
+*/
+
+section.site-meta {
+	background-color: #B1C4CB;
+}
+
+section.content {
+	background-color: #ffffff;
+	padding-bottom: 3em;
+	min-height: 80%;
+}
+
+body {
+	/*
+	background-color: #B1C4CB;
+	*/
+	background-color: #5B7C89;
+}
+
+hr {
+	border-top: 1px solid #EEF2F4;
+}
+
+footer.site,
+footer.site a {
+    color: #B1C4CB;
+    text-decoration: none;
+}
+footer.site a:hover {
+    color: #ffffff;
+}
+
+section.site-meta a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: .05em .05em .1em #46606A;
+}
+
+section.site-meta a:visited {
+    color: #ffffff;
+}
+
+section.site-meta .site-title {
+    font-size: 3em;
+}
+
+section.site-meta .site-subtitle {
+    font-size: 1.25em;
+}
+
+hr.site-meta {
+	border: none;
+	background-color: #92ACB7;
+	height: 1px;
+	margin: 0;
+	padding: 0;
+}
+
+footer.site > .container,
+section.content > .container,
+section.site-meta .container {
+	padding: 1.5em;
+}
+
+footer.site {
+	font-weight: lighter;
+}
+
+/*
+footer.site {
+	background-color: #5B7C89;
+}
+*/
+/*
+footer.site,
+footer.site a {
+	color: #5B7C89;
+}
+*/
+
+footer.site {
+	text-align: center;
+}
+
+footer.site ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+footer.site .social ul li {
+	display: inline-block;
+	margin: 0 .25em;
+}
+
+footer.site .copyright {
+	margin-top: 1em;
+}
+
+.marketing {
+	font-size: .675em;
+	margin-bottom: 2em;
+}
+
+.marketing .jumbo {
+	font-size: 1.5em;
+	line-height: 1.375em;
+}
+
+.marketing .jumbo strong {
+	color: #658998;
+}
+
+.marketing p span {
+	font-weight: bold;
+	color: #658998;
+}
+
+.marketing h1 {
+	margin: 1em 0 0 0;
+}
+
+
+.marketing p {
+	font-size: 1.25em;
+	line-height: 1.375em;
+	margin: 1em 0;
+}
+
+.marketing p strong {
+	font-weight: bold;
+}
+
+.powered-by .row a {
+	text-decoration: none;
+	padding: .25em 0;
+	display: inline-block;
+}
+
+.powered-by .powered-by-site {
+	font-size: 1.5em;
+}
+.powered-by .powered-by-site .title {
+}
+
+.powered-by .powered-by-site .url,
+.powered-by .powered-by-site .source {
+	font-size: .75em;
+}
+
+.powered-by .powered-by-site .source {
+	color: #C0CFD5;
+}
+.powered-by .powered-by-site .source:hover {
+	color: #DFE7EA;
+}
+
+.powered-by .powered-by-site .icon-github:after,
+.powered-by .powered-by-site .icon-bitbucket:after {
+	content: " src";
+}
+
+
+section.content {
+	color: #547989;
+}
+
+
+section.content h1 {
+	font-size: 3em;
+}
+
+section.content h1,
+section.content h2,
+section.content h3,
+section.content h4,
+section.content h5 {
+	color: #658998;
+}
+
+section.content h1 a,
+section.content h2 a,
+section.content h3 a,
+section.content h4 a,
+section.content h5 a {
+	text-decoration: none;
+}
+
+section.content h1 small,
+section.content h2 small,
+section.content h3 small,
+section.content h4 small,
+section.content h5 small {
+	color: #C0CFD5;
+}
+
+section.content a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+section.content a:hover {
+	color: #B1C4CB;
+}
+
+section.content hr {
+	border-top: 1px solid #EEF2F4;
+}
+
+section.content h1,
+section.content h2,
+section.content h3,
+section.content h4 {
+	font-weight: lighter;
+}
+
+.mascot {
+	text-align: center;
+	padding: 0 0 1em;
+}
+
+ul.nav ul.nav li a {
+	padding-left: 2em;
+	display: block;
+}
+
+.sculpin-sidebar {
+	border-radius: 1em;
+	color: #5B7C89;
+	background-color: #FAFBFC;
+	border: 1px solid #D0DBDF;
+	padding: .25em;
+}
+
+section.content .sculpin-sidebar a {
+	padding: .25em .5em;
+}
+
+section.content .sculpin-sidebar a {
+	text-decoration: none;
+}
+
+section.content .sculpin-sidebar a:hover,
+section.content .sculpin-sidebar a:focus {
+	border-radius: .75em;
+	color: #fff;
+	background-color: #5b7c89;
+}
+
+section.content .sculpin-sidebar li.active > a {
+	border-radius: .75em;
+	color: #fff;
+	background-color: #89a6b1;
+}
+
+
+@media only screen and (min-width: 320px) {
+
+	/* Small screen, non-retina */
+
+    header.site .site-mascot {
+        background-image: url(sculpin-mascot-jackson-micro.png);
+        background-size: 33px 32px;
+        height: 32px;
+        width: 33px;
+        margin: 9px 0.75em;
+        float: left;
+    }
+
+	.site-meta .site-mascot a {
+	    background-image: url(sculpin-mascot-jackson-small.png);
+	    background-size: contain;
+	    width: 88px;
+	    height: 85px;
+	    float: right;
+	}
+
+	footer.site .mascot a {
+		display: inline-block;
+	    background-image: url(sculpin-mascot-jackson-micro.png);
+	    background-size: contain;
+	    width: 50px;
+	    height: 48px;
+	    opacity: .75;
+	}
+
+	.marketing {
+		font-size: .75em;
+	}
+
+	.marketing .jumbo {
+		margin: 1.25em 0 1em;
+	}
+
+	section.content hr {
+		margin: 3em 0 3em;
+	}
+
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 320px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (                min-resolution: 192dpi) and (min-width: 320px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 320px) {
+
+	/* Small screen, retina, stuff to override above media query */
+
+    .site-meta .site-mascot a {
+        background-image: url(sculpin-mascot-jackson-small@2x.png);
+	    background-size: 88px 85px;
+    }
+
+	footer.site .mascot a {
+	    background-image: url(sculpin-mascot-jackson-micro@2x.png);
+	    background-size: 50px 48px;
+	}
+
+	.meet-jackson .mascot {
+		display: block;
+		margin: 0 auto;
+		width: 200px;
+		height: 193px;
+	    background-image: url(sculpin-mascot-jackson-medium@2x.png);
+	    background-size: 200px 193px;
+	}
+
+	.meet-jackson .mascot img {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 480px) {
+
+	/* Medium screen, non-retina */
+
+	section.site-meta .container {
+		padding-top: 1em;
+		padding-bottom: 2em;
+	}
+
+	section.site-meta .site-title,
+	section.site-meta .site-subtitle {
+	    text-align: center;
+	    padding-right: 150px;
+	}
+
+	section.site-meta .site-title {
+	    font-size: 5em;
+	}
+
+	section.site-meta .site-subtitle {
+	    font-size: 1.5em;
+	}
+
+	.site-meta .site-mascot a {
+	    background-image: url(sculpin-mascot-jackson-medium.png);
+	    width: 150px;
+	    height: 146px;
+	    margin-bottom: -100%;
+	}
+
+	.marketing {
+		font-size: 1em;
+	}
+
+	.marketing .jumbo {
+		font-size: 1.125em;
+		margin: .75em 0 .5em;
+	}
+
+	.marketing p {
+		font-size: 1em;
+	}
+}
+
+.fork-me-on-github {
+	display: none;
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 480px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 480px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 480px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 480px),
+only screen and (                min-resolution: 192dpi) and (min-width: 480px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 480px) {
+
+	/* Medium screen, retina, stuff to override above media query */
+
+    .site-meta .site-mascot a {
+        background-image: url(sculpin-mascot-jackson-medium@2x.png);
+	    background-size: 150px 146px;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+
+	/* Medium screen, non-retina */
+
+	section.site-meta .container {
+		padding-top: 2em;
+		padding-bottom: 3em;
+	}
+
+	section.site-meta .site-title,
+	section.site-meta .site-subtitle {
+	    padding-right: 200px;
+	}
+
+	section.site-meta .site-title {
+	    font-size: 7em;
+	}
+
+	section.site-meta .site-subtitle {
+	    font-size: 1.75em;
+	}
+
+	.site-meta .site-mascot a {
+	    background-image: url(sculpin-mascot-jackson-medium.png);
+	    width: 200px;
+	    height: 194px;
+	}
+
+	.marketing {
+		font-size: 1.5em;
+	}
+
+	.marketing p {
+		font-size: .75em;
+	}
+
+	section.content .marketing h1 {
+		font-size: 2em;
+	}
+
+	footer.site .social ul {
+		float: right;
+	}
+
+	footer.site .copyright {
+		margin-top: 0;
+	}
+	footer.site .social ul li {
+		margin-left: .5em;
+		margin-right: 0;
+	}
+
+	footer.site {
+		text-align: left;
+	}
+
+	.marketing .powered-by .powered-by-site {
+		font-size: 1em;
+	}
+
+	footer.site .mascot {
+		padding: 0;
+		position: absolute;
+		left: 50%;
+		margin-left: -50px;
+		margin-top: -15px;
+	}
+
+	.meet-jackson .mascot {
+		float: right;
+		margin-left: 1em;
+	}
+
+	.meet-jackson h1 {
+		padding-top: .5em;
+	}
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 600px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 600px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 600px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 600px),
+only screen and (                min-resolution: 192dpi) and (min-width: 600px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 600px) {
+
+    .site-meta .site-mascot a {
+        background-image: url(sculpin-mascot-jackson-medium@2x.png);
+	    background-size: 200px 194px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+	.powered-by .powered-by-site .source {
+		font-size: .5em;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+
+	/* Large screen, non-retina */
+
+	section.site-meta .container {
+		padding-top: 3em;
+		padding-bottom: 3em;
+	}
+
+	section.site-meta .site-title,
+	section.site-meta .site-subtitle {
+	    padding-right: 300px;
+	}
+
+	section.site-meta .site-title {
+	    font-size: 9em;
+	}
+
+	section.site-meta .site-subtitle {
+	    font-size: 2.5em;
+	}
+
+	.site-meta .site-mascot a {
+	    background-image: url(sculpin-mascot-jackson-large.png);
+	    width: 240px;
+	    height: 232px;
+	}
+
+	.marketing {
+		font-size: 1.875em;
+	}
+
+	.meet-jackson {
+		font-size: 1.5em;
+	}
+
+	.meet-jackson .mascot {
+	    background-image: url(sculpin-mascot-jackson-large.png);
+	    width: 300px;
+	    height: 290px;
+	}
+
+	.meet-jackson .mascot img {
+		display: none;
+	}
+
+	.fork-me-on-github {
+		display: inline;
+	}
+
+	.fork-me-on-github img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 1500;
+		border: 0;
+		width: 149px;
+		height: 149px;
+	}
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 992px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 992px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 992px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 992px),
+only screen and (                min-resolution: 192dpi) and (min-width: 992px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 992px) {
+
+	/* Large screen, retina, stuff to override above media query */
+
+    .site-meta .site-mascot a {
+        background-image: url(sculpin-mascot-jackson-medium@2x.png);
+	    background-size: 240px 232px;
+    }
+
+	.meet-jackson .mascot {
+	    background-image: url(sculpin-mascot-jackson-large@2x.png);
+	    background-size: 300px 290px;
+	}
+
+}
+
+@media only screen and (min-width: 1200px) {
+	section.site-meta .container {
+		padding-top: 3.5em;
+		padding-bottom: 3.5em;
+	}
+
+	section.site-meta .site-title {
+	    font-size: 11em;
+	}
+
+	section.site-meta .site-subtitle {
+	    font-size: 2.75em;
+	}
+
+	.site-meta .site-mascot a {
+	    /*background-image: url(sculpin-mascot-jackson-large.png);*/
+	    width: 300px;
+	    height: 290px;
+	}
+
+	.marketing {
+		font-size: 2em;
+	}
+
+	.marketing .jumbo {
+		font-size: 1.25em;
+	}
+
+	.meet-jackson {
+		font-size: 1.75em;
+	}
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1200px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1200px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1200px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1200px),
+only screen and (                min-resolution: 192dpi) and (min-width: 1200px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 1200px) {
+    .site-meta .site-mascot a {
+        /*background-image: url(sculpin-mascot-jackson-large@2x.png);*/
+	    background-size: 300px 290px;
+    }
+}

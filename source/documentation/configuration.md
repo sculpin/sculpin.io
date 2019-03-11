@@ -17,8 +17,8 @@ environments. By default Sculpin will generate your site for the `dev`
 environment. This is important to know because configuration can be based on
 environment.
 
-In order to generate your site for a production environment (`prod`), you need to
-specify this in your command line:
+In order to generate your site for a production environment (`prod`), specify
+the `--env=prod` option in your command line:
 
     sculpin generate --watch --server --env=prod
 

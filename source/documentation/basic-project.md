@@ -29,9 +29,8 @@ no time!
 
 ### Hello World Directory Structure
 
-The directory structure of a Sculpin project is pretty simple. By default,
-Sculpin assumes that there will be a `source/` directory in your project root.
-Sculpin will read all of the files in your source directory.
+Sculpin reads all files that are under the source directory. By default, this
+directory is called `source/` in your project root.
 
 Create a file called `index.md` in your source directory. Sculpin will
 automatically translate this file to `index.html` when it generates your site.

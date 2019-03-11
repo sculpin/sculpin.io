@@ -19,27 +19,14 @@ Sculpin [community]({{site.url}}/community/)! They will be happy to help. :)
 
 <br>
 
-## Download via Composer
+## Install with Composer
 
-Sculpin can be added to any existing Composer managed project by
-requiring Sculpin in `composer.json`.
+Sculpin can be added to any existing Composer managed project by requiring
+it:
 
-    {
-        "require": {
-            "sculpin/sculpin": "^3.0"
-        }
-    }
+    composer require sculpin/sculpin
 
-Or you can run the `composer require` command directly on your console:
-
-    $ composer require sculpin/sculpin
-
-Using `composer require` directly is handy because it means you won't
-have to run `composer install` or `composer update` after manually
-modifying the `composer.json`.
-
-Both of these approaches will install the Sculpin console command to
-`vendor/bin/sculpin`.
+The entry point for sculpin is now `vendor/bin/sculpin`.
 
 > The best version of Sculpin to be running right now is version 3.0.
 
@@ -47,8 +34,9 @@ Both of these approaches will install the Sculpin console command to
 
 ## Download via Git
 
-Sculpin can be downloaded via git to be used while being under development.
-Either clone the Sculpin project directly or fork and clone the fork.
+Sculpin can be downloaded with git. This is mainly useful if you want to work
+on changes to sculpin. Either clone the Sculpin project directly or fork and
+clone the fork:
 
     git clone git@github.com:sculpin/sculpin.git
     cd sculpin
@@ -56,21 +44,7 @@ Either clone the Sculpin project directly or fork and clone the fork.
 
 At this point, `bin/sculpin` should be usable.
 
-If you want to make your development version of Sculpin available, create a
-symlink to it from somewhere in your `$PATH`. For example, to create a
-`sculpin-dev` command and assuming that `~/bin` is in your `$PATH`, execute the
-following:
+Note:
 
-    ln -s ~/sculpin/bin/sculpin ~/bin/sculpin-dev
-
-This will allow you to have a globally installed version of Sculpin (like maybe
-`sculpin.phar`) along side a development version of Sculpin (`sculpin-dev`).
-
-### Important Notice Regarding Git
-
-Global installation is not recommended as each Sculpin site could have runtime
-dependencies that are not compatible with the globally installed version of
-Sculpin. This has been a popular method of maintaining Sculpin sites in
-the past, though, so notes are still left here. Please keep in mind that
-it will probably be better to run the Sculpin that gets installed
-specifically for your site.
+Originally, we recommended to install Sculpin globally. This has been
+deprecated, because each Sculpin site can have specific runtime dependencies.

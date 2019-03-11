@@ -75,7 +75,7 @@ Please note, the server command may crash from time to time. This is usually as 
 
 ## Add Content to Sculpin
 
-You are now ready to add blog posts to your new site. Your blog posts will be in Markdown format, and contain metadata in YAML format. (Don't worry, it's easy.)
+You are now ready to add blog posts to your new site. Your blog posts will be in Markdown format, and contain metadata in YAML format. (Don't worry, we explain this all in detail.)
 
 Jump right into the source directory.
 
@@ -133,7 +133,7 @@ This will create the directory `output_prod` in your project's directory. The co
 
 ---
 
-## Deploy Sculpin
+## Deploy your Generated Site
 
 In the previous step you created a stand-alone version of your site built from static HTML files. These files, which reside in `output_prod`, need to be uploaded to your publicly accessible web server.
 

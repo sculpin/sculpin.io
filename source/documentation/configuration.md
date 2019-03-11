@@ -113,7 +113,7 @@ A custom permalink configuration could look like this:
     sculpin:
         permalink: blog/:year/:month/:day/:slug_title
 
-If you wish your generated permalinks to have a trailing slash, you just have to add it to the configuration like this:
+If you wish your generated permalinks to have a trailing slash, specify the trailing slash in the configuration like this:
 
     sculpin:
         permalink: blog/:title/

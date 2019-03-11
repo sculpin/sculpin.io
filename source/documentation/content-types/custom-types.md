@@ -4,15 +4,15 @@ slug: content-types/custom-types
 
 ---
 
-Creating custom content types with Sculpin is relatively easy. It mostly
-involves configuring `sculpin_content_types` in `app/config/sculpin_kernel.yml`.
+You can create your own custom content types with Sculpin. To do so, you
+configure `sculpin_content_types` in `app/config/sculpin_kernel.yml`.
 The end result is one or more data providers and optionally some taxonomy
 related data providers and index generators.
 
-The content types bundle uses some magic to derive some values automatically so
-that you can configure less things. Everything can be overridden, though, so you
-are not going to be stuck with some unfortunate decisions made by Sculpin's
-default logic.
+The content types bundle uses rules to derive some values automatically so
+that you have to configure less things. Everything can be overridden, though,
+so you are not going to be stuck with some unfortunate decisions made by
+Sculpin's default logic.
 
 
 ---
@@ -242,7 +242,7 @@ generator to create a new page for every tag and list its projects.
 
 ### Pagination of custom types
 
-Custom types can be paginated just as simply as posts.
+Custom types can be paginated in the same way as posts.
 
     ---
     generator: pagination
@@ -256,4 +256,4 @@ Custom types can be paginated just as simply as posts.
       <li><a href="{{ project.url }}">{{ project.title }}</a></li>
     {% endfor %}
 
-The `use` list will load all the items in each given provider into the key data.{{provider_name}}. So, in this example, all the projects available will be loaded into `data.projects`. Now, simply setting the provider of pagination to `data.projects` we are able to paginate our custom type instead.
+The `use` list will load all the items in each given provider into the key data.{{provider_name}}. So, in this example, all the projects available will be loaded into `data.projects`. By setting the provider of pagination to `data.projects`, we are able to paginate our custom type instead.

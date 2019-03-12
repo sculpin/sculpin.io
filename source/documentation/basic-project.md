@@ -81,6 +81,68 @@ generating the site.
 With this option passed, `{{ site.url }}/about` will now be generated as
 `http://my.dev.host/blog-skelton/output_dev/about` instead of `/about`.
 
+## CSS and JavaScript
+
+It is best practice to combine all your CSS files and all your JavaScript files
+into single files. That way they are simple to include in your templates and
+create less overhead for the browser loading the page. The recommended way to
+combine assets is with Symfony's
+[Webpack Encore](https://symfony.com/doc/current/frontend.html).
+
+The [Blog Skeleton](https://github.com/sculpin/sculpin-blog-skeleton) project
+uses Encore to manage assets. If you're setting up your project with Sculpin
+directly, not using the skeleton, install Encore using the
+[setup instructions](https://symfony.com/doc/current/frontend/encore/installation.html).
+
+The rest of this section assumes that you are using Encore, with a
+configuration like
+[in the skeleton](https://github.com/sculpin/sculpin-blog-skeleton/blob/master/webpack.config.js).
+
+Put your CSS and JS assets in the directory `source/assets/` as shown.
+
+    |-- source/
+       `-- assets/
+          |-- css/
+          |  `-- app.css
+          `-- js/
+             `-- app.js
+
+The app's main CSS file is configured to be `source/assets/css/app.css`.
+You can add more CSS files in the same directory if necessary and require them
+in your JavaScript files to use them.
+
+Encore can also support Sass, and the Blog Skeleton is set up to use it. See
+the relevant
+[Encore docs](https://symfony.com/doc/current/frontend/encore/simple-example.html#using-sass-less-stylus)
+for more details.
+
+The app's main JavaScript file is `source/assets/js/app.js`. Make sure that it
+is added in the `webpack.config.js` configuration file. You can add further
+JavaScript files and require them in `app.js`, and `require` other libraries as
+necessary.
+
+Build the assets using the command:
+
+    yarn encore dev --watch
+
+Encore will then compile all the CSS into the `build/app.css` file and all the
+JavaScript, including library code, into the `build/app.js` file.
+
+The default templates in the skeleton come with the correct stylesheet link and
+script tag. If you build your own templates, add these tags to your base
+template  (in `_views/`):
+
+```html
+<head>
+    <link rel="stylesheet" href="{{ site.url }}/build/app.css">
+</head>
+<body>
+    (all your other content)
+
+    <script src="{{ site.url }}/build/app.js"></script>
+</body>
+```
+
 ## Environments
 
 Sculpin knows the `dev` and `prod` environment. They allow you to have

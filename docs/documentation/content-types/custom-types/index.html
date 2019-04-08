@@ -1,0 +1,354 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#5b7c89">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Custom Types &mdash; Sculpin &mdash; PHP Static Site Generator</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="https://sculpin.io/favicon.ico">
+    <link rel="stylesheet" href="https://sculpin.io/components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://sculpin.io/css/style.css?v=6">
+    <link rel="stylesheet" href="https://sculpin.io/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://sculpin.io/components/highlightjs/styles/github.css" />
+
+    <link rel="apple-touch-startup-image" href="/images/jackson/2048x2048.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="76x76" href="/images/jackson/76x76.png">
+    <link rel="shortcut icon" sizes="120x120" href="/images/jackson/120x120.png">
+    <link rel="shortcut icon" sizes="128x128" href="/images/jackson/128x128.png">
+    <link rel="shortcut icon" sizes="152x152" href="/images/jackson/152x152.png">
+    <link rel="shortcut icon" sizes="196x196" href="/images/jackson/196x196.png">
+    <link rel="shortcut icon" sizes="512x512" href="/images/jackson/512x512.png">
+    <link rel="shortcut icon" sizes="1024x1024" href="/images/jackson/1024x1024.png">
+    <link rel="shortcut icon" sizes="2048x2048" href="/images/jackson/2048x2048.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/jackson/76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/jackson/120x120.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="/images/jackson/128x128.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/jackson/152x152.png">
+    <link rel="apple-touch-icon" sizes="196x196" href="/images/jackson/196x196.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/jackson/512x512.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="/images/jackson/1024x1024.png">
+    <link rel="apple-touch-icon" sizes="2048x2048" href="/images/jackson/2048x2048.png">
+</head>
+<body>
+    <a class="fork-me-on-github" href="https://github.com/sculpin/sculpin"><img src="https://sculpin.io/assets/right-red@2x.png" alt="Fork me on GitHub"></a>
+    <header class="site">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="site-mascot" title="Meet Jackson, the Sculpin mascot"></div>
+                    <a class="navbar-brand" href="https://sculpin.io/">Sculpin</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="https://sculpin.io/">About</a>
+                        </li>
+                        <li >
+                            <a href="https://sculpin.io/getstarted/">Get Started</a>
+                        </li>
+                        <li >
+                            <a href="https://sculpin.io/download/">Download</a>
+                        </li>
+                        <li >
+                            <a href="https://sculpin.io/documentation/">Documentation</a>
+                        </li>
+                        <li >
+                            <a href="https://sculpin.io/community/">Community</a>
+                        </li>
+                        <li>
+                            <a href="http://blog.sculpin.io">Blog <i class="icon icon-external-link"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <section class="content">
+        <div class="container">
+            	<div class="row">
+		<div class="col-sm-3">
+			<div class="sculpin-sidebar">
+				<ul class="nav">
+											<li ><a href="https://sculpin.io/getstarted/">Get Started</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/basic-project/">Basic Project</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/configuration/">Configuration</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/sources/">Sources</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/layouts/">Layouts</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/themes/">Themes</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/converters/">Converters</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/formatters/">Formatters</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/generators/">Generators</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/content-types/">Content Types</a>
+															<ul class="nav">
+																			<li ><a href="https://sculpin.io/documentation/content-types/posts/">Posts</a>
+																			<li  class="active" ><a href="https://sculpin.io/documentation/content-types/custom-types/">Custom Types</a>
+																	</ul>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/embedded-composer/">Embedded Composer</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/extending-sculpin">Extending Sculpin</a>
+															<ul class="nav">
+																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/configuration/">Configuration</a>
+																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/creating-bundles/">Creating Bundles</a>
+																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/lifecycle/">Lifecycle</a>
+																	</ul>
+													</li>
+									</ul>
+			</div>
+		</div>
+		<div class="col-sm-9">
+			<h1>Custom Types</h1>
+            <p>Creating custom content types with Sculpin is relatively easy. It mostly
+involves configuring <code>sculpin_content_types</code> in <code>app/config/sculpin_kernel.yml</code>.
+The end result is one or more data providers and optionally some taxonomy
+related data providers and index generators.</p>
+
+<p>The content types bundle uses some magic to derive some values automatically so
+that you can configure less things. Everything can be overridden, though, so you
+are not going to be stuck with some unfortunate decisions made by Sculpin's
+default logic.</p>
+
+<hr />
+
+<h2 id="configuration">Configuration</h2>
+
+<p>Content types are defined by configuring the <code>sculpin_content_types</code> section of
+<code>app/config/sculpin_kernel.yml</code>. The top level keys in this node are considered
+the type names. Each type can have additional configuration.</p>
+
+<h3 id="type-configuration-keys">Type Configuration Keys</h3>
+
+<p>For a given type name (the keys in the <code>sculpin_content_types</code> configuration),
+the following keys are available:</p>
+
+<ul>
+<li><strong>singular_name</strong>:
+The singularized name for the type. Defaults to the result of calling a
+singularize function on the type name.</li>
+<li><strong>type</strong>:
+The type of content type, either <strong>path</strong> or <strong>meta</strong>. Essentially, this is
+how Sculpin determines <em>how</em> it will select the content type. Either based on
+path or on some meta information.</li>
+<li><strong>path</strong>:
+If <code>type: path</code>, the path that will be used to locate this type. Defaults to
+the type name with a <code>_</code> prepended. (so, for a content type named <code>talks</code>, 
+the default path would be <code>_talks</code>)</li>
+<li><strong>meta_key</strong>:
+If <code>type: meta</code>, the meta key that will be used to locate this type. Defaults
+to <code>type</code>.</li>
+<li><strong>meta</strong>:
+If <code>type: meta</code>, the value of the meta key that will be used to locate this
+type. Defaults to the singularized name.</li>
+<li><strong>publish_drafts</strong>:
+Whether or not to publish drafts of this type. In the production environment
+this defaults to <strong>false</strong>. Otherwise, the default value is <strong>true</strong>.</li>
+<li><strong>layout</strong>:
+The default layout to use for this type. Defaults to the singularized name
+of the type.</li>
+<li><strong>permalink</strong>:
+The default permalink to use for this type.</li>
+<li><strong>enabled</strong>:
+Whether or not the content type should be enabled. Defaults to <code>true</code>.</li>
+</ul>
+
+<hr />
+
+<h2 id="a-sample-content-type">A Sample Content Type</h2>
+
+<p>The following is a sample content type called <strong>projects</strong>.</p>
+
+<pre><code>sculpin_content_types:
+    projects:
+</code></pre>
+
+<p>That's it! It wires everything up using defaults. Isn't magic fun?</p>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>The default values are expanded below. Please note that <strong>you do not have to
+specify all of these options</strong>, this merely shows you the configuration options
+you <em>can</em> set, if you need to deviate from the defaults.</p>
+
+<pre><code>sculpin_content_types:
+    projects:
+        type: path
+        path: _projects
+        singular_name: project
+        layout: project
+        enabled: true
+        taxonomies:
+            - tags
+</code></pre>
+
+<h3 id="data-providers-and-generators">Data Providers and Generators</h3>
+
+<p>Given the above configuration, a few data providers and a generator will be made
+available:</p>
+
+<ul>
+<li><strong>projects</strong> (data provider):
+This is created based on the name of the type. It contains a sorted list of
+all of the sources that are discovered for the content type.
+
+<ul>
+<li><strong>next_project</strong>:
+Each item in the <strong>projects</strong> collection will have a <strong>next_project</strong>
+meta data that contains either <strong>null</strong> or the next project in the
+collection.</li>
+<li><strong>previous_project</strong>:
+Each item in the <strong>projects</strong> collection will have a <strong>previous_project</strong>
+meta data that contains either <strong>null</strong> or the previous project in the
+collection.</li>
+</ul></li>
+<li><strong>projects_tags</strong> (data provider):
+This is a <code>Sculpin\Contrib\Taxonomy\ProxySourceTaxonomyDataProvider</code> that
+contains a mapping from tags to projects.</li>
+<li><strong>projects_tag_index</strong> (generator):
+This is a <code>Sculpin\Contrib\Taxonomy\ProxySourceTaxonomyIndexGenerator</code> that
+will create a page for each tag.
+
+<ul>
+<li><strong>tag</strong>:
+Each generated tag index will have a piece of meta data named <strong>tag</strong> that
+will contain the name of the tag for which the index is being generated.</li>
+<li><strong>tag_projects</strong>:
+Each generated tag index will have a piece of meta data named
+<strong>tag_projects</strong> that will be the collection of all projects with this
+tag.</li>
+</ul></li>
+<li><strong>project.tag_html_index_permalinks</strong> (source property):
+Each source (in this case, each project source) will have have a map of each
+taxon to its indexes for each type (html, json, xml) if any are available.
+If there is an HTML page that uses the <code>projects_tag_index</code> generator, then
+<code>tag_html_index_permalinks</code> will be added to each project source.</li>
+</ul>
+
+<h3 id="sample-projects-index-page">Sample Projects Index Page</h3>
+
+<p>The following is a quick sample of a template that can be used to list all
+projects.</p>
+
+<pre><code>---
+use: [projects]
+---
+&lt;ul&gt;
+    {% for project in data.projects %}
+        &lt;li&gt;&lt;a href="{{ project.url }}"&gt;{{ project.title }}&lt;/a&gt;&lt;/li&gt;
+    {% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<h3 id="sample-project-tags-index-page">Sample Project Tags Index Page</h3>
+
+<p>The following is a quick sample of a template that can be used to list all
+tags that have been used to tag projects.</p>
+
+<pre><code>---
+use: [projects_tags]
+---
+&lt;ul&gt;
+    {% for tag,projects in data.projects_tags %}
+        &lt;li&gt;&lt;a href="{{ site.url }}/projects/tags/{{ tag|url_encode(true) }}"&gt;{{ tag }}&lt;/a&gt;&lt;/li&gt;
+    {% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<h3 id="sample-project-tags-projects-index-page">Sample Project Tags Projects Index Page</h3>
+
+<p>The following is a quick sample of a template that leverages the tag index
+generator to create a new page for every tag and list its projects.</p>
+
+<pre><code>---
+generator: projects_tag_index
+---
+&lt;h1&gt;&lt;/h1&gt;
+&lt;ul&gt;
+    {% for project in page.tag_projects %}
+        &lt;li&gt;&lt;a href="{{ project.url }}"&gt;{{ project.title }}&lt;/a&gt;&lt;/li&gt;
+    {% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<h3 id="pagination-of-custom-types">Pagination of custom types</h3>
+
+<p>Custom types can be paginated just as simply as posts.</p>
+
+<pre><code>---
+generator: pagination
+pagination:
+  provider: data.projects
+use:
+  - projects
+---
+&lt;h1&gt;Paginated Projects&lt;/h1&gt;
+</code></pre>
+
+<p>The <code>use</code> list will load all the items in each given provider into the key data.. So, in this example, all the projects available will be loaded into <code>data.projects</code>. Now, simply setting the provider of pagination to <code>data.projects</code> we are able to paginate our custom type instead.</p>
+        </div>
+    </div>
+        </div>
+    </section>
+    <footer class="site">
+        <div class="container">
+                            <div class="mascot">
+                    <a class="ir" href="https://sculpin.io/mascot/">Meet Jackson, the Sculpin mascot</a>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/sculpin"><i class="icon icon-github"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/getsculpin"><i class="icon icon-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/getsculpin"><i class="icon icon-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/116539064425497686827" rel="publisher"><i class="icon icon-google-plus"></i></a>
+                        </li>
+                        <li>
+                            <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    &copy;2019 <a href="http://dflydev.com/projects/sculpin">Dragonfly Development</a>
+                </div>
+                    </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://sculpin.io/components/jquery/jquery.min.js"><\/script>')</script>
+    <script defer src="https://sculpin.io/components/bootstrap/js/bootstrap.min.js"></script>
+          <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-6757870-20', 'sculpin.io');
+        ga('send', 'pageview');
+      </script>
+    </body>
+</html>

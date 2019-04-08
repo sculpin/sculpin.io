@@ -1,0 +1,214 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#5b7c89">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Converters &mdash; Sculpin &mdash; PHP Static Site Generator</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="https://sculpin.io/favicon.ico">
+    <link rel="stylesheet" href="https://sculpin.io/components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://sculpin.io/css/style.css?v=6">
+    <link rel="stylesheet" href="https://sculpin.io/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://sculpin.io/components/highlightjs/styles/github.css" />
+
+    <link rel="apple-touch-startup-image" href="/images/jackson/2048x2048.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="76x76" href="/images/jackson/76x76.png">
+    <link rel="shortcut icon" sizes="120x120" href="/images/jackson/120x120.png">
+    <link rel="shortcut icon" sizes="128x128" href="/images/jackson/128x128.png">
+    <link rel="shortcut icon" sizes="152x152" href="/images/jackson/152x152.png">
+    <link rel="shortcut icon" sizes="196x196" href="/images/jackson/196x196.png">
+    <link rel="shortcut icon" sizes="512x512" href="/images/jackson/512x512.png">
+    <link rel="shortcut icon" sizes="1024x1024" href="/images/jackson/1024x1024.png">
+    <link rel="shortcut icon" sizes="2048x2048" href="/images/jackson/2048x2048.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/jackson/76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/jackson/120x120.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="/images/jackson/128x128.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/jackson/152x152.png">
+    <link rel="apple-touch-icon" sizes="196x196" href="/images/jackson/196x196.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/jackson/512x512.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="/images/jackson/1024x1024.png">
+    <link rel="apple-touch-icon" sizes="2048x2048" href="/images/jackson/2048x2048.png">
+</head>
+<body>
+    <a class="fork-me-on-github" href="https://github.com/sculpin/sculpin"><img src="https://sculpin.io/assets/right-red@2x.png" alt="Fork me on GitHub"></a>
+    <header class="site">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="site-mascot" title="Meet Jackson, the Sculpin mascot"></div>
+                    <a class="navbar-brand" href="https://sculpin.io/">Sculpin</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="https://sculpin.io/">About</a>
+                        </li>
+                        <li >
+                            <a href="https://sculpin.io/getstarted/">Get Started</a>
+                        </li>
+                        <li >
+                            <a href="https://sculpin.io/download/">Download</a>
+                        </li>
+                        <li >
+                            <a href="https://sculpin.io/documentation/">Documentation</a>
+                        </li>
+                        <li >
+                            <a href="https://sculpin.io/community/">Community</a>
+                        </li>
+                        <li>
+                            <a href="http://blog.sculpin.io">Blog <i class="icon icon-external-link"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <section class="content">
+        <div class="container">
+            	<div class="row">
+		<div class="col-sm-3">
+			<div class="sculpin-sidebar">
+				<ul class="nav">
+											<li ><a href="https://sculpin.io/getstarted/">Get Started</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/basic-project/">Basic Project</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/configuration/">Configuration</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/sources/">Sources</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/layouts/">Layouts</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/themes/">Themes</a>
+													</li>
+											<li class="active" ><a href="https://sculpin.io/documentation/converters/">Converters</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/formatters/">Formatters</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/generators/">Generators</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/content-types/">Content Types</a>
+															<ul class="nav">
+																			<li ><a href="https://sculpin.io/documentation/content-types/posts/">Posts</a>
+																			<li ><a href="https://sculpin.io/documentation/content-types/custom-types/">Custom Types</a>
+																	</ul>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/embedded-composer/">Embedded Composer</a>
+													</li>
+											<li ><a href="https://sculpin.io/documentation/extending-sculpin">Extending Sculpin</a>
+															<ul class="nav">
+																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/configuration/">Configuration</a>
+																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/creating-bundles/">Creating Bundles</a>
+																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/lifecycle/">Lifecycle</a>
+																	</ul>
+													</li>
+									</ul>
+			</div>
+		</div>
+		<div class="col-sm-9">
+			<h1>Converters</h1>
+            <p>Converters will convert incoming markup to something else, generally HTML.
+Sculpin ships with two converters, Markdown and Textile.</p>
+
+<hr />
+
+<h2 id="markdown-converter">Markdown Converter</h2>
+
+<p>The Markdown Converter will convert <code>.md</code>, <code>.mdown</code>, <code>.mkdn</code> and <code>.markdown</code> files
+using <a href="https://packagist.org/packages/michelf/php-markdown">michelf/php-markdown</a>.</p>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>The Markdown Converter can be configured by adjusting the following
+<code>sculpin_kernel.yml</code> settings:</p>
+
+<ul>
+<li><strong>sculpin_markdown.parser_class</strong>:
+Can be one of <code>Sculpin\Bundle\MarkdownBundle\PhpMarkdownParser</code> or <code>Sculpin\Bundle\MarkdownBundle\PhpMarkdownExtraParser</code>. Default value is <code>Sculpin\Bundle\MarkdownBundle\PhpMarkdownParser</code>. A custom parser must implement the <code>Sculpin\Core\Converter\ParserInterface</code>.</li>
+<li><strong>sculpin_markdown.extensions</strong>:
+Default value is <code>['md', 'mdown', 'mkdn', 'markdown']</code>.</li>
+</ul>
+
+<h3 id="other-markdown-classes">Other Markdown Classes</h3>
+
+<p>Third party extensions are available to support other Markdown varieties. See the individual package README files for specific installation information.</p>
+
+<ul>
+<li><strong><a href="https://github.com/bcremer/sculpin-commonmark-bundle">Bcremer\Sculpin\Bundle\CommonMarkBundle\SculpinCommonMarkBundle</a></strong> - Bundle that integrates the <a href="https://github.com/thephpleague/commonmark">league/commonmark</a> markdown parser.</li>
+</ul>
+
+<hr />
+
+<h2 id="textile-converter">Textile Converter</h2>
+
+<p>The Textile Converter will convert <code>.textile</code> files using
+<a href="https://packagist.org/packages/netcarver/textile">netcarver/textile</a>.</p>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>The Textile Converter can be configured by adjusting the following
+<code>sculpin_kernel.yml</code> settings:</p>
+
+<ul>
+<li><strong>sculpin_textile.extensions</strong>:
+Default value is <code>['.textile']</code>.</li>
+</ul>
+        </div>
+    </div>
+        </div>
+    </section>
+    <footer class="site">
+        <div class="container">
+                            <div class="mascot">
+                    <a class="ir" href="https://sculpin.io/mascot/">Meet Jackson, the Sculpin mascot</a>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/sculpin"><i class="icon icon-github"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/getsculpin"><i class="icon icon-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/getsculpin"><i class="icon icon-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/116539064425497686827" rel="publisher"><i class="icon icon-google-plus"></i></a>
+                        </li>
+                        <li>
+                            <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    &copy;2019 <a href="http://dflydev.com/projects/sculpin">Dragonfly Development</a>
+                </div>
+                    </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://sculpin.io/components/jquery/jquery.min.js"><\/script>')</script>
+    <script defer src="https://sculpin.io/components/bootstrap/js/bootstrap.min.js"></script>
+          <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-6757870-20', 'sculpin.io');
+        ga('send', 'pageview');
+      </script>
+    </body>
+</html>

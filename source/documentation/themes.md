@@ -19,20 +19,20 @@ sculpin_theme:
   theme: myApp/myTheme
 ```
 
-This configuration would look for a theme in `sources/themes/myApp/myTheme`.
+This configuration would look for a theme in `source/themes/myApp/myTheme`.
 
-To access theme assets in a twig template, you can use the `theme_path()` template helper. For example {% verbatim %}`{{ theme_path("css/style.css") }}`{% endverbatim %} would resolve to `sources/themes/myApp/css/style.css`.
+To access theme assets in a twig template, you can use the `theme_path()` template helper. For example {% verbatim %}`{{ theme_path("css/style.css") }}`{% endverbatim %} would resolve to `source/themes/myApp/css/style.css`.
 
 Themes can also inherit from other themes. To define a theme's parent theme, create a `theme.yml` file in the theme directory.
  
 ```yml
-# sources/themes/myApp/myTheme/theme.yml
+# source/themes/myApp/myTheme/theme.yml
 parent: 'myApp/parentTheme'
 ```
 
 Asset resolution for theme layouts, views, and static assets works as follows:
 
-- Check the `sources/` directory
+- Check the `source/` directory
 - If the asset is not found, check the theme directory
 - If the asset is not found, check the parent theme directory. 
 
@@ -45,7 +45,7 @@ Consider the following code structure:
 app/
   config/
     sculpin_kernel.yml
-sources/
+source/
   index.html.twig
   css/
     page.css
@@ -64,7 +64,7 @@ sources/
           page.css
 ```
 
-The `sources/index.html.twig` can work like so:
+The `source/index.html.twig` can work like so:
 
 {% verbatim %}
 ```twig
@@ -73,19 +73,19 @@ layout: default
 ---
 {# 
   This view will use the layout from 
-  sources/themes/myApp/myTheme/_layouts/default.html.twig,
+  source/themes/myApp/myTheme/_layouts/default.html.twig,
   which overrides the default layout in parentTheme.
 #}
 
 {% block stylesheets %}
   {# 
     This will use a stylesheet from 
-    sources/themes/myApp/myTheme/css/style.css 
+    source/themes/myApp/myTheme/css/style.css 
   #}
   <link rel="stylesheet" href="{{ theme_path("css/style.css") }}" />
   
   {#
-    This will use a stylesheet from sources/css/page.css,
+    This will use a stylesheet from source/css/page.css,
     which overrides the page.css in childTheme
   #}
   <link rel="stylesheet" href="{{ theme_path("css/page.css") }}" />
@@ -94,7 +94,7 @@ layout: default
 {% block logo %}
   {#
     This will use an image from 
-    sources/themes/myApp/parentTheme/images/logo.png 
+    source/themes/myApp/parentTheme/images/logo.png 
   #}
   <img src="{{ theme_path("images/logo.png") }}" />
 {% endblock %}

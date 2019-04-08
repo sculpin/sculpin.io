@@ -67,7 +67,11 @@ Now we can use Sculpin to generate static files, watch for changes, and run a lo
 
     vendor/bin/sculpin generate --watch --server
 
-The `watch` flag tells Sculpin to watch the files for changes, and when changed to re-generate the site automatically. `server` launches PHP's web server which lets you see your work in progress from [localhost:8000](http://localhost:8000). After having run this command, a new directory, `output_dev`, will appear in your project, folder.
+The `watch` flag tells Sculpin to watch the files for changes, and when changed to re-generate the site automatically. `server` launches PHP's web server which lets you see your work in progress from [localhost:8000](http://localhost:8000). After having run this command, a new directory, `output_dev`, will appear in your project folder.
+
+The `generate` command also takes a `--port` option to run on a different port:
+
+    vendor/bin/sculpin generate --watch --server --port=8888
 
 Please note, the server command may crash from time to time. This is usually as a result of in-progress or partly-saved updates that can cause unrecoverable errors. If this happens, try running the command again - this usually resolves the issue, or helps provide more information about the cause.
 
@@ -119,6 +123,10 @@ If the content hasn't generated fully (perhaps there is a page missing for one o
     control-C
     vendor/bin/sculpin generate --watch --server
 
+Your blog post should now show up on the site. You can also see the generated file at
+
+    output_dev/blog/2020/01/07/time-travel/index.html
+
 ---
 
 ## Generate a Production-Ready Site
@@ -129,7 +137,7 @@ Create a production ready version of your static site:
 
     vendor/bin/sculpin generate --env=prod
 
-This will create the directory `output_prod` in your project's directory. The contents of this file can now be uploaded.
+This will create the directory `output_prod` in your project's directory. The contents of this directory are ready to be uploaded to a webserver.
 
 ---
 
@@ -143,13 +151,21 @@ Some common options are covered here:
 
     rsync -avze 'ssh -p 999' output_prod/ user@example.com:public_html
 
+You might want to use the `--delete` option to also delete files that got
+removed. (But first make sure that there are no other files in the target
+directory that you do not want to be deleted. When in doubt, try with the
+`--dry-run` flag first and check what rsync would do.)
+
 #### GitHub
 
-GitHub pages change from time to time, it is best to [read their instructions][1].
+For GitHub pages, you will commit the rendered files in a git repository.
+Please refer to the official [instructions on GitHub pages][1].
 
 #### Amazon s3 bucket
 
-The skeleton site comes with a `s3-publish.sh` script which you may edit and use to upload to your bucket.
+The skeleton site comes with a `s3-publish.sh` script which you may edit and
+use to upload to your bucket. You will need to install the `s3cmd` utility
+in your system for this script to work.
 
 ---
 

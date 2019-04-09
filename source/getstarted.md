@@ -91,21 +91,29 @@ Sculpin blog.
 ## Run Sculpin
 
 Now we can use Sculpin to generate static files, watch for changes, and
-run a local web server we can use to see the results as we work.
+run a local web server to see the results as we work.
 
     vendor/bin/sculpin generate --watch --server
 
-The `watch` flag tells Sculpin to watch the files for changes, and when
-changed to re-generate the site automatically. `server` launches PHP's
-web server which lets you see your work in progress from [localhost:8000](http://localhost:8000).
+The `--watch` flag tells Sculpin to watch the files for changes, and
+when changed to re-generate the site automatically. The `--server` flag
+launches PHP's web server which lets you see your work in progress from
+[localhost:8000](http://localhost:8000).
 
 After having run this command, a new directory, `output_dev`, will
 appear in your project folder.
 
 The `generate` command also takes a `--port` option to run on a
-different port:
+different port, in case the default is currently being used:
 
     vendor/bin/sculpin generate --watch --server --port=8888
+
+There's also a helpful shortcut that leverages Composer to make things
+easier to remember:
+
+```
+composer sculpin-watch
+```
 
 Please note, the server command may encounter exceptions from time to
 time. This can happen if your editor saves a file before you're finished

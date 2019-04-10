@@ -105,8 +105,6 @@
 																			<li  class="active" ><a href="https://sculpin.io/documentation/content-types/custom-types/">Custom Types</a>
 																	</ul>
 													</li>
-											<li ><a href="https://sculpin.io/documentation/embedded-composer/">Embedded Composer</a>
-													</li>
 											<li ><a href="https://sculpin.io/documentation/extending-sculpin">Extending Sculpin</a>
 															<ul class="nav">
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/configuration/">Configuration</a>
@@ -119,58 +117,150 @@
 		</div>
 		<div class="col-sm-9">
 			<h1>Custom Types</h1>
-            <p>Creating custom content types with Sculpin is relatively easy. It mostly
-involves configuring <code>sculpin_content_types</code> in <code>app/config/sculpin_kernel.yml</code>.
-The end result is one or more data providers and optionally some taxonomy
-related data providers and index generators.</p>
+            <p>You can create your own custom content types with Sculpin. To do so,
+configure <code>sculpin_content_types</code> in <code>app/config/sculpin_kernel.yml</code> by
+following the guidelines outlined below.</p>
 
-<p>The content types bundle uses some magic to derive some values automatically so
-that you can configure less things. Everything can be overridden, though, so you
-are not going to be stuck with some unfortunate decisions made by Sculpin's
-default logic.</p>
+<p>The end result will be one or more data providers and optionally some
+taxonomy-related data providers (like "tags" on blog posts) and index
+generators.</p>
+
+<p>The content types bundle uses rules to derive some values automatically
+so that you have to configure fewer things. Everything can be
+overridden, though, so you can tailor the configuration if you're not
+satisfied by Sculpin's default guesses.</p>
 
 <hr />
 
 <h2 id="configuration">Configuration</h2>
 
-<p>Content types are defined by configuring the <code>sculpin_content_types</code> section of
-<code>app/config/sculpin_kernel.yml</code>. The top level keys in this node are considered
-the type names. Each type can have additional configuration.</p>
+<p>Content types are defined by configuring the <code>sculpin_content_types</code>
+section of <code>app/config/sculpin_kernel.yml</code>. The top level keys in this
+node are considered the type names. Each type can have additional
+configuration.</p>
 
 <h3 id="type-configuration-keys">Type Configuration Keys</h3>
 
-<p>For a given type name (the keys in the <code>sculpin_content_types</code> configuration),
-the following keys are available:</p>
+<p>For a given type name (the keys in the <code>sculpin_content_types</code>
+configuration), the following keys are available:</p>
 
 <ul>
 <li><strong>singular_name</strong>:
-The singularized name for the type. Defaults to the result of calling a
-singularize function on the type name.</li>
+The singularized name for the type. Defaults to the result of calling
+a singularize function on the type name.</li>
 <li><strong>type</strong>:
-The type of content type, either <strong>path</strong> or <strong>meta</strong>. Essentially, this is
-how Sculpin determines <em>how</em> it will select the content type. Either based on
-path or on some meta information.</li>
+The type of content type, either <strong>path</strong> or <strong>meta</strong>. Essentially,
+this is how Sculpin determines <em>how</em> it will select the content type.
+Either based on path or on some meta information.</li>
 <li><strong>path</strong>:
-If <code>type: path</code>, the path that will be used to locate this type. Defaults to
-the type name with a <code>_</code> prepended. (so, for a content type named <code>talks</code>, 
-the default path would be <code>_talks</code>)</li>
+If <code>type: path</code>, the path that will be used to locate this type.
+Defaults to the type name with a <code>_</code> prepended. (so, for a content
+type named <code>talks</code>, the default path would be <code>_talks</code>)</li>
 <li><strong>meta_key</strong>:
-If <code>type: meta</code>, the meta key that will be used to locate this type. Defaults
-to <code>type</code>.</li>
+If <code>type: meta</code>, the meta key that will be used to locate this type.
+Defaults to <code>type</code>.</li>
 <li><strong>meta</strong>:
-If <code>type: meta</code>, the value of the meta key that will be used to locate this
-type. Defaults to the singularized name.</li>
+If <code>type: meta</code>, the value of the meta key that will be used to
+locate this type. Defaults to the singularized name.</li>
 <li><strong>publish_drafts</strong>:
-Whether or not to publish drafts of this type. In the production environment
-this defaults to <strong>false</strong>. Otherwise, the default value is <strong>true</strong>.</li>
+Whether or not to publish drafts of this type. In the production
+environment this defaults to <strong>false</strong>. Otherwise, the default value
+is <strong>true</strong>.</li>
 <li><strong>layout</strong>:
-The default layout to use for this type. Defaults to the singularized name
-of the type.</li>
+The default layout to use for this type. Defaults to the singularized
+name of the type.</li>
 <li><strong>permalink</strong>:
 The default permalink to use for this type.</li>
 <li><strong>enabled</strong>:
-Whether or not the content type should be enabled. Defaults to <code>true</code>.</li>
+Whether or not the content type should be enabled. Defaults to
+<code>true</code>.</li>
 </ul>
+
+<hr />
+
+<h2 id="the-content-create-command">The Content Create Command</h2>
+
+<p>New in Sculpin 3.0, the <code>sculpin content:create</code> command will
+automatically define the YML changes and create placeholder HTML and
+Markdown assets for your specified content type.</p>
+
+<h3 id="usage">Usage</h3>
+
+<p>Running this command will create a new "<strong>Projects</strong>" content type with
+boilerplate files as well as the taxonomy "<strong>Tags</strong>" for organizing the
+project entries by custom tags.</p>
+
+<pre><code>vendor/bin/sculpin content:create -b -t tags projects
+</code></pre>
+
+<p>This will output:</p>
+
+<pre><code>Generating new content type: projects
+=============================================
+YAML to add to app/config/sculpin_kernel.yml:
+=============================================
+
+sculpin_content_types:
+    projects:
+        type: path
+        path: _projects
+        singular_name: project
+        layout: project
+        enabled: true
+        permalink: projects/:title
+        taxonomies:
+            - tags
+
+=================END OF YAML=================
+
+
+Generating boilerplate for portfolio
+</code></pre>
+
+<blockquote>
+  <p>Don't forget to add the YAML to your <code>sculpin_kernel.yml</code> file.</p>
+</blockquote>
+
+<p>The following boilerplate files and directories will be generated,
+thanks to the <code>-b</code>/<code>--boilerplate</code> option:</p>
+
+<pre><code>`-- source/
+   |-- _projects/          - Folder that stores Projects
+   |-- _views/
+   |   `-- project.html    - Layout file for Projects
+   |-- projects/
+   |   |-- tags/
+   |   |   `-- tag.html    - Listing template for individual "tags"
+   |   `-- tags.html       - Main list for "tags" taxonomy
+   `-- projects.html       - Template for the list of projects
+</code></pre>
+
+<p>All of these files are extremely bare-bones placeholders, meant to
+provide a toehold for getting started with building your site and taking
+advantage of Sculpin's features for aggregation (taxonomies) and
+pagination.</p>
+
+<p>Once you apply the YAML changes, you can create your first Project entry
+and see how the defaults look:</p>
+
+<p><em>%PROJECT_DIR%/source/_projects/sculpin.md</em></p>
+
+<pre><code>---
+layout: project
+title: Project SCULPIN
+tags: [blog, howto]
+---
+Lorem ipsum dolor belta lowdah ...
+</code></pre>
+
+<blockquote>
+  <p>Run <code>vendor/bin/sculpin generate --watch --server</code> and browse to your
+  sculpin site's projects folder (e.g.,
+  <code>http://localhost:8000/projects</code>) to see your new Project entry.</p>
+</blockquote>
+
+<p>Continue reading for an overview of how these files tie together to
+deliver custom content.</p>
 
 <hr />
 
@@ -186,9 +276,9 @@ Whether or not the content type should be enabled. Defaults to <code>true</code>
 
 <h3 id="configuration">Configuration</h3>
 
-<p>The default values are expanded below. Please note that <strong>you do not have to
-specify all of these options</strong>, this merely shows you the configuration options
-you <em>can</em> set, if you need to deviate from the defaults.</p>
+<p>The default values are expanded below. Please note that <strong>you do not
+have to specify all of these options</strong>, this merely shows the
+configuration options you <em>can</em> set, if you need to change the defaults.</p>
 
 <pre><code>sculpin_content_types:
     projects:
@@ -203,50 +293,52 @@ you <em>can</em> set, if you need to deviate from the defaults.</p>
 
 <h3 id="data-providers-and-generators">Data Providers and Generators</h3>
 
-<p>Given the above configuration, a few data providers and a generator will be made
-available:</p>
+<p>Given the above configuration, a few data providers and a generator will
+be made available:</p>
 
 <ul>
 <li><strong>projects</strong> (data provider):
-This is created based on the name of the type. It contains a sorted list of
-all of the sources that are discovered for the content type.
+This is created based on the name of the type. It contains a sorted
+list of all of the sources that are discovered for the content type.
 
 <ul>
 <li><strong>next_project</strong>:
-Each item in the <strong>projects</strong> collection will have a <strong>next_project</strong>
-meta data that contains either <strong>null</strong> or the next project in the
-collection.</li>
+Each item in the <strong>projects</strong> collection will have a
+<strong>next_project</strong> meta data that contains either <strong>null</strong> or the
+next project in the collection.</li>
 <li><strong>previous_project</strong>:
-Each item in the <strong>projects</strong> collection will have a <strong>previous_project</strong>
-meta data that contains either <strong>null</strong> or the previous project in the
-collection.</li>
+Each item in the <strong>projects</strong> collection will have a
+<strong>previous_project</strong> meta data that contains either <strong>null</strong> or
+the previous project in the collection.</li>
 </ul></li>
 <li><strong>projects_tags</strong> (data provider):
-This is a <code>Sculpin\Contrib\Taxonomy\ProxySourceTaxonomyDataProvider</code> that
-contains a mapping from tags to projects.</li>
+This is a <code>Sculpin\Contrib\Taxonomy\ProxySourceTaxonomyDataProvider</code>
+that contains a mapping from tags to projects.</li>
 <li><strong>projects_tag_index</strong> (generator):
-This is a <code>Sculpin\Contrib\Taxonomy\ProxySourceTaxonomyIndexGenerator</code> that
-will create a page for each tag.
+This is a <code>Sculpin\Contrib\Taxonomy\ProxySourceTaxonomyIndexGenerator</code>
+that will create a page for each tag.
 
 <ul>
 <li><strong>tag</strong>:
-Each generated tag index will have a piece of meta data named <strong>tag</strong> that
-will contain the name of the tag for which the index is being generated.</li>
+Each generated tag index will have a piece of meta data named
+<strong>tag</strong> that will contain the name of the tag for which the index
+is being generated.</li>
 <li><strong>tag_projects</strong>:
 Each generated tag index will have a piece of meta data named
-<strong>tag_projects</strong> that will be the collection of all projects with this
-tag.</li>
+<strong>tag_projects</strong> that will be the collection of all projects with
+this tag.</li>
 </ul></li>
 <li><strong>project.tag_html_index_permalinks</strong> (source property):
-Each source (in this case, each project source) will have have a map of each
-taxon to its indexes for each type (html, json, xml) if any are available.
-If there is an HTML page that uses the <code>projects_tag_index</code> generator, then
-<code>tag_html_index_permalinks</code> will be added to each project source.</li>
+Each source (in this case, each project source) will have have a map
+of each taxon to its indexes for each type (html, json, xml) if any
+are available. If there is an HTML page that uses the
+<code>projects_tag_index</code> generator, then <code>tag_html_index_permalinks</code> will
+be added to each project source.</li>
 </ul>
 
 <h3 id="sample-projects-index-page">Sample Projects Index Page</h3>
 
-<p>The following is a quick sample of a template that can be used to list all
+<p>The following is a sample of a template that can be used to list all
 projects.</p>
 
 <pre><code>---
@@ -261,7 +353,7 @@ use: [projects]
 
 <h3 id="sample-project-tags-index-page">Sample Project Tags Index Page</h3>
 
-<p>The following is a quick sample of a template that can be used to list all
+<p>The following is a sample of a template that can be used to list all
 tags that have been used to tag projects.</p>
 
 <pre><code>---
@@ -276,7 +368,7 @@ use: [projects_tags]
 
 <h3 id="sample-project-tags-projects-index-page">Sample Project Tags Projects Index Page</h3>
 
-<p>The following is a quick sample of a template that leverages the tag index
+<p>The following is a sample of a template that leverages the tag index
 generator to create a new page for every tag and list its projects.</p>
 
 <pre><code>---
@@ -292,7 +384,7 @@ generator: projects_tag_index
 
 <h3 id="pagination-of-custom-types">Pagination of custom types</h3>
 
-<p>Custom types can be paginated just as simply as posts.</p>
+<p>Custom types can be paginated in the same way as posts.</p>
 
 <pre><code>---
 generator: pagination
@@ -304,7 +396,11 @@ use:
 &lt;h1&gt;Paginated Projects&lt;/h1&gt;
 </code></pre>
 
-<p>The <code>use</code> list will load all the items in each given provider into the key data.. So, in this example, all the projects available will be loaded into <code>data.projects</code>. Now, simply setting the provider of pagination to <code>data.projects</code> we are able to paginate our custom type instead.</p>
+<p>The <code>use</code> list will load all the items in each given provider into the
+key data.. So, in this example, all the projects
+available will be loaded into <code>data.projects</code>. By setting the provider
+of pagination to <code>data.projects</code>, we are able to paginate our custom
+type instead.</p>
         </div>
     </div>
         </div>
@@ -324,9 +420,6 @@ use:
                         </li>
                         <li>
                             <a href="https://www.facebook.com/getsculpin"><i class="icon icon-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/116539064425497686827" rel="publisher"><i class="icon icon-google-plus"></i></a>
                         </li>
                         <li>
                             <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>

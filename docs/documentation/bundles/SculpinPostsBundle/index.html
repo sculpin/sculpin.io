@@ -167,10 +167,8 @@ to it.</p>
 <h3 id="title">Title</h3>
 
 <p>A Post has a title as a first class concept. It is set by the <code>title</code> top level
-metadata key. If a Post is used from a data provider, title can be easily found
-by requesting <code>post.title</code>.</p>
-
-<p>This is simply a shortcut for <code>post.meta.title</code>.</p>
+metadata key. If a Post is used from a data provider, the title is available as
+<code>post.title</code>, which is a shortcut for <code>post.meta.title</code>.</p>
 
 <p>Example:</p>
 
@@ -269,7 +267,7 @@ class AutoTagFromTitleMap implements MapInterface
 {
     private $tags;
 
-    public function __construct(array $tags = array())
+    public function __construct(array $tags = [])
     {
         $this-&gt;tags = array_map(function ($value) {
             return strtolower($value);
@@ -278,7 +276,7 @@ class AutoTagFromTitleMap implements MapInterface
 
     public function process(SourceInterface $source)
     {
-        $tags = array();
+        $tags = [];
 
         // Break out the title into words.
         $nameParts = explode(' ', $source-&gt;data()-&gt;get('title'));
@@ -294,16 +292,16 @@ class AutoTagFromTitleMap implements MapInterface
         $existingTags = $source-&gt;data()-&gt;get('tags');
         if (null === $existingTags) {
             // The Post had no tags to begin with
-            $existingTags = array();
+            $existingTags = [];
         } else {
             if (!is_array($existingTags)) {
                 if ($existingTags) {
                     // Normalize in case people did something
                     // not smart.
-                    $existingTags = array($existingTags);
+                    $existingTags = [$existingTags];
                 } else {
                     // Just in case...
-                    $existingTags = array();
+                    $existingTags = [];
                 }
             }
         }
@@ -355,9 +353,6 @@ services:
                         </li>
                         <li>
                             <a href="https://www.facebook.com/getsculpin"><i class="icon icon-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/116539064425497686827" rel="publisher"><i class="icon icon-google-plus"></i></a>
                         </li>
                         <li>
                             <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>

@@ -105,8 +105,6 @@
 																			<li ><a href="https://sculpin.io/documentation/content-types/custom-types/">Custom Types</a>
 																	</ul>
 													</li>
-											<li ><a href="https://sculpin.io/documentation/embedded-composer/">Embedded Composer</a>
-													</li>
 											<li ><a href="https://sculpin.io/documentation/extending-sculpin">Extending Sculpin</a>
 															<ul class="nav">
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/configuration/">Configuration</a>
@@ -121,100 +119,155 @@
 			<h1>Get Started</h1>
             <h2 id="welcome-to-sculpin%21">Welcome to Sculpin!</h2>
 
-<p>In this guide you'll learn the easiest way to get up and published using a blog template. Sculpin is not only for blogs, it can be used to create any number of static site formats, this is just a starting place to show you what's possible.</p>
+<p>In this guide, you'll be introduced to the Sculpin Blog Skeleton. You'll
+download and install it, run it, add some content to it, and generate
+and deploy a production-ready site using it.</p>
 
-<p>To create and publish your first Sculpin site, you will need to complete the following steps:</p>
+<p>Sculpin can be used to create any type of static website. The blog
+skeleton is a good way to explore Sculpin's features and get accustomed
+to working with it.</p>
+
+<p>To create and publish your first Sculpin site, you'll be guided through
+the following steps:</p>
 
 <ol>
-<li>Download and Install Composer</li>
-<li>Download and Install a Starter Kit</li>
-<li>Run Sculpin</li>
-<li>Add Content to Sculpin</li>
-<li>Generate a Production-Ready Site</li>
-<li>Deploy Sculpin</li>
+<li>Downloading and Installing Composer</li>
+<li>Starting a Blog</li>
+<li>Running Sculpin</li>
+<li>Adding Content to Sculpin</li>
+<li>Running Yarn</li>
+<li>Personalizing Your Site</li>
+<li>Generating a Production-Ready Site</li>
+<li>Deploying Static Sites</li>
 </ol>
 
 <hr />
 
 <h2 id="download-and-install-composer">Download and Install Composer</h2>
 
-<p>The best way to get Sculpin is to use Composer. This is a PHP based package management tool which is used to manage Sculpin's dependencies.</p>
+<p>Sculpin relies on Composer for installation. Composer is a PHP based
+package management tool which is used to manage Sculpin's dependencies.</p>
 
-<p>Use the instructions on the <a href="https://getcomposer.org/download/">Composer download page</a> to get started.</p>
+<blockquote>
+  <p>Use the instructions on the <a href="https://getcomposer.org/download/">Composer download page</a>
+  to get started. The provided commands include steps that verify the
+  installer's signature, so they can't be copied and pasted here.</p>
+</blockquote>
 
-<p>Since it's handy to run Composer from any directory you can move it to your bin directory.</p>
+<p>It's handy to be able to run Composer from any directory, which you can
+do by adding it to a folder in your path. For example, if your home
+directory contains a "bin" folder that is in your path, you could move
+composer like so:</p>
 
 <pre><code>mv composer.phar ~/bin/composer
 </code></pre>
 
-<p>You should now be able to type <code>composer</code> from any directory. If not, you likely do not have your user's bin directory assigned to your shell's <code>$PATH</code> variable. On bash, you can fix this by entering:</p>
+<p>You would now be able to type <code>composer</code> from any directory. If that
+turns out not to work, you likely do not have your user's bin directory
+assigned to your shell's <code>$PATH</code> variable. Using the bash shell, you can
+fix this by entering:</p>
 
 <pre><code>PATH=$PATH:$HOME/bin
 </code></pre>
 
-<p>You will want to add that line into your bash startup script also (<code>.bashrc</code> or <code>.bash_profile</code> in your home directory).</p>
+<p><small>Rather than entering that every time, you can add that line into your
+bash startup script also (<code>.bashrc</code> or <code>.bash_profile</code> in your home
+directory).</small></p>
 
-<h2 id="download-and-install-a-starter-kit">Download and Install a Starter Kit</h2>
+<h2 id="starting-a-blog">Starting a Blog</h2>
 
-<p>One of the most popular ways to use Sculpin is as a blogging platform. (This use of Sculpin is similar to using the blogging tool Jekyll.) The blog starter kit isn't included in the Sculpin project because Sculpin itself is not limited to a blogging platform. As a result, you will need to download this starter kit separately. The remainder of this tutorial assumes you have this starter kit in place, so please complete the following steps as well.</p>
+<p>One of the most popular ways to use Sculpin is as a blogging platform.
+This use of Sculpin is similar to other blogging tools, such as Jekyll
+or Hugo. Sculpin itself is not limited to being a blog, it can be used
+for any type of static website, which is why this specifically-tuned
+"blog skeleton" is provided separately from the main project.</p>
 
-<p>Download the starter kit from GitHub:</p>
+<p>Using composer, create a new blog:</p>
 
-<pre><code>cd ~
-git clone https://github.com/sculpin/sculpin-blog-skeleton.git myblog
+<pre><code>composer create-project sculpin/blog-skeleton myblog
 cd myblog
 </code></pre>
 
-<p>You will notice several configuration files in the main directory for your project as well as the following directories:</p>
+<p>When Composer asks if you want to remove existing VCS files, go ahead
+and answer "Yes". You can run <code>git init</code> later to start version-tracking
+your content.</p>
+
+<p>You will notice several configuration files in the main directory for
+your project as well as the following directories:</p>
 
 <ul>
-<li><code>app</code> contains all the logic for generating the blog.</li>
-<li><code>source</code> contains the raw content for your blog.</li>
+<li><code>app/</code> contains some of the logic for generating the blog.</li>
+<li><code>source/</code> contains the raw content for your blog.</li>
 </ul>
 
-<p>Now we must tell Sculpin to install any relevant dependencies for your project. You will see some JavaScript libraries and other bundles get installed. You must run this command for each new project you start! Make sure you are in the root directory for your project, and then run the install command.</p>
+<p>Composer's create-project command has now installed the relevant PHP
+dependencies for your project.</p>
 
-<pre><code>cd ~/myblog
-composer install
-</code></pre>
-
-<p>You are now ready to start the server, and add content to your new Sculpin site.</p>
+<p>You are now ready to start the server and add content to your new
+Sculpin blog.</p>
 
 <hr />
 
 <h2 id="run-sculpin">Run Sculpin</h2>
 
-<p>Now we can use Sculpin to generate static files, watch for changes, and run a local web server we can use to see the results as we work.</p>
+<p>Now we can use Sculpin to generate static files, watch for changes, and
+run a local web server to see the results as we work.</p>
 
 <pre><code>vendor/bin/sculpin generate --watch --server
 </code></pre>
 
-<p>The <code>watch</code> flag tells Sculpin to watch the files for changes, and when changed to re-generate the site automatically. <code>server</code> launches PHP's web server which lets you see your work in progress from <a href="http://localhost:8000">localhost:8000</a>. After having run this command, a new directory, <code>output_dev</code>, will appear in your project, folder.</p>
+<p>The <code>--watch</code> flag tells Sculpin to watch the files for changes, and
+when changed to re-generate the site automatically. The <code>--server</code> flag
+launches PHP's web server which lets you see your work in progress from
+<a href="http://localhost:8000">localhost:8000</a>.</p>
 
-<p>Please note, the server command may crash from time to time. This is usually as a result of in-progress or partly-saved updates that can cause unrecoverable errors. If this happens, simply re-run the command - this usually resolves the issue, or helps provide more information about the cause.</p>
+<p>After having run this command, a new directory, <code>output_dev</code>, will
+appear in your project folder.</p>
+
+<p>The <code>generate</code> command also takes a <code>--port</code> option to run on a
+different port, in case the default is currently being used:</p>
+
+<pre><code>vendor/bin/sculpin generate --watch --server --port=8888
+</code></pre>
+
+<p>There's also a helpful shortcut that leverages Composer to make things
+easier to remember:</p>
+
+<pre><code>composer sculpin-watch
+</code></pre>
+
+<p>Please note, the server command may encounter exceptions from time to
+time. This can happen if your editor saves a file before you're finished
+typing a complex templating tag. The generate command will catch these
+exceptions and provide information about what file and line number the
+issue was observed on.</p>
 
 <hr />
 
 <h2 id="add-content-to-sculpin">Add Content to Sculpin</h2>
 
-<p>You are now ready to add blog posts to your new site. Your blog posts will be in Markdown format, and contain metadata in YAML format. (Don't worry, it's easy.)</p>
+<p>You are now ready to add blog posts to your new site. Your blog posts
+will be in Markdown format, and contain metadata in YAML format. (Don't
+worry, we explain this all in detail.)</p>
 
 <p>Jump right into the source directory.</p>
 
 <pre><code>cd source
 </code></pre>
 
-<p>Here you'll see all the components that make up your blog, so let's go ahead and create a new post.</p>
+<p>Here you'll see all the components that make up your blog, so let's go
+ahead and create a new post.</p>
 
 <pre><code>cd _posts
 </code></pre>
 
 <p>Let's make a new file here and publish an article in the year 2020:</p>
 
-<pre><code>touch 2020-01-07-time-travel.md
+<pre><code>touch 2020-07-19-time-travel.md
 </code></pre>
 
-<p>Using your favorite text editor open up the file and let's write a message in the future!</p>
+<p>Using your favorite text editor open up the file and let's write a
+message in the future!</p>
 
 <pre><code>---
 title: Time travel
@@ -236,34 +289,112 @@ I am in the future.
 
 <p>Save the file.</p>
 
-<p>With this one file you've updated the blog listing, created a page for the post, and updated the atom feed.</p>
+<p>With this one file you've updated the blog listing, created a page for
+the post, and updated the atom feed.</p>
 
-<p>Assuming you are still running the server with the command <code>sculpin generate --watch --server</code>, the new pages are now available on your local server (<a href="http://localhost:8000">localhost:8000</a>). You will need to refresh the browser to see your new content.</p>
+<p>Assuming you are still running the server with the command
+<code>sculpin generate --watch --server</code>, the new pages are now available on
+your local server (<a href="http://localhost:8000">localhost:8000</a>). You will
+need to refresh the browser to see your new content.</p>
 
-<p>If the content hasn't generated fully (perhaps there is a page missing for one of the tags). Simply stop and then restart the server from the command line:</p>
+<p>If the content hasn't generated fully (perhaps there is a page missing
+for one of the tags), you can stop and then restart the server from the
+command line:</p>
 
 <pre><code>control-C
 vendor/bin/sculpin generate --watch --server
 </code></pre>
 
+<p>Your blog post should now show up on the site. You can also see the
+generated file at</p>
+
+<pre><code>output_dev/blog/2020/01/07/time-travel/index.html
+</code></pre>
+
+<hr />
+
+<h2 id="run-yarn">Run Yarn</h2>
+
+<p>When you're ready to start modifying your CSS and JS to personalize the
+look and feel of your blog, you can choose to go your own way and do
+things by hand. Or, you can install the <code>yarn</code> tool for compiling
+changes to CSS and JS. The skeleton comes preconfigured for the Webpack
+and Encore tools to deliver a modern toolchain for frontend development.</p>
+
+<blockquote>
+  <p>These <a href="https://yarnpkg.com/en/docs/install">installation instructions for Yarn</a>
+  will guide you to the proper steps for your system.</p>
+</blockquote>
+
+<p>Once yarn is installed, these commands will get you started:</p>
+
+<pre><code>yarn install
+yarn encore dev --watch
+</code></pre>
+
+<p>The watch command can also be launched from Composer:</p>
+
+<pre><code>composer yarn-watch
+</code></pre>
+
+<p>Yarn will watch for changes to CSS and JS files and regenerate the
+streamlined assets to incorporate the new changes.</p>
+
+<blockquote>
+  <p>To run the Sculpin watch process at the same time as the Yarn watch
+  process, it's advised to start a second terminal window and run the Yarn
+  command there.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="personalize-your-site">Personalize Your Site</h2>
+
+<p>Assets for your site are stored under <code>source/assets/</code>. When Yarn
+detects changes to the below files, it will then assemble them into some
+build artifacts in the <code>source/build/</code> folder. These build artifacts are
+what are downloaded when your site is loaded.</p>
+
+<h3 id="%60source%2Fassets%2Fcss%2Fapp.scss%60"><code>source/assets/css/app.scss</code></h3>
+
+<p>This file contains a number of SCSS ("Sassy CSS") directives. Yarn will
+run these through the SCSS preprocessor to create the build artifacts.</p>
+
+<h3 id="%60source%2Fassets%2Fjs%2Fapp.js%60"><code>source/assets/js/app.js</code></h3>
+
+<p>This file is where your site's JS will live. You can use all kinds of
+wizardry here if you're so inclined; Yarn will happily assemble it into
+a build artifact.</p>
+
 <hr />
 
 <h2 id="generate-a-production-ready-site">Generate a Production-Ready Site</h2>
 
-<p>Great! You've installed Sculpin, got a blog running and wrote a new post. Now publish it!</p>
+<p>Great! You've installed Sculpin, got a blog running, personalized it,
+and written a new post. Now publish it!</p>
 
 <p>Create a production ready version of your static site:</p>
 
 <pre><code>vendor/bin/sculpin generate --env=prod
 </code></pre>
 
-<p>This will create the directory <code>output_prod</code> in your project's directory. The contents of this file can now be uploaded.</p>
+<p>This will create the directory <code>output_prod</code> in your project's
+directory. The contents of this directory are ready to be uploaded to a
+webserver.</p>
+
+<blockquote>
+  <p>The main purpose of the "prod" environment is to hide draft blog posts
+  and pages.</p>
+</blockquote>
 
 <hr />
 
-<h2 id="deploy-sculpin">Deploy Sculpin</h2>
+<h2 id="deploy-your-generated-site">Deploy your Generated Site</h2>
 
-<p>In the previous step you created a stand-alone version of your site built from static HTML files. These files, which reside in <code>output_prod</code>, need to be uploaded to your publicly accessible web server.</p>
+<p>In the previous step you created a stand-alone version of your site
+built from static HTML files. These files, which reside in
+<code>output_prod</code>, need to be uploaded to your publicly-accessible web
+server.</p>
 
 <p>Some common options are covered here:</p>
 
@@ -272,19 +403,31 @@ vendor/bin/sculpin generate --watch --server
 <pre><code>rsync -avze 'ssh -p 999' output_prod/ user@example.com:public_html
 </code></pre>
 
+<p>You might want to use the <code>--delete</code> option to also delete files that
+got removed. Always make sure that there are no other files in the
+target directory that you do not want to be deleted. When in doubt, try
+with the <code>--dry-run</code>/<code>-n</code> flag first and check what rsync would do.</p>
+
 <h4 id="github">GitHub</h4>
 
-<p>GitHub pages change from time to time, it is best to <a href="http://pages.github.com/">read their instructions</a>.</p>
+<p>For GitHub pages, you will commit the rendered files in a git
+repository. Please refer to the official
+<a href="http://pages.github.com/">instructions on GitHub pages</a>.</p>
 
-<h4 id="amazon-s3-bucket">Amazon s3 bucket</h4>
+<h4 id="amazon-s3-bucket">Amazon S3 bucket</h4>
 
-<p>The skeleton site comes with a <code>s3-publish.sh</code> script which you may edit and use to upload to your bucket.</p>
+<p>The skeleton site comes with a <code>s3-publish.sh</code> script which you may edit
+and use to upload to your bucket. You will need to install the <code>s3cmd</code>
+utility in your system for this script to work.</p>
 
 <hr />
 
 <h2 id="what%27s-next%3F">What's next?</h2>
 
-<p>Now that you have created your first Sculpin site, you are ready to dive into creating highly customized sites. You may want to proceed by looking at <a href="../community">what others have built</a>, or you may want to dive into the <a href="../documentation">Sculpin documentation</a>.</p>
+<p>Now that you have created your first Sculpin site, you are ready to dive
+into creating highly customized sites. You may want to proceed by
+looking at <a href="../community">what others have built</a>, or you may want to
+explore the <a href="../documentation">Sculpin documentation</a>.</p>
         </div>
     </div>
         </div>
@@ -304,9 +447,6 @@ vendor/bin/sculpin generate --watch --server
                         </li>
                         <li>
                             <a href="https://www.facebook.com/getsculpin"><i class="icon icon-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/116539064425497686827" rel="publisher"><i class="icon icon-google-plus"></i></a>
                         </li>
                         <li>
                             <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>

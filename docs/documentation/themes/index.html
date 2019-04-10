@@ -105,8 +105,6 @@
 																			<li ><a href="https://sculpin.io/documentation/content-types/custom-types/">Custom Types</a>
 																	</ul>
 													</li>
-											<li ><a href="https://sculpin.io/documentation/embedded-composer/">Embedded Composer</a>
-													</li>
 											<li ><a href="https://sculpin.io/documentation/extending-sculpin">Extending Sculpin</a>
 															<ul class="nav">
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/configuration/">Configuration</a>
@@ -122,11 +120,11 @@
             <div class="well well-small">
 <h2>WARNING</h2>
 <p>
-Theme support for Sculpin is still highly experimental. It has been stable in its current form since early 2014 but be aware that the theme API <em>may</em> change drastically sometime later this year.
+Theme support for Sculpin is still highly experimental. It has been stable in its current form since early 2014 but be aware that the theme API <em>may</em> change drastically over time.
 </p>
 </div>
 
-<p>A theme is composed of layouts, assets, and views. To create a theme, simply register your theme name in <code>sculpin_kernel.yml</code>:</p>
+<p>A theme is composed of layouts, assets, and views. To create a theme, register your theme name in <code>sculpin_kernel.yml</code>:</p>
 
 <pre><code class="yml"># app/config/sculpin_kernel.yml
 sculpin_theme:
@@ -148,7 +146,7 @@ parent: 'myApp/parentTheme'
 <ul>
 <li>Check the <code>source/</code> directory</li>
 <li>If the asset is not found, check the theme directory</li>
-<li>If the asset is not found, check the parent theme directory. </li>
+<li>If the asset is not found, check the parent theme directory.</li>
 </ul>
 
 <h2 id="example">Example</h2>
@@ -233,9 +231,6 @@ layout: default
                         </li>
                         <li>
                             <a href="https://www.facebook.com/getsculpin"><i class="icon icon-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/116539064425497686827" rel="publisher"><i class="icon icon-google-plus"></i></a>
                         </li>
                         <li>
                             <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>

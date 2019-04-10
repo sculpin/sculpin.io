@@ -105,8 +105,6 @@
 																			<li ><a href="https://sculpin.io/documentation/content-types/custom-types/">Custom Types</a>
 																	</ul>
 													</li>
-											<li ><a href="https://sculpin.io/documentation/embedded-composer/">Embedded Composer</a>
-													</li>
 											<li ><a href="https://sculpin.io/documentation/extending-sculpin">Extending Sculpin</a>
 															<ul class="nav">
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/configuration/">Configuration</a>
@@ -120,7 +118,7 @@
 		<div class="col-sm-9">
 			<h1>Basic Sculpin Project</h1>
             <p>A Sculpin project is capable of building exactly one static site. By default,
-Sculpin assumes a basic filesystem structure for any Sculpin project.</p>
+Sculpin is configured to work with the following file structure:</p>
 
 <pre><code>|-- app/
 |  |-- SculpinKernel.php           # Custom Sculpin kernel
@@ -129,68 +127,103 @@ Sculpin assumes a basic filesystem structure for any Sculpin project.</p>
 |     |-- sculpin_site.yml         # Site meta data
 |     `-- sculpin_site_${env}.yml  # Env specific meta data
 |-- output_${env}/                 # Env specific generated files
-|-- source/
+|-- source/                        # Files in here are read and compiled
 |  |-- _posts/                     # Individual blog posts live here
 |  `-- _views/                     # Templates
-`-- composer.json                   # Dependencies
+`-- composer.json                  # Dependencies
 </code></pre>
 
-<hr />
+<p>Sculpin reads all files that are under the source directory. Sculpin
+expects this directory to be called <code>source/</code> in your project root. For
+example, if you have a file called <code>source/index.md</code>, Sculpin will
+generate a file called <code>output_dev/index.html</code>.</p>
 
-<h2 id="hello-world-project">Hello World Project</h2>
+<p>Besides the actual content, the <code>index.md</code> can also provide metadata.
+See <a href="https://sculpin.io/documentation/sources/">Sources</a> for the details.</p>
 
-<p>To get started, try creating a simple "Hello World" project for Sculpin. By
-following these rules you can get started with a completely bare Sulpin site in
-no time!</p>
+<p>Once created, the <code>output_prod</code> folder can be uploaded to a web server
+as-is. Because Sculpin is a static site generator, no PHP is used on the
+server. This provides greater freedom in hosting choices.</p>
 
-<h3 id="hello-world-directory-structure">Hello World Directory Structure</h3>
+<h2 id="commands">Commands</h2>
 
-<p>The directory structure of a Sculpin project is pretty simple. By default,
-Sculpin assumes that there will be a <code>source/</code> directory in your project root.
-Sculpin will read all of the files in your source directory.</p>
+<h3 id="rendering-your-site">Rendering your Site</h3>
 
-<p>Create a file called <code>index.md</code> in your source directory. Sculpin will
-automatically translate this file to <code>index.html</code> when it generates your site.</p>
+<p>The <code>generate</code> command looks for files in your source directory and
+generates static HTML files:</p>
 
-<p>Your project should now look like this:</p>
-
-<pre><code>|-- source/
-   `-- index.md
+<pre><code>vendor/bin/sculpin generate
 </code></pre>
 
-<h3 id="smallest-source-file">Smallest Source File</h3>
+<p>Your generated web site would then be available in <code>output_dev</code>.</p>
 
-<p>The contents of <code>index.md</code> should look like this. We will talk about this in
-more detail later in the <a href="https://sculpin.io/documentation/sources/">Sources</a> section.
-For now, just type this in exactly.</p>
+<p>The <code>generate</code> command has two useful options for editing your site
+locally:</p>
 
-<pre><code>---
----
+<ul>
+<li><code>--watch</code> will monitor the source directory and regenerate the site
+whenever a source file is changed</li>
+<li><code>--server</code> serves files over HTTP with the built-in webserver</li>
+</ul>
 
-# Hello World
-</code></pre>
-
-<h3 id="run-and-view">Run and View</h3>
-
-<p>Your project now has everything Sculpin needs to know in order to generate your
-Hello World project. For now, we are going to use the <code>--watch</code> and <code>--server</code>
-flags. This tells Sculpin to <em>watch</em> the source directory for changes (so it
-can regenerate the site as you edit your files) and to <em>serve</em> the site using an
-embedded web server.</p>
+<p>Combining these flags will let you edit your site locally and view the
+changes by refreshing your browser.</p>
 
 <pre><code>vendor/bin/sculpin generate --watch --server
 </code></pre>
 
-<p>Visit <a href="http://localhost:8000">localhost:8000</a> to see your new static site!</p>
+<p>This launches your site in <code>dev</code> mode at <a href="http://localhost:8000">localhost:8000</a></p>
 
-<h3 id="output">Output</h3>
+<p>The <code>generate</code> command also has a <code>--port</code> option, in case you need the web
+server to run on a different port:</p>
 
-<p>The static files are placed in <code>output_dev</code>. Explore the <code>output_dev</code> directory
-to see what is happening behind the scenes:</p>
-
-<pre><code>|-- output_dev/
-|  `-- index.html
+<pre><code>vendor/bin/sculpin generate --watch --server --port=8888
 </code></pre>
+
+<p>Besides using the <code>--server</code> option for <code>generate</code>, there are some other
+options for previewing the rendered pages locally.</p>
+
+<h4 id="serve-command">Serve Command</h4>
+
+<p>To serve files that have already been generated, use the <code>serve</code>
+command:</p>
+
+<pre><code>vendor/bin/sculpin serve
+</code></pre>
+
+<p>This mode will not automatically detect and update changes.</p>
+
+<h4 id="using-a-standard-webserver">Using a Standard Webserver</h4>
+
+<p>The only special consideration that needs to be taken into account for standard
+webservers <strong>in development</strong> is the fact that the URLs generated may not match
+the path at which the site is installed.</p>
+
+<p>This can be solved by overriding the <code>site.url</code> configuration option when
+generating the site.</p>
+
+<pre><code>vendor/bin/sculpin generate --url=http://my.dev.host/blog-skeleton/output_dev
+</code></pre>
+
+<p>With this option passed, <code>https://sculpin.io/about</code> will now be generated as
+<code>http://my.dev.host/blog-skelton/output_dev/about</code> instead of <code>/about</code>.</p>
+
+<h2 id="environments">Environments</h2>
+
+<p>Sculpin knows the <code>dev</code> and <code>prod</code> environment. They allow you to have
+<a href="configuration/">different configuration settings by environment</a>.</p>
+
+<p>Sculpin assumes that all commands will be run in the <code>dev</code> environment
+unless otherwise specified.</p>
+
+<p>When you want to build the final web site, run the command with the
+<code>--env=prod</code> option.</p>
+
+<pre><code>vendor/bin/sculpin generate --env=prod
+</code></pre>
+
+<p>The output of this command will be placed in <code>output_prod</code>. Upload the
+contents of this folder to your public website to deploy your site.</p>
         </div>
     </div>
         </div>
@@ -210,9 +243,6 @@ to see what is happening behind the scenes:</p>
                         </li>
                         <li>
                             <a href="https://www.facebook.com/getsculpin"><i class="icon icon-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/116539064425497686827" rel="publisher"><i class="icon icon-google-plus"></i></a>
                         </li>
                         <li>
                             <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>

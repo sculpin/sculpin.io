@@ -84,7 +84,7 @@ the path at which the site is installed.
 This can be solved by overriding the `site.url` configuration option when
 generating the site.
 
-    sculpin generate --url=http://my.dev.host/blog-skeleton/output_dev
+    vendor/bin/sculpin generate --url=http://my.dev.host/blog-skeleton/output_dev
 
 With this option passed, `{{ site.url }}/about` will now be generated as
 `http://my.dev.host/blog-skelton/output_dev/about` instead of `/about`.

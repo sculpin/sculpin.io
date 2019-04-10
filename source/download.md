@@ -7,8 +7,14 @@ nav_name: download
 
 # Download
 
-There are a few of ways to download Sculpin. The easiest way is to add Sculpin
-and any of its development dependencies to the `composer.json` for your site.
+There are a few of ways to download Sculpin.
+
+The easiest way is to head over to the [Get Started](/getstarted/)
+guide. The guide walks you through creating a Sculpin-based blog.
+
+Another option is to add Sculpin to the `composer.json` for your site.
+This is particularly useful if the site you're planning to create is not
+specifically a blog.
 
 > Don't have a `composer.json` yet? No worries - running the `composer
 > require` command can automatically create one for you. Or, you can run
@@ -17,7 +23,7 @@ and any of its development dependencies to the `composer.json` for your site.
 Confused about which option is best for your use case? Ask the
 Sculpin [community]({{site.url}}/community/)! They will be happy to help. :)
 
-<br>
+---
 
 ## Install with Composer
 
@@ -26,7 +32,7 @@ it:
 
     composer require sculpin/sculpin
 
-The entry point for sculpin is now `vendor/bin/sculpin`.
+The entry point for running Sculpin commands is `vendor/bin/sculpin`.
 
 > The best version of Sculpin to be running right now is version 3.0.
 
@@ -44,7 +50,11 @@ clone the fork:
 
 At this point, `bin/sculpin` should be usable.
 
-Note:
+**Note:**
 
-Originally, we recommended to install Sculpin globally. This has been
-deprecated, because each Sculpin site can have specific runtime dependencies.
+In the past, it was recommended to install Sculpin globally. This has
+been deprecated for various reasons, including moving away from the
+"phar" approach to Sculpin distribution.
+
+Installing Sculpin on a per-site basis using Composer allows greater
+flexibility with dependencies.

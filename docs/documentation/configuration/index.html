@@ -105,8 +105,6 @@
 																			<li ><a href="https://sculpin.io/documentation/content-types/custom-types/">Custom Types</a>
 																	</ul>
 													</li>
-											<li ><a href="https://sculpin.io/documentation/embedded-composer/">Embedded Composer</a>
-													</li>
 											<li ><a href="https://sculpin.io/documentation/extending-sculpin">Extending Sculpin</a>
 															<ul class="nav">
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/configuration/">Configuration</a>
@@ -120,30 +118,30 @@
 		<div class="col-sm-9">
 			<h1>Configuration</h1>
             <p>For Sculpin configuration there are a few things to keep in mind. First,
-configuration can be environment specific. After that, there are two main ways
-to configure Sculpin: site meta data and kernel configuration.</p>
+configuration can be environment specific. After that, there are two
+main ways to configure Sculpin: site meta data and kernel configuration.</p>
 
 <hr />
 
 <h2 id="development-and-production-environments">Development and Production Environments</h2>
 
 <p>Sculpin can be run in two modes, dev and production. These are known as
-environments. By default Sculpin will generate your site for the <code>dev</code>
-environment. This is important to know because configuration can be based on
-environment.</p>
+environments. Sculpin assumes it should generate your site for the <code>dev</code>
+environment unless othewise specified. This is important to know because
+configuration settings and variables can be based on environment.</p>
 
-<p>In order to generate your site for a production environment (<code>prod</code>), you need to
-specify this in your command line:</p>
+<p>In order to generate your site for a production environment (<code>prod</code>),
+specify the <code>--env=prod</code> option in your command line:</p>
 
-<pre><code>sculpin generate --watch --server --env=prod
+<pre><code>vendor/bin/sculpin generate --watch --server --env=prod
 </code></pre>
 
 <hr />
 
 <h2 id="site-meta-data">Site Meta Data</h2>
 
-<p>The easiest way to "configure" Sculpin is to add site meta data. Site meta data
-can be added to any of the following files:</p>
+<p>The easiest way to "configure" Sculpin is to add site meta data. Site
+meta data can be added to any of the following files:</p>
 
 <pre><code>|-- app/
 |  `-- config/
@@ -151,16 +149,20 @@ can be added to any of the following files:</p>
 |     `-- sculpin_site_${env}.yml  # Environment specific meta data (optional)
 </code></pre>
 
+<p><code>${env}</code> could be either of <code>dev</code> or <code>prod</code>, or potentially other custom
+environments if you need them.</p>
+
 <h3 id="environment-aware-configuration">Environment Aware Configuration</h3>
 
-<p>Environment specific meta data overrides generic meta data so sane defaults can
-be added to <code>sculpin_site.yml</code> and overridden on an environment-by-environment
-basis. This can be useful for things like Google Analytics identifiers. Set the
-default development version in <code>sculpin_site.yml</code> and set the production value
-in <code>sculpin_site_prod.yml</code>.</p>
+<p>Environment specific meta data overrides generic meta data so global
+defaults can be added to <code>sculpin_site.yml</code> and overridden on an
+environment-by-environment basis. This can be useful for things like
+Google Analytics identifiers. Set the default development version in
+<code>sculpin_site.yml</code> and set the production value in
+<code>sculpin_site_prod.yml</code>.</p>
 
-<p>Merging the <code>sculpin_site.yml</code> is not automatic. It must be imported into an
-environment specific configuration file like this:</p>
+<p>Merging the <code>sculpin_site.yml</code> is not automatic. It must be imported
+into an environment specific configuration file like this:</p>
 
 <pre><code>imports:
     - sculpin_site.yml
@@ -171,17 +173,17 @@ google_analytics_tracking_id: UA-PRODUCTION-372
 
 <h2 id="sculpin-kernel-configuration">Sculpin Kernel Configuration</h2>
 
-<p>Some parts of Sculpin, specifically anything configured as a bundle, must be
-configured at the kernel level. This can be done by modifying the
-<code>sculpin_kernel.yml</code> file.</p>
+<p>Some parts of Sculpin, specifically anything configured as a bundle,
+must be configured at the kernel level. This can be done by modifying
+the <code>sculpin_kernel.yml</code> file.</p>
 
 <pre><code>|-- app/
 |  `-- config/
 |     `-- sculpin_kernel.yml       # Sculpin's configuration (optional)
 </code></pre>
 
-<p>For example, to configure something like the default permalink for all sources,
-one would need to configure the Sculpin bundle's configuration:</p>
+<p>For example, to configure something like the default permalink for all
+sources, one would need to configure the Sculpin bundle's configuration:</p>
 
 <pre><code>sculpin:
     permalink: pretty
@@ -199,19 +201,29 @@ one would need to configure the Sculpin bundle's configuration:</p>
     theme: acme/awesome-theme
 </code></pre>
 
-<p>It is up to a bundle to define whether or not it can be configured using site
-meta data or kernel configuration. In general, kernel configuration is probably
-where configuration will happen for things that are not source (read, runtime
-based on stuff in <code>source/</code>) dependent.</p>
+<p>It is up to a bundle to define whether or not it can be configured using
+site meta data or kernel configuration. In general, kernel configuration
+is where very advanced configuration will happen for things that are not
+controllable by content in the <code>source/</code> folder.</p>
 
 <h2 id="permalinks">Permalinks</h2>
 
 <p>Sculpin supports multiple styles of permalinks.</p>
 
 <ul>
-<li><code>none</code>: The pathname of your source file. For example: <code>source/about.html</code> would result in <code>about.html</code> and <code>source/_projects/sculpin.html</code> would result in <code>_projects/sculpin.html</code></li>
-<li><code>date</code>: Replaces dashes with slashes to have a permalink popular in many blogs. For example: <code>source/2014-04-10-article.html</code> would result in <code>2014/04/10/article.html</code></li>
-<li><code>pretty</code>: This style adds <code>index.html</code> to the name of the source file, allowing you to have permalinks without the <code>.html</code> file extension. For example: <code>source/about.html</code> would result in <code>about/index.html</code>. It also supports files with dates, for example, <code>source/2014-04-10-article.html</code> would result in <code>2014/04/10/article/index.html</code>.</li>
+<li><code>none</code>: The pathname of your source file. For example:
+<code>source/about.html</code> would result in <code>about.html</code> and
+<code>source/_projects/sculpin.html</code> would result in
+<code>_projects/sculpin.html</code></li>
+<li><code>date</code>: Replaces dashes with slashes to have a permalink popular in
+many blogs. For example: <code>source/2014-04-10-article.html</code> would result
+in <code>2014/04/10/article.html</code></li>
+<li><code>pretty</code>: This style adds <code>index.html</code> to the name of the source file,
+allowing you to have permalinks without the <code>.html</code> file extension.
+For example: <code>source/about.html</code> would result in <code>about/index.html</code>.
+It also supports files with dates, for example,
+<code>source/2014-04-10-article.html</code> would result in
+<code>2014/04/10/article/index.html</code>.</li>
 </ul>
 
 <p>Additionally you can create custom permalinks using the following tags:</p>
@@ -227,9 +239,13 @@ based on stuff in <code>source/</code>) dependent.</p>
 <li><code>:slug_title</code>: Slug or slugified title of the page if no slug exists</li>
 <li><code>:filename</code>: Filename of the page, for example, <code>about.html</code></li>
 <li><code>:slug_filename</code>: Slug or filename if no slug exists</li>
-<li><code>:basename</code>: Basename of the page, for example, <code>source/_projects/sculpin.html</code> would result in <code>sculpin</code></li>
-<li><code>:basename_real</code>: Basename of the page including the extension, for example, <code>source/_projects/sculpin.html</code> would result in <code>sculpin.html</code></li>
-<li><code>:folder</code>: The folder the page is in. Type folders are filtered out. If no subfolder is present, folder does nothing. See example below for more details.</li>
+<li><code>:basename</code>: Basename of the page, for example,
+<code>source/_projects/sculpin.html</code> would result in <code>sculpin</code></li>
+<li><code>:basename_real</code>: Basename of the page including the extension, for
+example, <code>source/_projects/sculpin.html</code> would result in <code>sculpin.html</code></li>
+<li><code>:folder</code>: The folder the page is in. Type folders are filtered out.
+If no subfolder is present, folder does nothing. See example below for
+more details.</li>
 </ul>
 
 <p>A custom permalink configuration could look like this:</p>
@@ -238,21 +254,29 @@ based on stuff in <code>source/</code>) dependent.</p>
     permalink: blog/:year/:month/:day/:slug_title
 </code></pre>
 
-<p>If you wish your generated permalinks to have a trailing slash, you just have to add it to the configuration like this:</p>
+<p>If you wish your generated permalinks to have a trailing slash, specify
+the trailing slash in the configuration like this:</p>
 
 <pre><code>sculpin:
     permalink: blog/:title/
 </code></pre>
 
-<p>The generated files will then have a <code>blog/your-title/index.html</code> file, while the link will be <code>blog/your-title/</code> for it. Remember to use the same trailing slashes in your own internal links as well.</p>
+<p>The generated files will then have a <code>blog/your-title/index.html</code> file,
+while the link will be <code>blog/your-title/</code> for it. Remember to use the
+same trailing slashes in your own internal links as well.</p>
 
-<p>To use the <code>:folder</code> configuration an example config could look like this:</p>
+<p>To use the <code>:folder</code> configuration an example config could look like
+this:</p>
 
 <pre><code>sculpin:
     permalink: blog/:folder:basename.html
 </code></pre>
 
-<p>Now a file in <code>source/_posts/somefolder/mypost.md</code> would render as <code>/blog/somefolder/mypost.html</code> while a file in <code>source/_posts/nofolder.md</code> would still render in <code>/blog/nofolder.html</code>. Without the <code>:folder</code> directive, both posts would be directly under blog, all folder structure would be ignored.</p>
+<p>Now a file in <code>source/_posts/somefolder/mypost.md</code> would render as
+<code>/blog/somefolder/mypost.html</code> while a file in
+<code>source/_posts/nofolder.md</code> would still render in <code>/blog/nofolder.html</code>.
+Without the <code>:folder</code> directive, both posts would be directly under
+<code>/blog/</code>, all folder structure would be ignored.</p>
         </div>
     </div>
         </div>
@@ -272,9 +296,6 @@ based on stuff in <code>source/</code>) dependent.</p>
                         </li>
                         <li>
                             <a href="https://www.facebook.com/getsculpin"><i class="icon icon-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/116539064425497686827" rel="publisher"><i class="icon icon-google-plus"></i></a>
                         </li>
                         <li>
                             <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>

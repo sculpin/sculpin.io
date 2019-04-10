@@ -79,46 +79,47 @@
         <div class="container">
                         <h1 id="download">Download</h1>
 
-<p>There are a few of ways to download Sculpin. The easiest way is to add Sculpin
-and any of its development dependencies to the <code>composer.json</code> for your site.
-Don't have a <code>composer.json</code> yet? Create one!</p>
+<p>There are a few of ways to download Sculpin.</p>
+
+<p>The easiest way is to head over to the <a href="/getstarted/">Get Started</a>
+guide. The guide walks you through creating a Sculpin-based blog.</p>
+
+<p>Another option is to add Sculpin to the <code>composer.json</code> for your site.
+This is particularly useful if the site you're planning to create is not
+specifically a blog.</p>
+
+<blockquote>
+  <p>Don't have a <code>composer.json</code> yet? No worries - running the <code>composer
+  require</code> command can automatically create one for you. Or, you can run
+  <code>composer init</code> to create a blank starting point.</p>
+</blockquote>
 
 <p>Confused about which option is best for your use case? Ask the
 Sculpin <a href="https://sculpin.io/community/">community</a>! They will be happy to help. :)</p>
 
-<p><br></p>
+<hr />
 
-<h2 id="download-via-composer">Download via Composer</h2>
+<h2 id="install-with-composer">Install with Composer</h2>
 
-<p>Sculpin can be added to any existing Composer managed project by simply
-requiring Sculpin (and a couple of other dev dependencies) in <code>composer.json</code>.</p>
+<p>Sculpin can be added to any existing Composer managed project by requiring
+it:</p>
 
-<pre><code>{
-    "require": {
-        "sculpin/sculpin": "^2.1@dev",
-
-        "dflydev/embedded-composer": "@dev"
-    }
-}
+<pre><code>composer require sculpin/sculpin
 </code></pre>
 
-<p>By default this will install Sculpin to <code>vendor/bin/sculpin</code>.</p>
+<p>The entry point for running Sculpin commands is <code>vendor/bin/sculpin</code>.</p>
 
-<p>The best version of Sculpin to be running right now is the most recent
-develompent version for 2.1. Since there are no public releases for
-2.1.*, you'll need to specify <code>@dev</code> for your Sculpin dependency.</p>
+<blockquote>
+  <p>The best version of Sculpin to be running right now is version 3.0.</p>
+</blockquote>
 
-<p>Sculpin currently relies on Embedded Composer which does not have a stable
-release. In order to avoid having to set <code>minimum-stability</code> to dev,
-these packages can be flagged as <code>@dev</code> to ensure Composer will
-install everything correctly.</p>
-
-<p><br></p>
+<hr />
 
 <h2 id="download-via-git">Download via Git</h2>
 
-<p>Sculpin can be downloaded via git to be used while being under development.
-Either clone the Sculpin project directly or fork and clone the fork.</p>
+<p>Sculpin can be downloaded with git. This is mainly useful if you want to work
+on changes to sculpin. Either clone the Sculpin project directly or fork and
+clone the fork:</p>
 
 <pre><code>git clone git@github.com:sculpin/sculpin.git
 cd sculpin
@@ -127,25 +128,14 @@ composer install
 
 <p>At this point, <code>bin/sculpin</code> should be usable.</p>
 
-<p>If you want to make your development version of Sculpin available, create a
-symlink to it from somewhere in your <code>$PATH</code>. For example, to create a
-<code>sculpin-dev</code> command and assuming that <code>~/bin</code> is in your <code>$PATH</code>, execute the
-following:</p>
+<p><strong>Note:</strong></p>
 
-<pre><code>ln -s ~/sculpin/bin/sculpin ~/bin/sculpin-dev
-</code></pre>
+<p>In the past, it was recommended to install Sculpin globally. This has
+been deprecated for various reasons, including moving away from the
+"phar" approach to Sculpin distribution.</p>
 
-<p>This will allow you to have a globally installed version of Sculpin (like maybe
-<code>sculpin.phar</code>) along side a development version of Sculpin (<code>sculpin-dev</code>).</p>
-
-<h3 id="important-notice-regarding-git">Important Notice Regarding Git</h3>
-
-<p>Global installation is not recommended as each Sculpin site could have runtime
-dependencies that are not compatible with the globally installed version of
-Sculpin. This has been a popular method of maintaining Sculpin sites in
-the past, though, so notes are still left here. Just keep in mind that
-it will probably be better to run the Sculpin that gets installed
-specifically for your site.</p>
+<p>Installing Sculpin on a per-site basis using Composer allows greater
+flexibility with dependencies.</p>
                     </div>
     </section>
     <footer class="site">
@@ -163,9 +153,6 @@ specifically for your site.</p>
                         </li>
                         <li>
                             <a href="https://www.facebook.com/getsculpin"><i class="icon icon-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/116539064425497686827" rel="publisher"><i class="icon icon-google-plus"></i></a>
                         </li>
                         <li>
                             <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>

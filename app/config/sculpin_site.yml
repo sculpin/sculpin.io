@@ -52,10 +52,6 @@ docs:
                 url: documentation/content-types/custom-types/
                 slug: content-types/custom-types
     -
-        name: Embedded Composer
-        url: documentation/embedded-composer/
-        slug: embedded-composer
-    -
         name: Extending Sculpin
         url: documentation/extending-sculpin
         slug: extending-sculpin

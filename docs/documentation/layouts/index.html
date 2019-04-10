@@ -105,8 +105,6 @@
 																			<li ><a href="https://sculpin.io/documentation/content-types/custom-types/">Custom Types</a>
 																	</ul>
 													</li>
-											<li ><a href="https://sculpin.io/documentation/embedded-composer/">Embedded Composer</a>
-													</li>
 											<li ><a href="https://sculpin.io/documentation/extending-sculpin">Extending Sculpin</a>
 															<ul class="nav">
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/configuration/">Configuration</a>
@@ -196,6 +194,26 @@ special_value: nice
 &lt;h1&gt;This is a markdown file with YAML frontmatter&lt;/h1&gt;
 &lt;/html&gt;
 </code></pre>
+
+<h3 id="content-wrapper">Content Wrapper</h3>
+
+<p>When working with multiple levels of view inheritance, wrap <code>page.blocks.content</code> or <code>{% block content %}{% endblock %}</code> or <code>{% block content '' %}</code> in a <code>content_wrapper</code> block, like in this example <code>_views/project.html</code> layout:</p>
+
+<pre><code>{% extends 'default' %}
+
+{% block content_wrapper %}
+&lt;article&gt;
+  &lt;header&gt;
+    &lt;h2&gt;{{ page.title }}&lt;/h2&gt;
+  &lt;/header&gt;
+  &lt;section class="main_body"&gt;
+    {{ page.blocks.content }}
+  &lt;/section&gt;
+&lt;/article&gt;
+{% endblock %}
+</code></pre>
+
+<p>This will help ensure that inheritance properly applies, so that the content gets embedded in the <code>project</code> view, which then gets embedded in the <code>default</code> view.</p>
         </div>
     </div>
         </div>
@@ -215,9 +233,6 @@ special_value: nice
                         </li>
                         <li>
                             <a href="https://www.facebook.com/getsculpin"><i class="icon icon-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/116539064425497686827" rel="publisher"><i class="icon icon-google-plus"></i></a>
                         </li>
                         <li>
                             <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>

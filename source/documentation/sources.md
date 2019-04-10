@@ -5,6 +5,7 @@ slug: sources
 ---
 
 By default, sources are objects represented by each file under `source/`.
+In addition to the actual content, these files can provide a YAML frontmatter.
 Sources that have YAML frontmatter are considered special in that they can be
 formatted.
 
@@ -20,14 +21,14 @@ What is YAML frontmatter? It is best to compare examples:
 
     # This is a markdown file with YAML frontmatter
 
-As you can see, there is a chunk of YAML in the second example. It is delimited
+The frontmatter is the chunk of YAML in the second example. It is delimited
 by `---`. The YAML frontmatter is parsed and injected into every page rendering
 and is accessible as `page.KEY`.
 
 
-## Deep Frontmatter YAML Structures
+## Nested Frontmatter YAML Structures
 
-Sculpin will read deep structures in YAML frontmatter. Just use a `.` to
+Sculpin reads nested structures in YAML frontmatter. Use a `.` to
 indicate that you want to descend into a structure. For example:
 
     ---

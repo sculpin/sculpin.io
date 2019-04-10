@@ -105,8 +105,6 @@
 																			<li ><a href="https://sculpin.io/documentation/content-types/custom-types/">Custom Types</a>
 																	</ul>
 													</li>
-											<li ><a href="https://sculpin.io/documentation/embedded-composer/">Embedded Composer</a>
-													</li>
 											<li ><a href="https://sculpin.io/documentation/extending-sculpin">Extending Sculpin</a>
 															<ul class="nav">
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/configuration/">Configuration</a>
@@ -120,6 +118,7 @@
 		<div class="col-sm-9">
 			<h1>Sources</h1>
             <p>By default, sources are objects represented by each file under <code>source/</code>.
+In addition to the actual content, these files can provide a YAML frontmatter.
 Sources that have YAML frontmatter are considered special in that they can be
 formatted.</p>
 
@@ -137,13 +136,13 @@ layout: default
 # This is a markdown file with YAML frontmatter
 </code></pre>
 
-<p>As you can see, there is a chunk of YAML in the second example. It is delimited
+<p>The frontmatter is the chunk of YAML in the second example. It is delimited
 by <code>---</code>. The YAML frontmatter is parsed and injected into every page rendering
 and is accessible as <code>page.KEY</code>.</p>
 
-<h2 id="deep-frontmatter-yaml-structures">Deep Frontmatter YAML Structures</h2>
+<h2 id="nested-frontmatter-yaml-structures">Nested Frontmatter YAML Structures</h2>
 
-<p>Sculpin will read deep structures in YAML frontmatter. Just use a <code>.</code> to
+<p>Sculpin reads nested structures in YAML frontmatter. Use a <code>.</code> to
 indicate that you want to descend into a structure. For example:</p>
 
 <pre><code>---
@@ -175,9 +174,6 @@ We can reference `{{ page.something.here.also }} === deep`.
                         </li>
                         <li>
                             <a href="https://www.facebook.com/getsculpin"><i class="icon icon-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/116539064425497686827" rel="publisher"><i class="icon icon-google-plus"></i></a>
                         </li>
                         <li>
                             <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>

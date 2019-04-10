@@ -7,11 +7,11 @@ slug: themes
 <div class="well well-small">
 <h2>WARNING</h2>
 <p>
-Theme support for Sculpin is still highly experimental. It has been stable in its current form since early 2014 but be aware that the theme API <em>may</em> change drastically sometime later this year.
+Theme support for Sculpin is still highly experimental. It has been stable in its current form since early 2014 but be aware that the theme API <em>may</em> change drastically over time.
 </p>
 </div>
 
-A theme is composed of layouts, assets, and views. To create a theme, simply register your theme name in `sculpin_kernel.yml`:
+A theme is composed of layouts, assets, and views. To create a theme, register your theme name in `sculpin_kernel.yml`:
 
 ```yml
 # app/config/sculpin_kernel.yml

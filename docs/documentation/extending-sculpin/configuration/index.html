@@ -105,8 +105,6 @@
 																			<li ><a href="https://sculpin.io/documentation/content-types/custom-types/">Custom Types</a>
 																	</ul>
 													</li>
-											<li ><a href="https://sculpin.io/documentation/embedded-composer/">Embedded Composer</a>
-													</li>
 											<li ><a href="https://sculpin.io/documentation/extending-sculpin">Extending Sculpin</a>
 															<ul class="nav">
 																			<li  class="active" ><a href="https://sculpin.io/documentation/extending-sculpin/configuration/">Configuration</a>
@@ -122,7 +120,7 @@
             <p>To configure Sculpin for additional bundles, a custom Sculpin kernel must be
 created. Sculpin will automatically look for this file in
 <code>app/SculpinKernel.php</code>. If this file exists, it is loaded. If not, Sculpin
-simply loads a default kernel.</p>
+loads a default kernel.</p>
 
 <p>If this file does not yet exist, you can use this template to create it:</p>
 
@@ -130,35 +128,38 @@ simply loads a default kernel.</p>
 
 class SculpinKernel extends \Sculpin\Bundle\SculpinBundle\HttpKernel\AbstractKernel
 {
-    protected function getAdditionalSculpinBundles()
+    protected function getAdditionalSculpinBundles(): array
     {
-        return array(
-        );
+        return [
+        ];
     }
 }
 </code></pre>
 
-<p>In order to enable a Sculpin bundle, just make sure that its class name is a part
-of the array returned from <code>getAdditionalSculpinBundles</code>. For example, to load
-the <a href="https://github.com/mavimo/sculpin-redirect-bundle">mavimo/sculpin-redirect-bundle</a>, whose class is
+<p>In order to enable a Sculpin bundle, add its class name to the array returned
+from <code>getAdditionalSculpinBundles</code>. For example, to load the
+<a href="https://github.com/mavimo/sculpin-redirect-bundle">mavimo/sculpin-redirect-bundle</a>, whose class is
 <code>Mavimo\Sculpin\Bundle\RedirectBundle\SculpinRedirectBundle</code>, you would do
 the following:</p>
 
 <pre><code>&lt;?php
 
-class SculpinKernel extends \Sculpin\Bundle\SculpinBundle\HttpKernel\AbstractKernel
+use Mavimo\Sculpin\Bundle\RedirectBundle\SculpinRedirectBundle;
+use Sculpin\Bundle\SculpinBundle\HttpKernel\AbstractKernel;
+
+class SculpinKernel extends AbstractKernel
 {
-    protected function getAdditionalSculpinBundles()
+    protected function getAdditionalSculpinBundles(): array
     {
-        return array(
-            'Mavimo\Sculpin\Bundle\RedirectBundle\SculpinRedirectBundle'
-        );
+        return [
+            SculpinRedirectBundle::class,
+        ];
     }
 }
 </code></pre>
 
-<p>Please note that you must return the class name as a string! This is slightly
-different from traditional Symfony 2 usage.</p>
+<p>Please note that you must return the class name as a string value! Do not
+return and instance, and also do not return a hashmap like in Symfony 4.</p>
 
 <p>That's it! This will ensure that your bundle will be registered correctly.</p>
         </div>
@@ -180,9 +181,6 @@ different from traditional Symfony 2 usage.</p>
                         </li>
                         <li>
                             <a href="https://www.facebook.com/getsculpin"><i class="icon icon-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/116539064425497686827" rel="publisher"><i class="icon icon-google-plus"></i></a>
                         </li>
                         <li>
                             <a href="irc://irc.freenode.net/%23sculpin"><i class="icon icon-comment"></i> #sculpin</a>

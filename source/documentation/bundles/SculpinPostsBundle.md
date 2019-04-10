@@ -107,10 +107,8 @@ to it.
 ### Title
 
 A Post has a title as a first class concept. It is set by the `title` top level
-metadata key. If a Post is used from a data provider, title can be easily found
-by requesting `post.title`.
-
-This is simply a shortcut for `post.meta.title`.
+metadata key. If a Post is used from a data provider, the title is available as
+`post.title`, which is a shortcut for `post.meta.title`.
 
 Example:
 
@@ -220,7 +218,7 @@ class AutoTagFromTitleMap implements MapInterface
 {
     private $tags;
 
-    public function __construct(array $tags = array())
+    public function __construct(array $tags = [])
     {
         $this->tags = array_map(function ($value) {
             return strtolower($value);
@@ -229,7 +227,7 @@ class AutoTagFromTitleMap implements MapInterface
 
     public function process(SourceInterface $source)
     {
-        $tags = array();
+        $tags = [];
 
         // Break out the title into words.
         $nameParts = explode(' ', $source->data()->get('title'));
@@ -245,16 +243,16 @@ class AutoTagFromTitleMap implements MapInterface
         $existingTags = $source->data()->get('tags');
         if (null === $existingTags) {
             // The Post had no tags to begin with
-            $existingTags = array();
+            $existingTags = [];
         } else {
             if (!is_array($existingTags)) {
                 if ($existingTags) {
                     // Normalize in case people did something
                     // not smart.
-                    $existingTags = array($existingTags);
+                    $existingTags = [$existingTags];
                 } else {
                     // Just in case...
-                    $existingTags = array();
+                    $existingTags = [];
                 }
             }
         }

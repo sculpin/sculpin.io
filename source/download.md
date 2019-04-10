@@ -7,10 +7,9 @@ nav_name: download
 
 # Download
 
-There are a few of ways to download Sculpin.
-
-The easiest way is to head over to the [Get Started](/getstarted/)
-guide. The guide walks you through creating a Sculpin-based blog.
+The easiest way to download Sculpin is to head over to the
+[Get Started](/getstarted/) guide. The guide walks you through creating
+a Sculpin-based blog.
 
 Another option is to add Sculpin to the `composer.json` for your site.
 This is particularly useful if the site you're planning to create is not

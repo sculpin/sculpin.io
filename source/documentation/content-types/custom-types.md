@@ -4,65 +4,70 @@ slug: content-types/custom-types
 
 ---
 
-You can create your own custom content types with Sculpin. To do so, you
-configure `sculpin_content_types` in `app/config/sculpin_kernel.yml`.
-The end result is one or more data providers and optionally some taxonomy
-related data providers and index generators.
+You can create your own custom content types with Sculpin. To do so,
+configure `sculpin_content_types` in `app/config/sculpin_kernel.yml` by
+following the guidelines outlined below.
 
-The content types bundle uses rules to derive some values automatically so
-that you have to configure less things. Everything can be overridden, though,
-so you are not going to be stuck with some unfortunate decisions made by
-Sculpin's default logic.
+The end result will be one or more data providers and optionally some
+taxonomy-related data providers (like "tags" on blog posts) and index
+generators.
 
+The content types bundle uses rules to derive some values automatically
+so that you have to configure fewer things. Everything can be
+overridden, though, so you can tailor the configuration if you're not
+satisfied by Sculpin's default guesses.
 
 ---
 
 ## Configuration
 
-Content types are defined by configuring the `sculpin_content_types` section of
-`app/config/sculpin_kernel.yml`. The top level keys in this node are considered
-the type names. Each type can have additional configuration.
+Content types are defined by configuring the `sculpin_content_types`
+section of `app/config/sculpin_kernel.yml`. The top level keys in this
+node are considered the type names. Each type can have additional
+configuration.
 
 ### Type Configuration Keys
 
-For a given type name (the keys in the `sculpin_content_types` configuration),
-the following keys are available:
+For a given type name (the keys in the `sculpin_content_types`
+configuration), the following keys are available:
 
  * **singular_name**:
-   The singularized name for the type. Defaults to the result of calling a
-   singularize function on the type name.
+   The singularized name for the type. Defaults to the result of calling
+   a singularize function on the type name.
  * **type**:
-   The type of content type, either **path** or **meta**. Essentially, this is
-   how Sculpin determines *how* it will select the content type. Either based on
-   path or on some meta information.
+   The type of content type, either **path** or **meta**. Essentially,
+   this is how Sculpin determines *how* it will select the content type.
+   Either based on path or on some meta information.
  * **path**:
-   If `type: path`, the path that will be used to locate this type. Defaults to
-   the type name with a `_` prepended. (so, for a content type named `talks`, 
-   the default path would be `_talks`)
+   If `type: path`, the path that will be used to locate this type.
+   Defaults to the type name with a `_` prepended. (so, for a content
+   type named `talks`, the default path would be `_talks`)
  * **meta_key**:
-   If `type: meta`, the meta key that will be used to locate this type. Defaults
-   to `type`.
+   If `type: meta`, the meta key that will be used to locate this type.
+   Defaults to `type`.
  * **meta**:
-   If `type: meta`, the value of the meta key that will be used to locate this
-   type. Defaults to the singularized name.
+   If `type: meta`, the value of the meta key that will be used to
+   locate this type. Defaults to the singularized name.
  * **publish_drafts**:
-   Whether or not to publish drafts of this type. In the production environment
-   this defaults to **false**. Otherwise, the default value is **true**.
+   Whether or not to publish drafts of this type. In the production
+   environment this defaults to **false**. Otherwise, the default value
+   is **true**.
  * **layout**:
-   The default layout to use for this type. Defaults to the singularized name
-   of the type.
+   The default layout to use for this type. Defaults to the singularized
+   name of the type.
  * **permalink**:
    The default permalink to use for this type.
  * **enabled**:
-   Whether or not the content type should be enabled. Defaults to `true`.
+   Whether or not the content type should be enabled. Defaults to
+   `true`.
 
 ---
 
 ## The Content Create Command
 
-New in Sculpin 3.0, the `sculpin content:create` command will automatically
-define the YML changes and create placeholder HTML/Markdown for your specified
-content type.
+New in Sculpin 3.0, the `sculpin content:create` command will
+automatically define the YML changes and create placeholder HTML and
+Markdown assets for your specified content type.
 
 ### Usage
 
@@ -128,8 +133,8 @@ and see how the defaults look:
     Lorem ipsum dolor belta lowdah ...
 
 > Run `vendor/bin/sculpin generate --watch --server` and browse to your
-> sculpin site's projects folder (e.g., `http://localhost:8000/projects`)
-> to see your new Project entry.
+> sculpin site's projects folder (e.g.,
+> `http://localhost:8000/projects`) to see your new Project entry.
 
 Continue reading for an overview of how these files tie together to
 deliver custom content.
@@ -147,9 +152,9 @@ That's it! It wires everything up using defaults. Isn't magic fun?
 
 ### Configuration
 
-The default values are expanded below. Please note that **you do not have to
-specify all of these options**, this merely shows you the configuration options
-you *can* set, if you need to deviate from the defaults.
+The default values are expanded below. Please note that **you do not
+have to specify all of these options**, this merely shows the
+configuration options you *can* set, if you need to change the defaults.
 
     sculpin_content_types:
         projects:
@@ -164,42 +169,44 @@ you *can* set, if you need to deviate from the defaults.
 
 ### Data Providers and Generators
 
-Given the above configuration, a few data providers and a generator will be made
-available:
+Given the above configuration, a few data providers and a generator will
+be made available:
 
  * **projects** (data provider):
-   This is created based on the name of the type. It contains a sorted list of
-   all of the sources that are discovered for the content type.
+   This is created based on the name of the type. It contains a sorted
+   list of all of the sources that are discovered for the content type.
     * **next_project**:
-      Each item in the **projects** collection will have a **next_project**
-      meta data that contains either **null** or the next project in the
-      collection.
+      Each item in the **projects** collection will have a
+      **next_project** meta data that contains either **null** or the
+      next project in the collection.
     * **previous_project**:
-      Each item in the **projects** collection will have a **previous_project**
-      meta data that contains either **null** or the previous project in the
-      collection.
+      Each item in the **projects** collection will have a
+      **previous_project** meta data that contains either **null** or
+      the previous project in the collection.
  * **projects_tags** (data provider):
-   This is a `Sculpin\Contrib\Taxonomy\ProxySourceTaxonomyDataProvider` that
-   contains a mapping from tags to projects.
+   This is a `Sculpin\Contrib\Taxonomy\ProxySourceTaxonomyDataProvider`
+   that contains a mapping from tags to projects.
  * **projects_tag_index** (generator):
-   This is a `Sculpin\Contrib\Taxonomy\ProxySourceTaxonomyIndexGenerator` that
-   will create a page for each tag.
+   This is a `Sculpin\Contrib\Taxonomy\ProxySourceTaxonomyIndexGenerator`
+   that will create a page for each tag.
     * **tag**:
-      Each generated tag index will have a piece of meta data named **tag** that
-      will contain the name of the tag for which the index is being generated.
+      Each generated tag index will have a piece of meta data named
+      **tag** that will contain the name of the tag for which the index
+      is being generated.
     * **tag_projects**:
       Each generated tag index will have a piece of meta data named
-      **tag_projects** that will be the collection of all projects with this
-      tag.
+      **tag_projects** that will be the collection of all projects with
+      this tag.
  * **project.tag_html_index_permalinks** (source property):
-   Each source (in this case, each project source) will have have a map of each
-   taxon to its indexes for each type (html, json, xml) if any are available.
-   If there is an HTML page that uses the `projects_tag_index` generator, then
-   `tag_html_index_permalinks` will be added to each project source.
+   Each source (in this case, each project source) will have have a map
+   of each taxon to its indexes for each type (html, json, xml) if any
+   are available. If there is an HTML page that uses the
+   `projects_tag_index` generator, then `tag_html_index_permalinks` will
+   be added to each project source.
 
 ### Sample Projects Index Page
 
-The following is a quick sample of a template that can be used to list all
+The following is a sample of a template that can be used to list all
 projects.
 
     ---
@@ -213,7 +220,7 @@ projects.
 
 ### Sample Project Tags Index Page
 
-The following is a quick sample of a template that can be used to list all
+The following is a sample of a template that can be used to list all
 tags that have been used to tag projects.
 
     ---
@@ -227,7 +234,7 @@ tags that have been used to tag projects.
 
 ### Sample Project Tags Projects Index Page
 
-The following is a quick sample of a template that leverages the tag index
+The following is a sample of a template that leverages the tag index
 generator to create a new page for every tag and list its projects.
 
     ---
@@ -256,4 +263,8 @@ Custom types can be paginated in the same way as posts.
       <li><a href="{{ project.url }}">{{ project.title }}</a></li>
     {% endfor %}
 
-The `use` list will load all the items in each given provider into the key data.{{provider_name}}. So, in this example, all the projects available will be loaded into `data.projects`. By setting the provider of pagination to `data.projects`, we are able to paginate our custom type instead.
+The `use` list will load all the items in each given provider into the
+key data.{{provider_name}}. So, in this example, all the projects
+available will be loaded into `data.projects`. By setting the provider
+of pagination to `data.projects`, we are able to paginate our custom
+type instead.

@@ -4,9 +4,14 @@
         "components/font-awesome": "~3.2.1",
         "components/highlightjs": "7.3.0",
         "components/jquery": "~1.9.1",
-        "sculpin/sculpin": "3.0.0-rc5"
+        "sculpin/sculpin": "^3.0"
     },
     "config": {
         "component-dir": "source/components"
+    },
+    "scripts": {
+        "publish": [
+            "vendor/bin/sculpin generate --env=prod --output-dir=docs"
+        ]
     }
 }

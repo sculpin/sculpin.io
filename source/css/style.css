@@ -227,14 +227,17 @@ footer.site .copyright {
 	font-weight: bold;
 }
 
-.powered-by .row a {
+.powered-by h3 {
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.powered-by ul li a {
 	text-decoration: none;
-	padding: .25em 0;
-	display: inline-block;
 }
 
 .powered-by .powered-by-site {
-	font-size: 1.5em;
+	font-size: 1.2em;
 }
 .powered-by .powered-by-site .title {
 }
@@ -244,16 +247,26 @@ footer.site .copyright {
 	font-size: .75em;
 }
 
-.powered-by .powered-by-site .source {
-	color: #C0CFD5;
+.powered-by ul.list-inline {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-gap: 2vw;
 }
-.powered-by .powered-by-site .source:hover {
-	color: #DFE7EA;
+.powered-by li.powered-by-site {
+	padding: .5em;
+	text-align: left;
 }
 
 .powered-by .powered-by-site .icon-github:after,
 .powered-by .powered-by-site .icon-bitbucket:after {
 	content: " src";
+}
+
+.powered-by .powered-by-site .source {
+	color: #C0CFD5;
+}
+.powered-by .powered-by-site .source:hover {
+	color: #DFE7EA;
 }
 
 
@@ -550,7 +563,7 @@ only screen and (                min-resolution: 2dppx)  and (min-width: 480px) 
 	}
 
 	.marketing .powered-by .powered-by-site {
-		font-size: 1em;
+		font-size: .6em;
 	}
 
 	footer.site .mascot {

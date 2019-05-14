@@ -1,5 +1,5 @@
 ---
-title: Basic Sculpin Project
+title: Basic Project
 slug: basic-project
 
 ---

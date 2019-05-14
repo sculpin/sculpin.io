@@ -48,6 +48,6 @@ Have questions or what to get involved? Here are the best ways to find us:
 Here is a quick sampling of Sculpin powered sites in the wild. Have a Sculpin
 powered site you'd like to have showcased here? Send a Pull Request to the
 <a href="https://github.com/sculpin/sculpin.io">sculpin.io</a> repository on
-GitHub!
+GitHub, or reach out to <strong><a href="https://twitter.com/getsculpin">@getsculpin</a></strong> on Twitter!
 
 {% include 'includes/powered-by.html' %}

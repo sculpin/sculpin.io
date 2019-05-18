@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="theme-color" content="#5b7c89">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Posts &mdash; Sculpin &mdash; PHP Static Site Generator</title>
+        <title>Community Extensions &mdash; Sculpin &mdash; PHP Static Site Generator</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="https://sculpin.io/favicon.ico">
     <link rel="stylesheet" href="https://sculpin.io/components/bootstrap/css/bootstrap.min.css">
@@ -101,7 +101,7 @@
 													</li>
 											<li ><a href="https://sculpin.io/documentation/content-types/">Content Types</a>
 															<ul class="nav">
-																			<li  class="active" ><a href="https://sculpin.io/documentation/content-types/posts/">Posts</a>
+																			<li ><a href="https://sculpin.io/documentation/content-types/posts/">Posts</a>
 																			<li ><a href="https://sculpin.io/documentation/content-types/custom-types/">Custom Types</a>
 																	</ul>
 													</li>
@@ -109,7 +109,7 @@
 															<ul class="nav">
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/configuration/">Configuration</a>
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/creating-bundles/">Creating Bundles</a>
-																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/community-extensions/">Community Extensions</a>
+																			<li  class="active" ><a href="https://sculpin.io/documentation/extending-sculpin/community-extensions/">Community Extensions</a>
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/lifecycle/">Lifecycle</a>
 																	</ul>
 													</li>
@@ -117,38 +117,71 @@
 			</div>
 		</div>
 		<div class="col-sm-9">
-			<h1>Posts</h1>
-            <p>Posts are a blog entry style content type that is enabled by default for every
-Sculpin project. The default configuration can be seen below:</p>
+			<h1>Community Extensions</h1>
+            <p>Community-made extensions are a great way to extend the capabilities of
+your Sculpin site.</p>
 
-<pre><code>sculpin_content_types:
-    posts:
-        type: path
-        path: _posts
-        permalink: pretty
-        taxonomies:
-            - tags
-            - categories
+<blockquote>
+Know of an extension that belongs on this list? Send a Pull
+Request to the <a href="https://github.com/sculpin/sculpin.io">
+sculpin.io</a> repository on GitHub, or reach out to <strong><a
+href="https://twitter.com/getsculpin">@getsculpin</a></strong> on
+Twitter!
+</blockquote>
+
+<p><strong><a href="https://packagist.org/packages/janbuecker/sculpin-meta-navigation-bundle">Meta Navigation Bundle</a></strong></p>
+
+<p>This extension helps you build navigation menus for your site.</p>
+
+<p>To make a menu item visible, add a <code>menu_title</code> entry to the page's
+front matter.</p>
+
+<p>Then, loop on <code>page.menu</code> to produce your menu, allowing up to
+3 levels of depth.</p>
+
+<p><strong><a href="https://packagist.org/packages/beryllium/icelus">Icelus Thumbnail Generator</a></strong></p>
+
+<p>Generate thumbnails from within Twig:</p>
+
+<pre><code>
+&lt;a href="image.jpg"&gt;&lt;img src="{{ thumbnail('image.jpg', 100, 100) }}"&gt;&lt;/a&gt;
+
 </code></pre>
 
-<p>Posts will be found in <code>_posts</code> inside of your <code>source</code> directory. The default
-permalink strategy is <code>pretty</code> and two taxonomies are supported, <code>tags</code> and
-<code>categories</code>.</p>
+<p><strong><a href="https://packagist.org/packages/tsphethean/sculpin-related-posts-bundle">Related Posts Bundle</a></strong></p>
 
-<p>In order to override these settings, you can modify
-<code>app/config/sculpin_kernel.yml</code>. For example, to set the permalink strategy to
-something else, you could change your local <code>sculpin_kernel.yml</code> to:</p>
+<p>List five related posts (based on tag and category correlations) below
+any given post:</p>
 
-<pre><code>sculpin_content_types:
-    posts:
-        permalink: blog/:year/:month/:day/:filename/
+<pre><code>
+{% if page.related %}
+&lt;ul&gt;
+  {% for relate in page.related %}
+  &lt;li&gt;&lt;a href="{{ relate.source.url }}"&gt;{{ relate.title }}&lt;/a&gt;&lt;/li&gt;
+  {% endfor %}
+&lt;/ul&gt;
+{% endif %}
+
 </code></pre>
 
-<p>To disable posts entirely, you would do:</p>
+<p><strong><a href="https://packagist.org/packages/opdavies/sculpin-twig-markdown-bundle">Twig Markdown Bundle</a></strong></p>
 
-<pre><code>sculpin_content_types:
-    posts:
-        enabled: false
+<p>Process markdown strings from within Twig:</p>
+
+<pre><code>
+{{ some_content|markdown }}
+
+</code></pre>
+
+<p><strong><a href="https://packagist.org/packages/opdavies/sculpin-twig-sort-by-field-bundle">Sort By Field Bundle</a></strong></p>
+
+<p>From within Twig, allows you to sort arrays by key:</p>
+
+<pre><code>
+{% for i in myArray | sortbyfield('array_sort_key') %}
+  {{ i.array_sort_key }}
+{% endfor %}
+
 </code></pre>
         </div>
     </div>

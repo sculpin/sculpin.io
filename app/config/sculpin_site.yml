@@ -65,6 +65,10 @@ docs:
                 url: documentation/extending-sculpin/creating-bundles/
                 slug: extending-sculpin/creating-bundles
             -
+                name: Community Extensions
+                url: documentation/extending-sculpin/community-extensions/
+                slug: extending-sculpin/community-extensions
+            -
                 name: Lifecycle
                 url: documentation/extending-sculpin/lifecycle/
                 slug: extending-sculpin/lifecycle

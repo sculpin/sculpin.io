@@ -92,7 +92,7 @@ With this option passed, `{{ site.url }}/about` will now be generated as
 ## Environments
 
 Sculpin knows the `dev` and `prod` environment. They allow you to have
-[different configuration settings by environment](configuration/).
+[different configuration settings by environment]({{site.url}}/documentation/sources/).
 
 Sculpin assumes that all commands will be run in the `dev` environment
 unless otherwise specified.

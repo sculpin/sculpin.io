@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="theme-color" content="#5b7c89">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Configuration &mdash; Sculpin &mdash; PHP Static Site Generator</title>
+        <title>Internals &mdash; Sculpin &mdash; PHP Static Site Generator</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="https://sculpin.io/favicon.ico">
     <link rel="stylesheet" href="https://sculpin.io/components/bootstrap/css/bootstrap.min.css">
@@ -95,7 +95,7 @@
 																			<li ><a href="https://sculpin.io/documentation/themes/">Themes</a>
 																	</ul>
 													</li>
-											<li ><a href="https://sculpin.io/documentation/internals/">Internals</a>
+											<li class="active" ><a href="https://sculpin.io/documentation/internals/">Internals</a>
 															<ul class="nav">
 																			<li ><a href="https://sculpin.io/documentation/converters/">Converters</a>
 																			<li ><a href="https://sculpin.io/documentation/formatters/">Formatters</a>
@@ -110,7 +110,7 @@
 													</li>
 											<li ><a href="https://sculpin.io/documentation/extending-sculpin">Extending Sculpin</a>
 															<ul class="nav">
-																			<li  class="active" ><a href="https://sculpin.io/documentation/extending-sculpin/configuration/">Configuration</a>
+																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/configuration/">Configuration</a>
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/creating-bundles/">Creating Bundles</a>
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/community-extensions/">Community Extensions</a>
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/lifecycle/">Lifecycle</a>
@@ -120,52 +120,25 @@
 			</div>
 		</div>
 		<div class="col-sm-9">
-			<h1>Configuration</h1>
-            <p>To configure Sculpin for additional bundles, a custom Sculpin kernel must be
-created. Sculpin will automatically look for this file in
-<code>app/SculpinKernel.php</code>. If this file exists, it is loaded. If not, Sculpin
-loads a default kernel.</p>
+			<h1>Internals</h1>
+            <p>Internally, Sculpin uses an event-driven architecture to perform its tasks. These
+events are fed into Sculpin's Converters, Formatters, and Generators at various 
+stages of the <a href="https://sculpin.io/documentation/extending-sculpin/lifecycle">lifecycle</a>.</p>
 
-<p>If this file does not yet exist, you can use this template to create it:</p>
+<h2 id="converters1"><a href="https://sculpin.io/documentation/coverters/">Converters</a></h2>
 
-<pre><code>&lt;?php
+<p><a href="https://sculpin.io/documentation/coverters/">Converters</a> convert incoming markup to something else, generally HTML. Sculpin ships with two converters, Markdown and Textile.</p>
 
-class SculpinKernel extends \Sculpin\Bundle\SculpinBundle\HttpKernel\AbstractKernel
-{
-    protected function getAdditionalSculpinBundles(): array
-    {
-        return [
-        ];
-    }
-}
-</code></pre>
+<h2 id="formatters2"><a href="https://sculpin.io/documentation/formatters/">Formatters</a></h2>
 
-<p>In order to enable a Sculpin bundle, add its class name to the array returned
-from <code>getAdditionalSculpinBundles</code>. For example, to load the
-<a href="https://github.com/mavimo/sculpin-redirect-bundle">mavimo/sculpin-redirect-bundle</a>, whose class is
-<code>Mavimo\Sculpin\Bundle\RedirectBundle\SculpinRedirectBundle</code>, you would do
-the following:</p>
+<p><a href="https://sculpin.io/documentation/formatters/">Formatters</a> are responsible for formatting sources. This can be considered a view or template layer.</p>
 
-<pre><code>&lt;?php
+<p>Sculpin ships with one formatter, Twig.</p>
 
-use Mavimo\Sculpin\Bundle\RedirectBundle\SculpinRedirectBundle;
-use Sculpin\Bundle\SculpinBundle\HttpKernel\AbstractKernel;
+<h2 id="generators3"><a href="https://sculpin.io/documentation/generators/">Generators</a></h2>
 
-class SculpinKernel extends AbstractKernel
-{
-    protected function getAdditionalSculpinBundles(): array
-    {
-        return [
-            SculpinRedirectBundle::class,
-        ];
-    }
-}
-</code></pre>
-
-<p>Please note that you must return the class name as a string value! Do not
-return and instance, and also do not return a hashmap like in Symfony 4.</p>
-
-<p>That's it! This will ensure that your bundle will be registered correctly.</p>
+<p><a href="https://sculpin.io/documentation/generators/">Generators</a> are used to fabricate new virtual sources based on an existing 
+concrete source (e.g., <a href="https://sculpin.io/documentation/content-types/">content type</a>). Sculpin ships with a Pagination generator.</p>
         </div>
     </div>
         </div>

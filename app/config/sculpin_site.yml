@@ -23,26 +23,32 @@ docs:
         name: Sources
         url: documentation/sources/
         slug: sources
+        children:
+            -
+                name: Layouts
+                url: documentation/layouts/
+                slug: layouts
+            -
+                name: Themes
+                url: documentation/themes/
+                slug: themes
     -
-        name: Layouts
-        url: documentation/layouts/
-        slug: layouts
-    -
-        name: Themes
-        url: documentation/themes/
-        slug: themes
-    -
-        name: Converters
-        url: documentation/converters/
-        slug: converters
-    -
-        name: Formatters
-        url: documentation/formatters/
-        slug: formatters
-    -
-        name: Generators
-        url: documentation/generators/
-        slug: generators
+        name: Internals
+        url: documentation/internals/
+        slug: internals
+        children:
+            -
+                name: Converters
+                url: documentation/converters/
+                slug: converters
+            -
+                name: Formatters
+                url: documentation/formatters/
+                slug: formatters
+            -
+                name: Generators
+                url: documentation/generators/
+                slug: generators
     -
         name: Content Types
         url: documentation/content-types/

@@ -362,6 +362,14 @@ section.content .sculpin-sidebar li.active > a {
 	background-color: #89a6b1;
 }
 
+section.content span.screenshot img {
+    width: 80%;
+}
+
+section.content span.mobile img {
+    height: 200px;
+    width: auto;
+}
 
 @media only screen and (min-width: 320px) {
 

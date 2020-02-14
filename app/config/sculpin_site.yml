@@ -6,6 +6,11 @@ docs:
         name: Get Started
         url: getstarted/
         slug: get-started
+        children:
+            -
+                name: Additional Skeletons
+                url: documentation/additional-skeletons/
+                slug: getstarted/skeletons
     -
         name: Basic Project
         url: documentation/basic-project/

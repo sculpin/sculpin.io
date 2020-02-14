@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="theme-color" content="#5b7c89">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Community Extensions &mdash; Sculpin &mdash; PHP Static Site Generator</title>
+        <title>Additional Skeletons &mdash; Sculpin &mdash; PHP Static Site Generator</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" href="https://sculpin.io/favicon.ico">
     <link rel="stylesheet" href="https://sculpin.io/components/bootstrap/css/bootstrap.min.css">
@@ -83,7 +83,7 @@
 				<ul class="nav">
 											<li ><a href="https://sculpin.io/getstarted/">Get Started</a>
 															<ul class="nav">
-																			<li ><a href="https://sculpin.io/documentation/additional-skeletons/">Additional Skeletons</a>
+																			<li  class="active" ><a href="https://sculpin.io/documentation/additional-skeletons/">Additional Skeletons</a>
 																	</ul>
 													</li>
 											<li ><a href="https://sculpin.io/documentation/basic-project/">Basic Project</a>
@@ -112,7 +112,7 @@
 															<ul class="nav">
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/configuration/">Configuration</a>
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/creating-bundles/">Creating Bundles</a>
-																			<li  class="active" ><a href="https://sculpin.io/documentation/extending-sculpin/community-extensions/">Community Extensions</a>
+																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/community-extensions/">Community Extensions</a>
 																			<li ><a href="https://sculpin.io/documentation/extending-sculpin/lifecycle/">Lifecycle</a>
 																	</ul>
 													</li>
@@ -120,72 +120,88 @@
 			</div>
 		</div>
 		<div class="col-sm-9">
-			<h1>Community Extensions</h1>
-            <p>Community-made extensions are a great way to extend the capabilities of
-your Sculpin site.</p>
+			<h1>Additional Skeletons</h1>
+            <p>Skeletons are a great way to bootstrap a Sculpin website.</p>
 
-<blockquote>
-Know of an extension that belongs on this list? Send a Pull
-Request to the <a href="https://github.com/sculpin/sculpin.io">
-sculpin.io</a> repository on GitHub, or reach out to <strong><a
-href="https://twitter.com/getsculpin">@getsculpin</a></strong> on
-Twitter!
-</blockquote>
+<p>They are bare-bones examples that include initial Twig template files for
+various parts of a Sculpin website, as well as some initial CSS/JS/Images to 
+get started.</p>
 
-<p><strong><a href="https://packagist.org/packages/janbuecker/sculpin-meta-navigation-bundle">Meta Navigation Bundle</a></strong></p>
+<h2 id="default-bootstrap-blog">Default Bootstrap Blog</h2>
 
-<p>This extension helps you build navigation menus for your site.</p>
+<p>Getting up and running with this Bootstrap-based blog is covered in the Sculpin <a href="/getstarted/">Get Started</a> guide.</p>
 
-<p>To make a menu item visible, add a <code>menu_title</code> entry to the page's
-front matter.</p>
+<h2 id="new%3A-tailwind-blog">NEW: Tailwind Blog</h2>
 
-<p>Then, loop on <code>page.menu</code> to produce your menu, allowing up to
-3 levels of depth.</p>
+<p>This blog uses the Tailwind utility-based CSS framework. Utility-based CSS is a great way to get a site started up quickly with fully custom design elements.</p>
 
-<p><strong><a href="https://packagist.org/packages/beryllium/icelus">Icelus Thumbnail Generator</a></strong></p>
+<p>Getting things in place just the way you want them gives you the insight necessary to decide what deserves to be abstracted and what can live on as a one-off.</p>
 
-<p>Generate thumbnails from within Twig:</p>
+<p>To get started with the Tailwind Blog, use this command:</p>
 
-<pre><code>
-&lt;a href="image.jpg"&gt;&lt;img src="{{ thumbnail('image.jpg', 100, 100) }}"&gt;&lt;/a&gt;
-
+<pre><code>composer create-project beryllium/sculpin-tailwind-blog-skeleton myblog
 </code></pre>
 
-<p><strong><a href="https://packagist.org/packages/tsphethean/sculpin-related-posts-bundle">Related Posts Bundle</a></strong></p>
+<p>Once the main assets are installed, change into the directory and run:</p>
 
-<p>List five related posts (based on tag and category correlations) below
-any given post:</p>
-
-<pre><code>
-{% if page.related %}
-&lt;ul&gt;
-  {% for relate in page.related %}
-  &lt;li&gt;&lt;a href="{{ relate.source.url }}"&gt;{{ relate.title }}&lt;/a&gt;&lt;/li&gt;
-  {% endfor %}
-&lt;/ul&gt;
-{% endif %}
-
+<pre><code>yarn encore dev
 </code></pre>
 
-<p><strong><a href="https://packagist.org/packages/opdavies/sculpin-twig-markdown-bundle">Twig Markdown Bundle</a></strong></p>
+<p>Then, you can run this to start Sculpin and try out your new site:</p>
 
-<p>Process markdown strings from within Twig:</p>
-
-<pre><code>
-{{ some_content|markdown }}
-
+<pre><code>vendor/bin/sculpin generate --watch --server
 </code></pre>
 
-<p><strong><a href="https://packagist.org/packages/opdavies/sculpin-twig-sort-by-field-bundle">Sort By Field Bundle</a></strong></p>
+<p><span class="screenshot">
+<img src="/assets/skeletons/2019-08-31-desktop-blog-screenshot.png" alt="Desktop Site" />
+</span></p>
 
-<p>From within Twig, allows you to sort arrays by key:</p>
+<p><span class="screenshot mobile">
+<img src="/assets/skeletons/2019-08-31-mobile-blog-screenshot.png" alt="Mobile Site" />
+</span></p>
 
-<pre><code>
-{% for i in myArray | sortbyfield('array_sort_key') %}
-  {{ i.array_sort_key }}
-{% endfor %}
+<p>If you want the webpack encore assets to regenerate in the background, e.g.,
+when you are editing your CSS, JS, and images, run this command in a separate 
+terminal:</p>
 
+<pre><code>yarn encore dev --watch
 </code></pre>
+
+<hr />
+
+<h2 id="new%3A-tailwind-product-site">NEW: Tailwind Product Site</h2>
+
+<p>Need to make a company website or a product landing page? This is the skeleton for you. It strips out all the stuff related to blogging and leaves you with just the pieces you need to tailor the exact experience you want to deliver.</p>
+
+<p>To get started with the Tailwind Product Landing Page, use this command:</p>
+
+<pre><code>composer create-project beryllium/sculpin-tailwind-landing-skeleton myproduct
+</code></pre>
+
+<p>Once the main assets are installed, change into the directory and run:</p>
+
+<pre><code>yarn encore dev
+</code></pre>
+
+<p>Then, you can run this to start Sculpin and try out your new site:</p>
+
+<pre><code>vendor/bin/sculpin generate --watch --server
+</code></pre>
+
+<p>If you want the webpack encore assets to regenerate in the background, e.g., if
+you are editing your CSS, JS, and images, you can run this command in a separate
+terminal:</p>
+
+<pre><code>yarn encore dev --watch
+</code></pre>
+
+<p><span class="screenshot">
+<img src="/assets/skeletons/2019-08-31-desktop-landing-screenshot.png" alt="Desktop Landing Page" />
+</span></p>
+
+<p><span class="screenshot mobile">
+<img src="/assets/skeletons/2019-08-31-mobile-landing-screenshot.png" alt="Mobile Landing Page" />
+</span></p>
         </div>
     </div>
         </div>

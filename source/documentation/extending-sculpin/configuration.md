@@ -4,6 +4,8 @@ slug: extending-sculpin/configuration
 
 ---
 
+## Additional bundles
+
 To configure Sculpin for additional bundles, a custom Sculpin kernel must be
 created. Sculpin will automatically look for this file in
 `app/SculpinKernel.php`. If this file exists, it is loaded. If not, Sculpin
@@ -49,3 +51,19 @@ return and instance, and also do not return a hashmap like in Symfony 4.
 That's it! This will ensure that your bundle will be registered correctly.
 
 [1]: https://github.com/mavimo/sculpin-redirect-bundle
+
+## Additional services
+
+You can register services without bundles by creating a file `app/config/sculpin_services.yml`. 
+Sculpin will register automatically all services declared or imported in that file.
+
+For instance, you can register an existing Twig extension with the following file :
+
+```yml
+services:
+  twig.extension.intl:
+    class: 'Twig\Extra\Intl\IntlExtension'
+    tags:
+      - twig.extension
+``` 
+

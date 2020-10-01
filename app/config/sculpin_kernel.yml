@@ -1,6 +1,6 @@
 sculpin_content_types:
     docs:
-        path: documentation
+        path: documentation file
         permalink: pretty
     posts:
         enabled: false

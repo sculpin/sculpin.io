@@ -138,9 +138,9 @@ ahead and create a new post.
 
     cd _posts
 
-Let's make a new file here and publish an article in the year 2020:
+Let's make a new file here and publish an article in the year 2000:
 
-    touch 2020-07-19-time-travel.md
+    touch 2000-01-17-time-travel.md
 
 Using your favorite text editor open up the file and let's write a
 message in the future!
@@ -148,7 +148,7 @@ message in the future!
     ---
     title: Time travel
     tags:
-        - future
+        - past
         - time
     categories:
         - time
@@ -156,9 +156,9 @@ message in the future!
 
     # Hello world.
 
-    I am in the future.
+    I am a visitor in the past. I'm going to invest all my gold into dotcom stocks!
 
-    *Markdown is cool.*
+    *Markdown is fun.*
 
     {% verbatim %}**So is twig, because it knows this page's name is: {{ page.title }}**{% endverbatim %}
 
@@ -182,7 +182,7 @@ command line:
 Your blog post should now show up on the site. You can also see the
 generated file at
 
-    output_dev/blog/2020/01/07/time-travel/index.html
+    output_dev/blog/2000/01/17/time-travel/index.html
 
 ---
 

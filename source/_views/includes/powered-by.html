@@ -1,111 +1,17 @@
 <div class="powered-by">
-    <h3>Company Sites</h3>
+    {% for section in site.powered_by %}
+        <h3>{{ section.category }}</h3>
 
-    <ul class="list-inline">
-    <li class="powered-by-site">
-        <a class="title" href="http://yottaram.com">Yottaram</a>
-        <a class="source" href="https://github.com/jonstavis/yottaram.com"><i class="icon icon-github"></i></a>
-    </li>
+        <ul class="list-inline">
+            {% for item in section.sites %}
+                <li class="powered-by-site">
+                    <a class="title" href="{{ item.url }}">{{ item.name }}</a>
 
-    <li class="powered-by-site">
-        <a class="title" href="http://future500.nl">Future500 B.V.</a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="https://geocod.io">Geocod.io</a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="http://www.ifdattic.com/">ifdattic.com</a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="http://www.audiodog.co.uk">Audiodog</a>
-    </li>
-    </ul>
-
-    <h3>Open Source Sites/Documentation</h3>
-
-    <ul class="list-inline">
-    <li class="powered-by-site">
-        <a class="title" href="https://thephp.foundation/">The PHP Foundation</a>
-        <a class="source" href="https://github.com/ThePHPF/thephp.foundation"><i class="icon icon-github"></i></a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="https://sculpin.io/">Sculpin</a>
-        <a class="source" href="https://github.com/sculpin/sculpin.io"><i class="icon icon-github"></i></a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="http://stackphp.com/">Stack</a>
-        <a class="source" href="https://github.com/stackphp/stackphp.com"><i class="icon icon-github"></i></a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="http://sabre.io/">sabre/dav</a>
-        <a class="source" href="https://github.com/fruux/sabre.io"><i class="icon icon-github"></i></a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="http://phergie.org/">Phergie.org</a>
-        <a class="source" href="https://github.com/phergie/phergie.org/"><i class="icon icon-github"></i></a>
-    </li>
-    </ul>
-
-    <h3>Community Sites</h3>
-
-    <ul class="list-inline">
-
-    <li class="powered-by-site">
-        <a class="title" href="http://labs.qandidate.com/">labs @ Qandidate.com</a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="http://www.memphistechnology.org">Memphis Technology Foundation</a>
-        <a class="source" href="https://github.com/memtech/memphistechnology.org"><i class="icon icon-github"></i></a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="https://shefphp.github.io">Sheffield PHP User Group</a>
-        <a class="source" href="https://github.com/ShefPHP/ShefPHP.github.io"><i class="icon icon-github"></i></a>
-    </li>
-
-    </ul>
-
-    <h3>Blogs/Personal Sites</h3>
-
-    <ul class="list-inline">
-    <li class="powered-by-site">
-        <a class="title" href="http://whateverthing.com/">whateverthing.com</a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="http://asm89.github.io/">asm89</a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="https://blog.wyrihaximus.net/">Cees-Jan Kiewiet's blog</a>
-        <a class="source" href="https://github.com/WyriHaximus/blog.wyrihaximus.net"><i class="icon icon-github"></i></a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="https://benplummer.uk">Ben Plummer</a>
-        <a class="source" href="https://github.com/benplummer/website"><i class="icon icon-github"></i></a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="http://blog.coderspirit.xyz">CoderSpirit.XYZ</a>
-        <a class="source" href="https://github.com/castarco/coderspirit.blog"><i class="icon icon-github"></i></a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="https://skey.uk">Stefan Kecskes</a>
-    </li>
-
-    <li class="powered-by-site">
-        <a class="title" href="https://www.sailingcoops.com/">Sailing Co-Ops</a>
-    </li>
-    </ul>
-
+                    {% if item.repo_url -%}
+                        <a class="source" href="{{ item.repo_url }}"><i class="icon icon-github"></i></a>
+                    {%- endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
 </div>

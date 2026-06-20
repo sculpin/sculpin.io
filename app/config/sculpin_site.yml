@@ -83,3 +83,91 @@ docs:
                 name: Lifecycle
                 url: documentation/extending-sculpin/lifecycle/
                 slug: extending-sculpin/lifecycle
+powered_by:
+    -
+        category: Company Sites
+        sites:
+            -
+                name: Yottaram
+                url: http://yottaram.com
+                repo_url: https://github.com/jonstavis/yottaram.com
+            -
+                name: Future500 B.V.
+                url: http://future500.nl
+            -
+                name: Geocod.io
+                url: https://geocod.io
+            -
+                name: ifdattic.com
+                url: http://www.ifdattic.com
+            -
+                name: Audiodog
+                url: http://www.audiodog.co.uk
+    -
+        category: Open Source Sites/Documentation
+        sites:
+            -
+                name: The PHP Foundation
+                url: https://thephp.foundation
+                repo_url: https://github.com/ThePHPF/thephp.foundation
+            -
+                name: Sculpin
+                url: https://sculpin.io
+                repo_url: https://github.com/sculpin/sculpin.io
+            -
+                name: Stack
+                url: http://stackphp.com
+                repo_url: https://github.com/stackphp/stackphp.com
+            -
+                name: sabre/dav
+                url: http://sabre.io
+                repo_url: https://github.com/fruux/sabre.io
+            -
+                name: Phergie.org
+                url: http://phergie.org
+                repo_url: https://github.com/phergie/phergie.org
+    -
+        category: Community Sites
+        sites:
+            -
+                name: labs @ Qandidate.com
+                url: http://labs.qandidate.com
+            -
+                name: Memphis Technology Foundation
+                url: http://www.memphistechnology.org
+                repo_url: https://github.com/memtech/memphistechnology.org
+            -
+                name: Sheffield PHP User Group
+                url: https://shefphp.github.io
+                repo_url: https://github.com/ShefPHP/ShefPHP.github.io
+    -
+        category: Blogs/Personal Sites
+        sites:
+            -
+                name: whateverthing.com
+                url: http://whateverthing.com
+            -
+                name: asm89
+                url: http://asm89.github.io
+            -
+                name: Cees-Jan Kiewiet's blog
+                url: https://blog.wyrihaximus.net
+                repo_url: https://github.com/WyriHaximus/blog.wyrihaximus.net
+            -
+                name: Oliver Davies
+                url: https://www.oliverdavies.uk
+                repo_url: https://git.oliverdavies.uk/opdavies/oliverdavies.uk
+            -
+                name: Ben Plummer
+                url: https://benplummer.uk
+                repo_url: https://github.com/benplummer/website
+            -
+                name: CoderSpirit.XYZ
+                url: http://blog.coderspirit.xyz
+                repo_url: https://github.com/castarco/coderspirit.blog
+            -
+                name: Stefan Kecskes
+                url: https://skey.uk
+            -
+                name: Sailing Co-Ops
+                url: https://www.sailingcoops.com

@@ -1,15 +1,17 @@
 {
     "require": {
-        "components/bootstrap": "~3.0.0",
-        "components/font-awesome": "~3.2.1",
-        "components/highlightjs": "7.3.0",
-        "components/jquery": "~1.9.1",
-        "sculpin/sculpin": "^3.0"
+        "sculpin/sculpin": "dev-4.0.x-dev"
     },
     "config": {
-        "component-dir": "source/components"
+        "allow-plugins": {
+            "sculpin/sculpin-theme-composer-plugin": true
+        }
     },
     "scripts": {
+        "watch": [
+            "Composer\\Config::disableProcessTimeout",
+            "vendor/bin/sculpin generate --watch --server"
+        ],
         "publish": [
             "vendor/bin/sculpin generate --env=prod --output-dir=docs"
         ]

@@ -23,7 +23,7 @@ Sculpin ships with one formatter, Twig.
 [Generators][3] are used to fabricate new virtual sources based on an existing 
 concrete source (e.g., [content type][4]). Sculpin ships with a Pagination generator.
 
-[1]: {{site.url}}/documentation/coverters/
+[1]: {{site.url}}/documentation/converters/
 [2]: {{site.url}}/documentation/formatters/
 [3]: {{site.url}}/documentation/generators/
 [4]: {{site.url}}/documentation/content-types/

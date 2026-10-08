@@ -1,7 +1,6 @@
 ---
 title: Community Extensions
 slug: extending-sculpin/community-extensions
-
 ---
 
 Community-made extensions are a great way to extend the capabilities of
@@ -11,8 +10,8 @@ your Sculpin site.
 Know of an extension that belongs on this list? Send a Pull
 Request to the <a href="https://github.com/sculpin/sculpin.io">
 sculpin.io</a> repository on GitHub, or reach out to <strong><a
-href="https://twitter.com/getsculpin">@getsculpin</a></strong> on
-Twitter!
+href="https://phpc.social/@sculpin">@sculpin@phpc.social</a></strong>
+on Mastodon!
 </blockquote>
 
 **[Meta Navigation Bundle](https://packagist.org/packages/janbuecker/sculpin-meta-navigation-bundle)**

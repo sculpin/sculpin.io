@@ -27,13 +27,11 @@ Sculpin [community]({{site.url}}/community/)! They will be happy to help. :)
 ## Install with Composer
 
 Sculpin can be added to any existing Composer managed project by requiring
-it:
+it as a dependency:
 
     composer require sculpin/sculpin
 
 The entry point for running Sculpin commands is `vendor/bin/sculpin`.
-
-> The best version of Sculpin to be running right now is version 3.0.
 
 ---
 

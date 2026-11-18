@@ -174,3 +174,6 @@ powered_by:
             -
                 name: Sailing Co-Ops
                 url: https://www.sailingcoops.com
+github:
+    default_branch: main
+    repo_url: https://github.com/sculpin/sculpin.io
